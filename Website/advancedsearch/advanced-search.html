@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Tue Oct 20 2015 18:37:42 GMT+0000 (UTC) -->
+<html data-wf-site="5615631c7481d047217c335f" data-wf-page="561bdfab1e3b95411143dfd2">
+<head>
+  <meta charset="utf-8">
+  <title>Advanced Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="../css/jaidens-supercool-site.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="../js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
+  <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
+</head>
+<body>
+  <div class="w-section head-panel">
+    <div class="w-container top-menu">
+      <div class="w-row toprow">
+        <div class="w-col w-col-8"></div>
+        <div class="w-col w-col-2 about-column"><a class="about" href="../about/about.html">About</a>
+        </div>
+        <div class="w-col w-col-2">
+          <div class="w-dropdown" data-delay="0">
+            <div class="w-dropdown-toggle topmenu">
+              <div><span class="in-image-text">Jaiden91</span>
+              </div>
+              <div class="w-icon-dropdown-toggle usermenu"></div>
+            </div>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">Not you?</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/neweditproject.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/newedituser.html">New Project</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div><img class="top-image" src="../images/Function room2.jpg">
+  </div>
+  <div>
+    <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+  </div>
+  <div class="w-container">
+    <div class="invalidmessage"><em>Incorrect Date Range - Please Use MM/DD/YYYY format</em>
+    </div>
+  </div>
+  <div class="w-section advancedsearchsection">
+    <div class="w-container advancedsearchcontainer">
+      <div class="w-form">
+        <form id="email-form" name="email-form" data-name="Email Form">
+          <label for="name">Keyword</label>
+          <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name">
+          <label for="email">DateRange (MM/DD/YYYY)</label>
+          <div class="w-row">
+            <div class="w-col w-col-6">
+              <input class="w-input" id="BeginDate" type="text" placeholder="Example Text" name="BeginDate" required="required" data-name="BeginDate">
+              <label for="email">Participants</label>
+            </div>
+            <div class="w-col w-col-6">
+              <input class="w-input" id="End-Date" type="text" placeholder="Example Text" name="End-Date" required="required" data-name="End Date">
+            </div>
+          </div>
+          <input class="w-input" id="FieldField" type="text" placeholder="Example Text" name="FieldField" required="required" data-name="FieldField">
+          <div class="w-row">
+            <div class="w-col w-col-2">
+              <label for="Artefacts">Artefacts</label>
+            </div>
+            <div class="w-col w-col-2">
+              <label for="MinRating">Rating</label>
+            </div>
+            <div class="w-col w-col-2">
+              <label for="email">Level</label>
+            </div>
+            <div class="w-col w-col-2">
+              <label for="email">Status</label>
+            </div>
+            <div class="w-col w-col-2">
+              <label for="email">Username</label>
+            </div>
+            <div class="w-col w-col-2">
+              <label for="email">Views</label>
+            </div>
+          </div>
+          <div class="w-row">
+            <div class="w-col w-col-2">
+              <select class="w-select artefacts" id="Artefacts" name="Artefacts" data-name="Artefacts">
+                <option value="">Unimportant</option>
+                <option value="TRUE">Has Artefacts</option>
+                <option value="FALSE">No Artefacts</option>
+              </select>
+            </div>
+            <div class="w-col w-col-2">
+              <select class="w-select rating" id="field" name="field">
+                <option value="">Any</option>
+                <option value="1">1 Star +</option>
+                <option value="2">2 Star +</option>
+                <option value="3">3 Star +</option>
+                <option value="4">4 Star +</option>
+              </select>
+            </div>
+            <div class="w-col w-col-2">
+              <select class="w-select level" id="Level" name="Level" data-name="Level">
+                <option value="0">Any</option>
+                <option value="1">High School</option>
+                <option value="2">Freshman</option>
+                <option value="3">Junior/Senior</option>
+                <option value="4">Postgrad</option>
+                <option value="5">Doctorate Level</option>
+              </select>
+            </div>
+            <div class="w-col w-col-2">
+              <select class="w-select status" id="Status" name="Status" data-name="Status">
+                <option value="0">Any</option>
+                <option value="False">Incomplete</option>
+                <option value="True">Complete</option>
+              </select>
+            </div>
+            <div class="w-col w-col-2">
+              <input class="w-input" id="Username" type="text" placeholder="Jaiden91" name="Username" required="required" data-name="Username">
+            </div>
+            <div class="w-col w-col-2">
+              <select class="w-select view" id="View-Count" name="View-Count" data-name="View Count">
+                <option value="0">Any</option>
+                <option value="100">100+</option>
+                <option value="1000">1000+</option>
+                <option value="10000">10 000 +</option>
+              </select>
+            </div>
+          </div>
+          <input class="w-button" type="submit" value="Search" data-wait="Please wait...">
+        </form>
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received!</p>
+        </div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

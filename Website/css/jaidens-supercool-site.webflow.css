@@ -1,0 +1,163 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+.head-panel {
+  height: 150px;
+  margin-bottom: 100px;
+  padding-bottom: 3px;
+}
+.title {
+  font-family: Exo, sans-serif;
+  color: #856161;
+  font-size: 92px;
+  text-align: center;
+}
+.headingsection {
+  height: 123px;
+  margin-top: 77px;
+  margin-bottom: 25px;
+}
+.user {
+  display: inline;
+}
+.topmenu {
+  top: 0px;
+  right: 0px;
+  display: inline-block;
+  color: red;
+  text-align: left;
+}
+.top-image {
+  margin-top: -337px;
+  margin-bottom: 8px;
+  padding-bottom: 0px;
+}
+.in-image-text {
+  color: red;
+  text-align: center;
+}
+.about {
+  position: static;
+  left: 0px;
+  top: 0px;
+  display: inline;
+  overflow-x: visible;
+  overflow-y: visible;
+  float: none;
+  clear: none;
+  direction: ltr;
+  color: red;
+  text-align: center;
+}
+.about-column {
+  left: 0px;
+  top: 19px;
+  text-align: center;
+}
+.advanced {
+  padding-top: 0px;
+}
+.submit-advanced {
+  margin-top: 0px;
+}
+.search-page-search {
+  margin-top: -135px;
+}
+.searchpagetitle {
+  display: block;
+  margin-top: 154px;
+  font-family: Exo, sans-serif;
+  color: #999;
+  font-size: 42px;
+  line-height: 29px;
+  font-style: italic;
+  text-align: center;
+}
+.title-text {
+  color: #999;
+}
+.results-heading {
+  margin-left: -15px;
+  font-family: Exo, sans-serif;
+  font-size: 11px;
+}
+.resultheading {
+  font-family: Exo, sans-serif;
+}
+.results-text {
+  text-align: center;
+}
+.search-navigate {
+  text-align: center;
+}
+.bottom-text {
+  margin-top: 84px;
+}
+.projectheading {
+  margin-top: 73px;
+  font-family: Exo, sans-serif;
+}
+.bottom-text-project-page {
+  text-align: center;
+}
+.smallheaderlink {
+  color: #999;
+  text-decoration: none;
+}
+.invalidmessage {
+  color: #fd0000;
+}
+.favorite-button {
+  float: right;
+}
+.favcontainer {
+  margin-top: 18px;
+}
+.modifybutton {
+  float: right;
+}
+.user-project-view {
+  padding-bottom: 20px;
+}
+.ratebutton {
+  background-color: #cc06f1;
+}
+.smallheadsection {
+  margin-top: 1px;
+  margin-bottom: 128px;
+}
+.projectdisp {
+  margin-top: 16px;
+}
+.userprojectheadingtext {
+  color: #999;
+  text-decoration: none;
+}
+.bottomrow {
+  margin-top: 18px;
+}
+.welcomeblurb {
+  margin-top: 16px;
+  float: left;
+  text-align: center;
+}
+.projectdescriptiontext {
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+@media (max-width: 991px) {
+  .head-panel {
+    margin-bottom: 100px;
+  }
+  .title {
+    color: #888282;
+  }
+  .top-image {
+    display: inline-block;
+  }
+}
+@media (max-width: 767px) {
+}
