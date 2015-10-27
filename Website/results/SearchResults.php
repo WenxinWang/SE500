@@ -1,3 +1,32 @@
+<?php
+    
+    // Code to include MYSQL
+
+// The below will take the results of the search from the previuos page and 
+
+    $Search =$_GET[ 'name' ];
+    //Error checking here / may want to reroute home
+    
+    // Tiffany code (Database connection and Query here
+    
+
+    //$NumResults = mysql_num_rows($DB)
+    $NumResults = 20;
+    &ProjectDesc = ["ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription"];
+
+    &ProjectName = ["Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20"]
+        
+        &ProjectAuthors = ["Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20"]
+        $ProjectDate = ["Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20"]
+        $ProjectRating = [1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2]
+        &i = 1;
+        
+
+    
+?>
+
+
+
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Oct 27 2015 15:11:45 GMT+0000 (UTC) -->
@@ -94,12 +123,47 @@
         </div>
       </div>
       <div>
-        <h1 class="results-heading">4 Results Displayed Below</h1>
+          <!--Syntax Requires checking -->
+        <h1 class="results-heading"><?php echo $NumResults ?> Results Found for your search</h1>
+        
       </div>
     </div>
   </div>
   <div class="w-section results-section">
     <div class="w-container result">
+        <!-- This is the beginning of the results, the earlier code will be replaced by a while loop which will add rows based on number of elements. -->
+   
+        <?php while($i <= 15 and $i <= $NumResult){?>
+        
+        <div class="w-row">
+        <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
+        </div>
+        <div class="w-col w-col-10">
+          <div class="w-row">
+            <div class="w-col w-col-7 projectheadingcolumn">
+              <h3 class="resultheading"><?php echo $ProjectName(&i); ?></h3>
+              <div>Created by <?php echo $ProjectAuthors(&i) $ProjectDate; ?> 2015</div>
+            </div>
+            <div class="w-col w-col-5">
+              <div>Includes: SRS, Source Code, Proposal</div>
+              <div><img src="../images/star rating.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="result-text"><?php echo $ProjectDesc ?>&nbsp;</div>
+        </div>
+      </div>
+      <div>
+          
+          
+          <?php
+        $i += 1;
+        }
+        ?>
+        
+        
+        <!-- Old results code used to display 
+        
       <div class="w-row">
         <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
         </div>
@@ -184,6 +248,7 @@
           </div>
         </div>
       </div>
+-->
     </div>
   </div>
   <div class="w-section bottom-text">
