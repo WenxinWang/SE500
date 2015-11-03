@@ -131,11 +131,15 @@
     <div class="w-container result">
         <!-- This is the beginning of the results, the earlier code will be replaced by a while loop which will add rows based on number of elements. -->
    
-        <?php while($ii < 15 and $ii <= $NumResult){?>
+        <?php 
+        
+        while($ii < 15 and $ii <= $NumResult){
+        
+        ?>
         
         <div class="w-row">
-        <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
-        </div>
+            <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
+            </div>
         <div class="w-col w-col-10">
           <div class="w-row">
             <div class="w-col w-col-7 projectheadingcolumn">
@@ -151,11 +155,12 @@
           <div class="result-text"><?php echo "{$ProjectDesc[$ii]}"; ?>&nbsp;</div>
         </div>
       </div>
-     
+      
+    
           
           
           <?php
-        $ii = $ii + 1;
+        $ii++;
         }
         ?>
         <div> 
