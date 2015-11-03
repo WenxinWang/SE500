@@ -9,7 +9,7 @@ function createUser()
 {
 
 
-$con = mysqli_connect("localhost","spr_erau","$PRfall2015@ERAU", "SE500spr");
+$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
 if (!$con)
   {
