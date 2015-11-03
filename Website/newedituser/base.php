@@ -31,8 +31,8 @@ $users_name = mysql_real_escape_string($users_name);
   */
   
   $query = "
-  INSERT INTO `SE500`.`Users` (`id`, `first_name`, 'last_name', `email`, `username`,
-        `favorited_project`, `uploaded_project`, `university`, `password`) VALUES (1, '$First_Name',
+  INSERT INTO `SE500`.`Users` (`first_name`, 'last_name', `email`, `username`,
+        `favorited_project`, `uploaded_project`, `university`, `password`) VALUES ('$First_Name',
         '$Last_Name', '$Email', '$Username', NULL, NULL,
         $University, '$Password');";
 		
