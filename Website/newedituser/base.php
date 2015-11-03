@@ -42,7 +42,14 @@ $users_name = mysql_real_escape_string($users_name);
 		
 		//$First_Name,
         //$Last_Name, $Email, $Username, $Password)";
-	mysqli_query($query);
+	//mysqli_query($query);
+	
+	if (mysqli_query($con, $query)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $query . "<br>" . mysqli_error($con);
+}
+
 	
 	mysqli_close($con);
 	
