@@ -8,10 +8,10 @@
     //Error checking here / may want to reroute home
     
     // Tiffany code (Database connection and Query here
-    echo $Search;
+    
 
     //$NumResults = mysql_num_rows($DB)
-    //$NumResults = 20;
+    $NumResults = 20;
     //&ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
     //&ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
     //&ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
@@ -122,7 +122,7 @@
       </div>
       <div>
           <!--Syntax Requires checking -->
-        <h1 class="results-heading"><?php //echo "{$NumResults} Results Found for your search"; ?> </h1>
+        <h1 class="results-heading"><?php echo "{$NumResults} Results Found for your search"; ?> </h1>
         
       </div>
     </div>
