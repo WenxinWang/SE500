@@ -9,7 +9,7 @@ function createUser()
 {
 
 
-$con = mysqli_connect("localhost","root","ERAUsprSE500", "SE500spr");
+$con = mysqli_connect("localhost","spr_erau","$PRfall2015@ERAU", "SE500spr");
 
 if (!$con)
   {
@@ -22,7 +22,6 @@ $First_Name = $_POST['FirstName']; //Take "name" from the form
 $Last_Name = $_POST['LastName'];
 $Email = $_POST['Email'];
 $Username = $_POST['Username'];
-//$University = $_POST['university'];
 $Password = $_POST['Password'];
 
 //echo "Data", $First_Name, $Last_Name;
