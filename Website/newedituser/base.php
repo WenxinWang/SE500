@@ -9,11 +9,11 @@ function createUser()
 {
 
 
-$con = mysqli_connect("192.168.1.128","spr_erau","$PRfall2015@ERAU", "SE500");
+$con = mysqli_connect("192.168.1.128","spr_erau","$PRfall2015@ERAU", "SE500spr");
 
 if (!$con)
   {
-    die('Could not connect: ' . mysqli_error());
+    die('Could not connect: ' . mysqli_connect_error());
   }
 
 mysqli_select_db("SE500spr", $con);
