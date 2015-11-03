@@ -25,7 +25,7 @@ $Username = $_POST['Username'];
 //$University = $_POST['university'];
 $Password = $_POST['Password'];
 
-echo "Data", $First_Name, $Last_Name;
+//echo "Data", $First_Name, $Last_Name;
 /*
  SQL injection
 
@@ -36,8 +36,8 @@ $users_name = mysql_real_escape_string($users_name);
   
   
   $query = "
-  INSERT INTO `Users` (`first_name`, 'last_name', `email`, `username`,
-         `password`) VALUES ('$First_Name',
+  INSERT INTO 'Users' ('First_Name', 'Last_Name', 'Email', 'Username',
+         'Password') VALUES ('$First_Name',
         '$Last_Name', '$Email', '$Username', '$Password');";
 		
 	mysqli_query($query);
