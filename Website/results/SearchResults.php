@@ -12,13 +12,13 @@
 
     //$NumResults = mysql_num_rows($DB)
     $NumResults = 20;
-    &ProjectDesc = ["ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription"];
+    &ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
 
-    &ProjectName = ["Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20"]
+    &ProjectName = array("Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20");
         
-        &ProjectAuthors = ["Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20"]
-        $ProjectDate = ["Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20"]
-        $ProjectRating = [1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2]
+        &ProjectAuthors = array("Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20");
+        $ProjectDate = array("Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20");
+        $ProjectRating = array(1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2);
         &i = 1;
         
 
@@ -124,7 +124,7 @@
       </div>
       <div>
           <!--Syntax Requires checking -->
-        <h1 class="results-heading"><?php echo $NumResults ?> Results Found for your search</h1>
+        <h1 class="results-heading"><?php echo "$NumResults"; ?> Results Found for your search</h1>
         
       </div>
     </div>
@@ -141,8 +141,8 @@
         <div class="w-col w-col-10">
           <div class="w-row">
             <div class="w-col w-col-7 projectheadingcolumn">
-              <h3 class="resultheading"><?php echo $ProjectName(&i); ?></h3>
-              <div>Created by <?php echo $ProjectAuthors(&i) $ProjectDate; ?> 2015</div>
+              <h3 class="resultheading"><?php echo "$ProjectName(&i)"; ?></h3>
+              <div>Created by <?php echo "$ProjectAuthors(&i) $ProjectDate"; ?> 2015</div>
             </div>
             <div class="w-col w-col-5">
               <div>Includes: SRS, Source Code, Proposal</div>
@@ -150,17 +150,17 @@
               </div>
             </div>
           </div>
-          <div class="result-text"><?php echo $ProjectDesc ?>&nbsp;</div>
+          <div class="result-text"><?php echo "$ProjectDesc"; ?>&nbsp;</div>
         </div>
       </div>
-      <div>
+     
           
           
           <?php
-        $i += 1;
+        $i = $i + 1;
         }
         ?>
-        
+        <div> 
         
         <!-- Old results code used to display 
         
