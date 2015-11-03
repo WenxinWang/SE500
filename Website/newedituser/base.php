@@ -9,7 +9,7 @@ function createUser()
 {
 
 
-$con = mysqli_connect("192.168.1.128/phpmyadmin","spr_erau","$PRfall2015@ERAU");
+$con = mysqli_connect("localhost","spr_erau","$PRfall2015@ERAU", "SE500");
 
 if (!$con)
   {
@@ -35,7 +35,7 @@ $users_name = mysql_real_escape_string($users_name);
   
   
   $query = "
-  INSERT INTO `SE500`.`Users` (`first_name`, 'last_name', `email`, `username`,
+  INSERT INTO `Users` (`first_name`, 'last_name', `email`, `username`,
          `password`) VALUES ('$First_Name',
         '$Last_Name', '$Email', '$Username', '$Password');";
 		
