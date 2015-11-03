@@ -25,6 +25,7 @@ $Username = $_POST['Username'];
 //$University = $_POST['university'];
 $Password = $_POST['Password'];
 
+echo "Data", $First_Name, $Last_Name;
 /*
  SQL injection
 
