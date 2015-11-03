@@ -8,16 +8,16 @@
     //Error checking here / may want to reroute home
     
     // Tiffany code (Database connection and Query here
-    
+    echo $Search;
 
     //$NumResults = mysql_num_rows($DB)
-    $NumResults = 20;
-    &ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
-    &ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    &ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    $ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    $ProjectRating = array(1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2);
-    &ii = 0;
+    //$NumResults = 20;
+    //&ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
+    //&ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+    //&ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+    //$ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+    //$ProjectRating = array(1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2);
+    //&ii = 0;
         
 
     
@@ -122,7 +122,7 @@
       </div>
       <div>
           <!--Syntax Requires checking -->
-        <h1 class="results-heading"><?php echo "{$NumResults} Results Found for your search"; ?> </h1>
+        <h1 class="results-heading"><?php //echo "{$NumResults} Results Found for your search"; ?> </h1>
         
       </div>
     </div>
@@ -131,7 +131,7 @@
     <div class="w-container result">
         <!-- This is the beginning of the results, the earlier code will be replaced by a while loop which will add rows based on number of elements. -->
    
-        <?php while($ii < 15 and $ii <= $NumResult){?>
+        <?php //while($ii < 15 and $ii <= $NumResult){?>
         
         <div class="w-row">
         <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
@@ -139,8 +139,8 @@
         <div class="w-col w-col-10">
           <div class="w-row">
             <div class="w-col w-col-7 projectheadingcolumn">
-              <h3 class="resultheading"><?php echo "{$ProjectName[&ii]}"; ?></h3>
-              <div>Created by <?php echo "{$ProjectAuthors[&ii]}, {$ProjectDate[$ii]}"; ?> 2015</div>
+              <h3 class="resultheading"><?php //echo "{$ProjectName[&ii]}"; ?></h3>
+              <div>Created by <?php //echo "{$ProjectAuthors[&ii]}, {$ProjectDate[$ii]}"; ?> 2015</div>
             </div>
             <div class="w-col w-col-5">
               <div>Includes: SRS, Source Code, Proposal</div>
@@ -148,15 +148,15 @@
               </div>
             </div>
           </div>
-          <div class="result-text"><?php echo "{$ProjectDesc[$ii]}"; ?>&nbsp;</div>
+          <div class="result-text"><?php //echo "{$ProjectDesc[$ii]}"; ?>&nbsp;</div>
         </div>
       </div>
      
           
           
           <?php
-        $ii = $ii + 1;
-        }
+        //$ii = $ii + 1;
+        //}
         ?>
         <div> 
         
