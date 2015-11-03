@@ -122,7 +122,7 @@
       </div>
       <div>
           <!--Syntax Requires checking -->
-        <h1 class="results-heading"><?php echo "{$NumResults} Results Found for your search"; ?> </h1>
+        <h1 class="results-heading"><?php echo "Your Search for {$Search} returned {$NumResults} results!"; ?> </h1>
         
       </div>
     </div>
