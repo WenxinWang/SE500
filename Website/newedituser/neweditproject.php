@@ -50,8 +50,8 @@
     <div class="w-container">
       <div>* Indicates Required Field</div>
       <div>
-        <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form">
+        <div class="w-form" >
+          <form id="email-form" method="post" action="base.php" name="email-form" data-name="Email Form">
             <div>
               <div class="w-row">
                 <div class="w-col w-col-6">
@@ -131,7 +131,7 @@
               </div>
             </div>
 <!-- -------- LOG in Info----------------- -->
-            <input class="w-button" type="submit" value="Go!" data-wait="Please wait...">
+            <input class="w-button" type="submit" value="Go!" name="submit" data-wait="Please wait...">
 <!-- ------------------------------------- -->
           </form>
           <div class="w-form-done">
