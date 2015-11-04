@@ -189,7 +189,7 @@
    
         <?php 
         
-        while(($ii <= 14) && $ii (<= ($NumResult))){
+        while(($ii <= 14) and $ii (<= ($NumResult))){
         
             echo "{ $ii }"; //debug only
         
