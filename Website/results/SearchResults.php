@@ -257,7 +257,7 @@
   </div>
   <div class="w-section bottom-text">
     <div class="w-container">
-      <div class="results-text">4 to 4 of 4 Results</div>
+      <div class="results-text">4 to 4 of 4 Results<?php echo $ii; ?></div>
       <div class="search-navigate">&lt;- Previous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next -&gt;</div>
     </div>
   </div>
