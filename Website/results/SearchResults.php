@@ -201,7 +201,7 @@
           echo '<div class="w-row">';
             echo '<div class="w-col w-col-7 projectheadingcolumn">';
               echo '<h3 class="resultheading">';
-            echo<"{$ProjectName[$ii]}";
+            echo "{$ProjectName[$ii]}";
             echo '</h3>';
               echo '<div>Created by';
               echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
