@@ -134,7 +134,7 @@
         <?php 
         
         while($ii < 15 and $ii <= $NumResult){
-        echo "{ $ii }"
+        echo "{ $ii }";
         ?>
         
         <div class="w-row">
