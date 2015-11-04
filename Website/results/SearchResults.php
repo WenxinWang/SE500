@@ -191,7 +191,7 @@
         
         while($ii <= 14 && $ii <= ($NumResults)){
         
-            echo "{ $ii }"; //debug only
+        echo "{ $ii }"; //debug only
         
         
         echo '<div class="w-row">';
@@ -200,8 +200,12 @@
         echo '<div class="w-col w-col-10">';
           echo '<div class="w-row">';
             echo '<div class="w-col w-col-7 projectheadingcolumn">';
-              echo '<h3 class="resultheading"><{$ProjectName[$ii]} ?></h3>';
-              echo '<div>Created by {$ProjectAuthors[$ii]}, {$ProjectDate[$ii]} ?> 2015</div>';
+              echo '<h3 class="resultheading">';
+            echo<"{$ProjectName[$ii]}";
+            echo '</h3>';
+              echo '<div>Created by';
+              echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
+            echo '</div>';
             echo '</div>';
             echo '<div class="w-col w-col-5">';
               echo '<div>Includes: SRS, Source Code, Proposal</div>';
@@ -209,7 +213,9 @@
               echo '</div>';
             echo '</div>';
           echo '</div>';
-          echo '<div class="result-text">{$ProjectDesc[$ii]} ?>&nbsp;</div>';
+          echo '<div class="result-text">';
+          echo "{$ProjectDesc[$ii]}"; 
+        echo '&nbsp;</div>';
         echo '</div>';
       echo '</div>';
             
