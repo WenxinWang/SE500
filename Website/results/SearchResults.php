@@ -189,9 +189,9 @@
    
         <?php 
         
-        while($ii < 15 and $ii <= $NumResult){
+        while(($ii <= 14) and ($ii <= $NumResult){
         
-            echo "{ $ii }";
+            echo "{ $ii }"; //debug only
         
         
         echo '<div class="w-row">';
@@ -212,11 +212,7 @@
           echo '<div class="result-text">{$ProjectDesc[$ii]} ?>&nbsp;</div>';
         echo '</div>';
       echo '</div>';
-      
-    
-          
-          
-        
+            
         $ii++;
         }
         ?>
