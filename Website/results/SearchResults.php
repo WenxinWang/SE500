@@ -134,32 +134,33 @@
         <?php 
         
         while($ii < 15 and $ii <= $NumResult){
-        echo "{ $ii }";
-        ?>
         
-        <div class="w-row">
-            <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
-            </div>
-        <div class="w-col w-col-10">
-          <div class="w-row">
-            <div class="w-col w-col-7 projectheadingcolumn">
-              <h3 class="resultheading"><?php echo "{$ProjectName[$ii]}"; ?></h3>
-              <div>Created by <?php echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}"; ?> 2015</div>
-            </div>
-            <div class="w-col w-col-5">
-              <div>Includes: SRS, Source Code, Proposal</div>
-              <div><img src="../images/star rating.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="result-text"><?php echo "{$ProjectDesc[$ii]}"; ?>&nbsp;</div>
-        </div>
-      </div>
+            echo "{ $ii }";
+        
+        
+        echo '<div class="w-row">';
+           echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">';
+            echo '</div>';
+        echo '<div class="w-col w-col-10">';
+          echo '<div class="w-row">';
+            echo '<div class="w-col w-col-7 projectheadingcolumn">';
+              echo '<h3 class="resultheading"><{$ProjectName[$ii]} ?></h3>';
+              echo '<div>Created by {$ProjectAuthors[$ii]}, {$ProjectDate[$ii]} ?> 2015</div>';
+            echo '</div>';
+            echo '<div class="w-col w-col-5">';
+              echo '<div>Includes: SRS, Source Code, Proposal</div>';
+              echo '<div><img src="../images/star rating.jpg">';
+              echo '</div>';
+            echo '</div>';
+          echo '</div>';
+          echo '<div class="result-text">{$ProjectDesc[$ii]} ?>&nbsp;</div>';
+        echo '</div>';
+      echo '</div>';
       
     
           
           
-          <?php
+        
         $ii++;
         }
         ?>
