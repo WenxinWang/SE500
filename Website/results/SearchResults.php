@@ -7,7 +7,7 @@
 	//$serverName="192.168.1.128/phpmyadmin";
 	//$userName="spr_erau";
 	//$password="$PRfall2015@ERAU";
-	//$dbName="Projects";
+	$dbName="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
 	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
