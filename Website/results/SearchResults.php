@@ -27,12 +27,12 @@ mysqli_select_db("SE500spr", $con);
     $Search=$_GET["name"];
 	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%"$Search"%'" ;
 		//here can also return other items of the projects.
-	$search_query = mysqli_query($search_sql);
+	//$search_query = mysqli_query($search_sql);
 	
-	if(!$search_query){	//Error checking here / may want to reroute index page
+	//if(!$search_query){	//Error checking here / may want to reroute index page
 	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
-	}//else{
+	//}//else{
 	//		$num_rows = mysqli_num_rows($search_query);
 	//		if(!$num_rows){	//Error checking here / may want to reroute index page
 	//			echo "No rows found, nothing to print so return to index page.";
