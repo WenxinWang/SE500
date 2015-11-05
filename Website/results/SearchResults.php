@@ -20,17 +20,17 @@ mysqli_select_db("SE500spr", $con);
 	//if (!$conn){		//check connection
 	//		die("Connection failed: " . mysqli_connect_error());
 	//}	
-	//else echo " succed logging into the database!";
+	else echo " succed logging into the database!";
 
-// The below will take the results of the search from the previuos page 
+// The below will take the results of the search from the previuos page Execute
 
     $Search=$_GET["name"];
-	//$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%"$Search"%'" ;
+	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%"$Search"%'" ;
 		//here can also return other items of the projects.
-	//$search_query = mysqli_query($search_sql);
+	$search_query = mysqli_query($search_sql);
 	
-	//if(!$search_query){	//Error checking here / may want to reroute index page
-	//	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
+	if(!$search_query){	//Error checking here / may want to reroute index page
+	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
 	//}else{
 	//		$num_rows = mysqli_num_rows($search_query);
