@@ -43,7 +43,7 @@ mysqli_select_db("SE500spr", $con);
 			if(!$num_rows){	//Error checking here / may want to reroute index page
 			echo "No rows found, nothing to print so return to index page.";
 	//			header("Location:index.php");
-	/	}else{
+		}else{
 				$search_rs = mysqli_fetch_assoc($search_query);
 				
 			//	<p>Search results</p>
