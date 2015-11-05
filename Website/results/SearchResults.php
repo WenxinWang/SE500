@@ -76,7 +76,7 @@
     $ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
     $ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
     $ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    $ProjectRating = array(1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2);
+    $ProjectRating = array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
     $ii = 0;
        
 ?>
@@ -209,6 +209,29 @@
             echo '</div>';
             echo '<div class="w-col w-col-5">';
               echo '<div>Includes: SRS, Source Code, Proposal</div>';
+            if (&Project Rating < 0.25){
+                echo '<div><img src="../images/starImage/0.png">';
+            } elseif (&Project Rating < 0.75){
+                echo '<div><img src="../images/starImage/05.png">';
+            } elseif (&Project Rating < 1.25){
+                echo '<div><img src="../images/starImage/1.png">';
+            } elseif (&Project Rating < 1.75){
+                echo '<div><img src="../images/starImage/15.png">';
+            } elseif (&Project Rating < 2.25){
+                echo '<div><img src="../images/starImage/2.png">';
+            } elseif (&Project Rating < 2.75){
+                echo '<div><img src="../images/starImage/25.png">';
+            } elseif (&Project Rating < 3.25){
+                echo '<div><img src="../images/starImage/3.png">';
+            } elseif (&Project Rating < 3.75){
+                echo '<div><img src="../images/starImage/35.png">';
+            } elseif (&Project Rating < 4.25){
+                echo '<div><img src="../images/starImage/4.png">';
+            } elseif (&Project Rating < 4.75){
+                echo '<div><img src="../images/starImage/05.png">';
+            } else {
+                 echo '<div><img src="../images/starImage/5.png">';
+            }
               echo '<div><img src="../images/star rating.jpg">';
               echo '</div>';
             echo '</div>';
