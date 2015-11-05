@@ -22,58 +22,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
   <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
 </head>
-<!-- @author Tiffany
-<?php
-
- //connect  to the database 
- $con = mysql_connect("192.168.1.128/phpmyadmin","spr_erau","$PRfall2015@ERAU");
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
-  else echo " succed logging into the database!";
-?>
-
- //-select  the database to use 
-
- //-query  the database table 
-
- //-run  the query against the mysql query function 
-
-
- 
-
-	
-if(!isset($_POST['email-form'])){
-	header("Location:index.php");
-}
-
-$search_sql = "SELECT * FROM stock WHERE name LIKE '%".$_POST[search])"%' OR description LIKE '%".$_POST[search])"%'"  ;
-$search_query = mysql_query($search_sql);
-if(mysql_num_rows($search_query)!= 0){
-$search_rs = mysql_fetch_assoc($search_query);
-}
-
-<!-- mySQL
-SELECT * FROM stock WHERE name LIKE '%skirt%' OR description LIKE '%skirt%'
- -->
-
-		<p>Search results</p>
-<?php if(mysql_num_rows($search_query)!=0){
-	do{
-		?>
-		<p><?php echo $search_rs['name']; ?> </p>
-	
-	}while($search_rs = mysql_fetch_assoc($search_query));
-
-}else{
-	echo "No results found";
-}
-
-
-
-?>
--->
 <body>
   <div class="w-section head-panel">
     <div class="w-container top-menu">
