@@ -49,15 +49,15 @@
   <div class="w-section">
     <div class="w-container">
       <div class="w-form">
-        <form id="email-form" name="email-form" data-name="Email Form">
+        <form id="email-form" method="post" action="base.php" name="email-form" data-name="Email Form">
           <label for="name">Project Title:</label>
-          <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name">
+          <input class="w-input" id="Title" type="text" placeholder="Enter your name" name="Title" data-name="Name">
           <div class="w-row">
             <div class="w-col w-col-8">
               <label for="IMGSRC">Main Image</label>
               <div class="w-row">
                 <div class="w-col w-col-9">
-                  <input class="w-input" id="IMGSRC" type="text" placeholder="Upload Image" name="IMGSRC" required="required" data-name="IMGSRC">
+                  <input class="w-input" id="IMGSRC" type="text" placeholder="Upload Image" name="IMGSRC" data-name="IMGSRC">
                 </div>
                 <div class="w-col w-col-3"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -72,7 +72,7 @@
               <div>UserName</div>
             </div>
             <div class="w-col w-col-10">
-              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" required="required">
+              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" >
             </div>
           </div>
           <div class="w-row">
@@ -80,7 +80,7 @@
               <div>UserName</div>
             </div>
             <div class="w-col w-col-10">
-              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" required="required">
+              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" >
             </div>
           </div>
           <div class="w-row">
@@ -88,7 +88,7 @@
               <div>UserName</div>
             </div>
             <div class="w-col w-col-10">
-              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" required="required">
+              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" >
             </div>
           </div>
           <div class="w-row">
@@ -96,7 +96,7 @@
               <div>UserName</div>
             </div>
             <div class="w-col w-col-10">
-              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" required="required">
+              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" >
             </div>
           </div>
           <div class="w-row">
@@ -104,7 +104,7 @@
               <div>UserName</div>
             </div>
             <div class="w-col w-col-10">
-              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" required="required">
+              <input class="w-input" id="field" type="text" placeholder="UserNameHere" name="field" >
             </div>
           </div>
           <div>
@@ -113,7 +113,7 @@
                 <label for="email">Project Description:</label>
               </div>
               <div class="w-col w-col-10">
-                <textarea class="w-input" id="field" placeholder="Project Description Here" name="field"></textarea>
+                <textarea class="w-input" id="field" placeholder="Project Description Here" name="Description"></textarea>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@
                 </select>
               </div>
               <div class="w-col w-col-6">
-                <input class="w-input" id="field-2" type="text" placeholder="MM/DD/YY" name="field-2" required="required">
+                <input class="w-input" id="field-2" type="text" placeholder="MM/DD/YY" name="field-2" >
               </div>
             </div>
             <div>
@@ -143,7 +143,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3"  data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -153,7 +153,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -163,7 +163,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -173,7 +173,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -183,7 +183,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -193,7 +193,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3"  data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -203,7 +203,7 @@
                   <label for="email">Artefacts</label>
                 </div>
                 <div class="w-col w-col-8">
-                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                  <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3"  data-name="Field 3">
                 </div>
                 <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
                 </div>
@@ -214,7 +214,7 @@
                 <label for="email">Artefacts</label>
               </div>
               <div class="w-col w-col-8">
-                <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+                <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3"  data-name="Field 3">
               </div>
               <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
               </div>
@@ -225,7 +225,7 @@
               <label for="email">Artefacts</label>
             </div>
             <div class="w-col w-col-8">
-              <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+              <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
             </div>
             <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
             </div>
@@ -235,7 +235,7 @@
               <label for="email">Artefacts</label>
             </div>
             <div class="w-col w-col-8">
-              <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+              <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
             </div>
             <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
             </div>
@@ -245,7 +245,7 @@
               <label for="email">Artefacts</label>
             </div>
             <div class="w-col w-col-8">
-              <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" required="required" data-name="Field 3">
+              <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
             </div>
             <div class="w-col w-col-2"><a class="w-button" href="#">Upload/Search</a>
             </div>
