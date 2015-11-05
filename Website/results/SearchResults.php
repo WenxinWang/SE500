@@ -34,10 +34,10 @@ mysqli_select_db("SE500spr", $con);
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($search_sql);
 	
-	if(!$search_query){	//Error checking here / may want to reroute index page
-	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
+	//if(!$search_query){	//Error checking here / may want to reroute index page
+	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
-	}else{
+	//}else{
 			//$num_rows = mysqli_num_rows($search_query);
            $NumResults =  mysqli_num_rows($search_query);
 	//		if(!$num_rows){	//Error checking here / may want to reroute index page
@@ -79,7 +79,7 @@ mysqli_select_db("SE500spr", $con);
 		//			echo $row["Project_Security_Level"];
 	//				echo $row["Date_Uploaded"];
 	//				echo $row["Primary_Programming_Language"];
-			}
+	//		}
 	//		}
 	//}
 		
