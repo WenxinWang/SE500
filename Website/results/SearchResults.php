@@ -30,7 +30,7 @@ mysqli_select_db("SE500spr", $con);
 // The below will take the results of the search from the previuos page Execute
 
     $Search=$_GET["name"];
-	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%'$Search'%'" ;
+	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%'$Search'%'";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($search_sql);
 	
