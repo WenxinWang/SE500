@@ -209,25 +209,25 @@
             echo '</div>';
             echo '<div class="w-col w-col-5">';
               echo '<div>Includes: SRS, Source Code, Proposal</div>';
-            if (&ProjectRating < 0.25){
+            if (&ProjectRating[$ii] < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
-            } elseif (&ProjectRating < 0.75){
+            } elseif (&ProjectRating[$ii] < 0.75){
                 echo '<div><img src="../images/starImage/05.png">';
-            } elseif (&ProjectRating < 1.25){
+            } elseif (&ProjectRating[$ii] < 1.25){
                 echo '<div><img src="../images/starImage/1.png">';
-            } elseif (&ProjectRating < 1.75){
+            } elseif (&ProjectRating[$ii] < 1.75){
                 echo '<div><img src="../images/starImage/15.png">';
-            } elseif (&ProjectRating < 2.25){
+            } elseif (&ProjectRating[$ii] < 2.25){
                 echo '<div><img src="../images/starImage/2.png">';
-            } elseif (&ProjectRating < 2.75){
+            } elseif (&ProjectRating[$ii] < 2.75){
                 echo '<div><img src="../images/starImage/25.png">';
-            } elseif (&ProjectRating < 3.25){
+            } elseif (&ProjectRating[$ii] < 3.25){
                 echo '<div><img src="../images/starImage/3.png">';
-            } elseif (&ProjectRating < 3.75){
+            } elseif (&ProjectRating[$ii] < 3.75){
                 echo '<div><img src="../images/starImage/35.png">';
-            } elseif (&ProjectRating < 4.25){
+            } elseif (&ProjectRating[$ii] < 4.25){
                 echo '<div><img src="../images/starImage/4.png">';
-            } elseif (&ProjectRating < 4.75){
+            } elseif (&ProjectRating[$ii] < 4.75){
                 echo '<div><img src="../images/starImage/05.png">';
             } else {
                  echo '<div><img src="../images/starImage/5.png">';
