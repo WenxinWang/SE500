@@ -1,5 +1,8 @@
 <?php
-    // Tiffany code (Database connection and Query here
+   
+
+
+// Tiffany code (Database connection and Query here
     // Code to include MYSQL, connect  to the database, select  the database to use, query  the database table 
 	//$serverName="192.168.1.128/phpmyadmin";
 	//$userName="spr_erau";
@@ -15,7 +18,7 @@
 
 // The below will take the results of the search from the previuos page 
 
-    //$Search=$_GET["name"];
+    $Search=$_GET["name"];
 	//$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%"$Search"%'" ;
 		//here can also return other items of the projects.
 	//$search_query = mysqli_query($search_sql);
@@ -190,10 +193,6 @@
         <?php 
         
         while($ii <= 14 && $ii <= ($NumResults)){
-        
-        echo "{ $ii }"; //debug only
-        
-        
         echo '<div class="w-row">';
            echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">';
             echo '</div>';
@@ -337,7 +336,7 @@
   </div>
   <div class="w-section bottom-text">
     <div class="w-container">
-      <div class="results-text">4 to 4 of 4 Results<?php echo $ii; ?></div>
+      <div class="results-text">4 to 4 of 4 Results </div>
       <div class="search-navigate">&lt;- Previous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next -&gt;</div>
     </div>
   </div>
