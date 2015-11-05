@@ -30,7 +30,7 @@ mysqli_select_db("SE500spr", $con);
 	$search_query = mysqli_query($search_sql);
 	
 	if(!$search_query){	//Error checking here / may want to reroute index page
-	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
+	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
 	//}else{
 	//		$num_rows = mysqli_num_rows($search_query);
