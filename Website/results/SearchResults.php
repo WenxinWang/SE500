@@ -40,11 +40,11 @@ mysqli_select_db("SE500spr", $con);
 	}else{
 			//$num_rows = mysqli_num_rows($search_query);
            $NumResults =  mysqli_num_rows($search_query);
-	//		if(!$num_rows){	//Error checking here / may want to reroute index page
-	//			echo "No rows found, nothing to print so return to index page.";
+			if(!$num_rows){	//Error checking here / may want to reroute index page
+			echo "No rows found, nothing to print so return to index page.";
 	//			header("Location:index.php");
-	//		}else{
-				//$search_rs = mysqli_fetch_assoc($search_query);
+	/	}else{
+				$search_rs = mysqli_fetch_assoc($search_query);
 				
 			//	<p>Search results</p>
 				// While a row of data exists, put that row in $row as an associative array
@@ -80,7 +80,7 @@ mysqli_select_db("SE500spr", $con);
 	//				echo $row["Date_Uploaded"];
 	//				echo $row["Primary_Programming_Language"];
 		}
-	//		}
+		}
 	//}
 		
 	//mysqli_free_result($search_query);
@@ -204,7 +204,7 @@ mysqli_select_db("SE500spr", $con);
    
         <?php 
         
-        while($ii <= 14 && $ii <= ($NumResults)){
+        while($ii <= 14 && $ii < ($NumResults)){
         echo '<div class="w-row">';
            echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">';
             echo '</div>';
