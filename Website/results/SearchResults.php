@@ -10,7 +10,13 @@
 	//$dbName="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	
+	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
+
+if (!$con)
+  {
+    die('Could not connect: ' . mysqli_connect_error());
+  }
+mysqli_select_db("SE500spr", $con);
 	//if (!$conn){		//check connection
 	//		die("Connection failed: " . mysqli_connect_error());
 	//}	
