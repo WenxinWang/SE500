@@ -232,7 +232,6 @@
             } else {
                  echo '<div><img src="../images/starImage/5.png">';
             }
-              echo '<div><img src="../images/star rating.jpg">';
               echo '</div>';
             echo '</div>';
           echo '</div>';
