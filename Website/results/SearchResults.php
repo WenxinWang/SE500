@@ -16,6 +16,9 @@ if (!$con)
   {
     die('Could not connect: ' . mysqli_connect_error());
   }
+else {
+echo " succeded logging into the database!"; 
+}
 mysqli_select_db("SE500spr", $con);
 	//if (!$conn){		//check connection
 	//		die("Connection failed: " . mysqli_connect_error());
