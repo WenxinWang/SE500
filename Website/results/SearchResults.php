@@ -16,7 +16,7 @@
 // The below will take the results of the search from the previuos page 
 
     $Search=$_GET["name"];
-	$search_sql = "SELECT ID, Project_Name, Project_Description FROM $dbName WHERE Project_Name LIKE '%"$Search"%'" ;
+	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%"$Search"%'" ;
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($search_sql);
 	
@@ -37,15 +37,39 @@
 				// Note: If you put extract($row); inside the following loop, you'll
 				//       then create $userid, $fullname, and $userstatus
 				while ($row = mysql_fetch_assoc($result)) {
+// results need to be send back to GUI interface.
 					echo $row["ID"];
+					echo $row["User_ID"];
 					echo $row["Project_Name"];
 					echo $row["Project_Description"];
+					echo $row["Requirements"];
+					echo $row["Source_Code"];
+					echo $row["UML _Diagram_1"];
+					echo $row["UML_Diagram_2"];
+					echo $row["UML_Diagram_3"];
+					echo $row["UML_Diagram_4"];
+					echo $row["UML_Diagram_5"];
+					echo $row["UML_Diagram_6"];
+					echo $row["UML_Diagram_7"];
+					echo $row["UML_Diagram_8"];
+					echo $row["UML_Diagram_9"];
+					echo $row["UML_Diagram_10"];
+					echo $row["Recommended_Grade_Level"];
+					echo $row["Recommended_Team_Size"];
+					echo $row["Completion_Status"];
+					echo $row["University"];
+					echo $row["Group_Members"];
+					echo $row["Rating_Total"];
+					echo $row["Number_of_Ratings"];
+					echo $row["Project_Security_Level"];
+					echo $row["Date_Uploaded"];
+					echo $row["Primary_Programming_Language"];
 				}
 			}
 	}
 		
 	mysqli_free_result($search_query);
-	
+	mysqli_close($conn);
     //$NumResults = mysql_num_rows($DB)
     //$NumResults = 20;
     //$ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
@@ -54,11 +78,8 @@
     //$ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
     //$ProjectRating = array(1,2,3,3,2,1,2,3,2,2,3,4,5,4,5,4,3,4,5,2);
     //$ii = 0;
-        
-
+       
 ?>
-
-
 
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
