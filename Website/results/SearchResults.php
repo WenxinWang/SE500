@@ -20,7 +20,9 @@ mysqli_select_db("SE500spr", $con);
 	//if (!$conn){		//check connection
 	//		die("Connection failed: " . mysqli_connect_error());
 	//}	
-	else echo " succed logging into the database!";
+	else{
+      echo " succ}ed logging into the database!";  
+    } 
 
 // The below will take the results of the search from the previuos page Execute
 
