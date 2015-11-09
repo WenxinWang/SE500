@@ -177,11 +177,7 @@ mysqli_select_db("SE500spr", $con);
               <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
             </div>
             <div class="w-col w-col-8">
-              <input class="w-input" id="Project-Search" type="text" placeholder="
-            <?php
-            echo $Search;
-            ?>
-            " name="Project-Search" data-name="Project Search">
+              <input class="w-input" id="name" type="text" placeholder="<?php echo $Search;?>" name="Project-Search" data-name="Project Search">
             </div>
             <div class="w-col w-col-2">
               <input class="w-button" type="submit" value="Submit" data-wait="Please wait...">
