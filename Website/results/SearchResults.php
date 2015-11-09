@@ -366,7 +366,26 @@ mysqli_select_db("SE500spr", $con);
   </div>
   <div class="w-section bottom-text">
     <div class="w-container">
-      <div class="results-text">4 to 4 of 4 Results </div>
+        <div class="results-text">Now displaying
+        
+        <?php
+        
+        echo $searchpage*15 + 1;
+        echo "to";
+        if ((($searchpage + 1) * 15) < $NumResults){
+            
+            echo $NumResults;
+            
+        }  esle {
+            
+            echo (($searchpage + 1) * 15);
+            
+        }
+            echo "of";
+            echo $NumResults;
+        
+        ?>
+      Results </div>
       <div class="search-navigate">&lt;- Previous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next -&gt;</div>
     </div>
   </div>
