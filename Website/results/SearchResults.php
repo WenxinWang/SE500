@@ -171,13 +171,17 @@ mysqli_select_db("SE500spr", $con);
   <div class="w-section search-page-search">
     <div class="w-container">
       <div class="w-form">
-        <form id="email-form" name="email-form" data-name="Email Form">
+        <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php">
           <div class="w-row">
             <div class="w-col w-col-2">
               <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
             </div>
             <div class="w-col w-col-8">
-              <input class="w-input" id="Project-Search" type="text" placeholder="Cool Project" name="Project-Search" data-name="Project Search">
+              <input class="w-input" id="Project-Search" type="text" placeholder="
+            <?php
+            echo $Search;
+            ?>
+            " name="Project-Search" data-name="Project Search">
             </div>
             <div class="w-col w-col-2">
               <input class="w-button" type="submit" value="Submit" data-wait="Please wait...">
