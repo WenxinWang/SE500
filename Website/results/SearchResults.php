@@ -30,6 +30,7 @@ mysqli_select_db("SE500spr", $con);
 // The below will take the results of the search from the previuos page Execute
 
     $Search=$_GET["name"];
+    $searchPage = 0; //( Page -1 (i.e. 0 is the first page))
 	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($con, $search_sql);
@@ -51,14 +52,16 @@ mysqli_select_db("SE500spr", $con);
 				$ProjectRating = [];//array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
 				//initial the array for saving results
 				$ii = 0;
-				
+				//Code Below is designed to load the variables based on the returned query and the page number
 				$num = 0;
 				while($search_rs = mysqli_fetch_assoc($search_query)){
+                    if ($num >= ($searchpage * 15) && $num < (($searchpage + 1) * 15)){
 					$ProjectDesc[$num] = $search_rs["Project_Description"];
 					$ProjectName[$num] = $search_rs["Project_Name"];
 					$ProjectAuthors[$num] = $search_rs["Group_Members"];
 					$ProjectDate[$num] = $search_rs["Date_Uploaded"];
 					$ProjectRating[$num] = $search_rs["Rating_Total"];
+                }
 					$num ++;
 				}
 			//	<p>Search results</p>
