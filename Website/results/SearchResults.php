@@ -420,7 +420,7 @@ mysqli_select_db("SE500spr", $con);
           echo $Search;
           echo '&page=';
           echo ($searchPage + 1);
-          echo '>&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
+          echo '">&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
           echo '</div>';
               
           }
