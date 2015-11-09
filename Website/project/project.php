@@ -135,6 +135,7 @@ mysqli_select_db("SE500spr", $con);
       <div class="w-row">
         <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a>
         </div>
+		 <div class="w-col w-col-8"><a class="w-button favorite-button">Download!</a>
         <div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
         </div>
       </div>
