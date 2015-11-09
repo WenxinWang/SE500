@@ -46,7 +46,7 @@ mysqli_select_db("SE500spr", $con);
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
     }
-	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%$Search%'";
+	$search_sql = "SELECT ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($con, $search_sql);
 	
@@ -62,7 +62,7 @@ mysqli_select_db("SE500spr", $con);
 		}else{
 				//array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
 				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+				//array("Eample1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
 				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
 				//array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
 				//initial the array for saving results
@@ -72,7 +72,7 @@ mysqli_select_db("SE500spr", $con);
                     if ($num >= ($searchPage * 15) && $num < (($searchPage + 1) * 15)){
                         
                         
-                        //$ProjectDesc[$load] = $search_rs["Project_Description"];
+                        $ProjectDesc[$load] = $search_rs["Project_Description"];
                         $ProjectName[$load] = $search_rs["Project_Name"];
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
                         $ProjectDate[$load] = $search_rs["Date_Uploaded"];
