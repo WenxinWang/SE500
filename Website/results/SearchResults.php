@@ -30,12 +30,12 @@ mysqli_select_db("SE500spr", $con);
 // The below will take the results of the search from the previuos page Execute
 
     $Search=$_GET["name"];
-    $searchPage = 1;
-    //$searchPage = $_Get["page"];
+    //$searchPage = 1;
+    $searchPage = $_Get["page"];
 //( Page -1 (i.e. 0 is the first page))
-    //if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
-    //    $searchPage = 0;
-    //}
+    if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
+        $searchPage = 0;
+    }
 	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($con, $search_sql);
@@ -406,6 +406,8 @@ mysqli_select_db("SE500spr", $con);
           
           echo '<div class="w-col w-col-6 w-clearfix"><a class="previous-page" href="../results/SearchResults.php?name=';
           echo $Search;
+          echo ',page=';
+          echo ($searchPage - 1);
           echo '">‍&lt;&nbsp;<span>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>';
           echo '</div>';
           
@@ -416,6 +418,8 @@ mysqli_select_db("SE500spr", $con);
           
           echo '<div class="w-col w-col-6"><a href="../results/SearchResults.php?name=';
           echo $Search;
+          echo ',page=';
+          echo ($searchPage + 1);
           echo '>&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
           echo '</div>';
               
