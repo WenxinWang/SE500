@@ -242,11 +242,12 @@ mysqli_select_db("SE500spr", $con);
         echo '<div class="w-col w-col-10">';
           echo '<div class="w-row">';
             echo '<div class="w-col w-col-7 projectheadingcolumn">';
-            echo '<h3 class="resultheading" href="../project/project.php?ID=';
+            echo '<h3 class="resultheading"><a class="smallheaderlink" href="../project/project.php?ID=';
             echo $ProjectID[$ii];
             echo '">';
             echo "{$ProjectName[$ii]}";
-            echo '</h3>';
+            echo '</a></h3>';
+            //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
               echo '<div>Created by';
               echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
             echo '</div>';
