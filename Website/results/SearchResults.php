@@ -67,12 +67,13 @@ mysqli_select_db("SE500spr", $con);
                     
                     if ($num >= ($searchPage * 15) && $num < (($searchPage + 1) * 15)){
                         
+                        $ProjectID[$Load] = $search_rs["ID"];
                         $ProjectDesc[$load] = $search_rs["Project_Description"];
                         $ProjectName[$load] = $search_rs["Project_Name"];
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
                         $ProjectDate[$load] = $search_rs["Date_Uploaded"];
                         $ProjectRating[$load] = $search_rs["Rating_Total"];
-                        $ProjectID[$Load] = $search_rs["ID"];
+                        
                         $load++;
                 }
 					$num ++;
