@@ -30,7 +30,12 @@ mysqli_select_db("SE500spr", $con);
 // The below will take the results of the search from the previuos page Execute
 
     $Search=$_GET["name"];
-    $searchPage = 1; //( Page -1 (i.e. 0 is the first page))
+    $searchPage = 1;
+    //$searchPage = $_Get["page"];
+//( Page -1 (i.e. 0 is the first page))
+    //if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
+    //    $searchPage = 0;
+    //}
 	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($con, $search_sql);
@@ -226,7 +231,7 @@ mysqli_select_db("SE500spr", $con);
    
         <?php 
         
-        while($ii <= 14 && $ii < ($NumResults)){
+        while($ii < count($ProjectName)){
         echo '<div class="w-row">';
            echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">';
             echo '</div>';
