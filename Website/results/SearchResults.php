@@ -32,7 +32,7 @@ mysqli_select_db("SE500spr", $con);
     $Search=$_GET["name"];
     //$searchPage = 1;
     $searchPage = $_GET["page"];
-    $SearchOrder = $_GET["OrderSearch"];
+    $OrderSearch = $_GET["OrderSearch"];
 //( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
