@@ -376,7 +376,7 @@ mysqli_select_db("SE500spr", $con);
             
             echo $NumResults;
             
-        }  esle {
+        }  else {
             
             echo (($searchpage + 1) * 15);
             
