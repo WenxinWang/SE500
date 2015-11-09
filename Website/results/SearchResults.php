@@ -32,7 +32,8 @@ mysqli_select_db("SE500spr", $con);
     $Search=$_GET["name"];
     //$searchPage = 1;
     $searchPage = $_GET["page"];
-    $OrderSearch = $_GET["OrderSearch"];
+    $OrderSearch
+        = $_GET["OrderSearch"];
 //( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
@@ -57,6 +58,7 @@ mysqli_select_db("SE500spr", $con);
 				$ProjectDate = [];//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
 				$ProjectRating = [];//array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
 				//initial the array for saving results
+                $ProjectID = [];
 				$ii = 0;
 				//Code Below is designed to load the variables based on the returned query and the page number
 				$num = 0;
@@ -70,6 +72,7 @@ mysqli_select_db("SE500spr", $con);
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
                         $ProjectDate[$load] = $search_rs["Date_Uploaded"];
                         $ProjectRating[$load] = $search_rs["Rating_Total"];
+                        $ProjectID[&Load] = $search_rs["ID"]
                         $load++;
                 }
 					$num ++;
@@ -239,7 +242,9 @@ mysqli_select_db("SE500spr", $con);
         echo '<div class="w-col w-col-10">';
           echo '<div class="w-row">';
             echo '<div class="w-col w-col-7 projectheadingcolumn">';
-              echo '<h3 class="resultheading">';
+            echo '<h3 class="resultheading"><a href="../project/project.php?ID=';
+            echo $ProjectID[$ii];
+            echo '">';
             echo "{$ProjectName[$ii]}";
             echo '</h3>';
               echo '<div>Created by';
