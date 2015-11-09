@@ -251,7 +251,6 @@ mysqli_select_db("SE500spr", $con);
             echo $ProjectID[$ii];
             echo '">';
             echo $ProjectName[$ii];
-            echo $ProjectID[$ii];
             echo '</a></h3>';
             //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
               echo '<div>Created by';
