@@ -72,7 +72,7 @@ mysqli_select_db("SE500spr", $con);
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
                         $ProjectDate[$load] = $search_rs["Date_Uploaded"];
                         $ProjectRating[$load] = $search_rs["Rating_Total"];
-                        $ProjectID[&Load] = $search_rs["ID"]
+                        $ProjectID[$Load] = $search_rs["ID"]
                         $load++;
                 }
 					$num ++;
@@ -243,7 +243,7 @@ mysqli_select_db("SE500spr", $con);
           echo '<div class="w-row">';
             echo '<div class="w-col w-col-7 projectheadingcolumn">';
             echo '<h3 class="resultheading"><a href="../project/project.php?ID=';
-            echo $ProjectID[$ii];
+            echo "{$ProjectID[$ii]}";
             echo '">';
             echo "{$ProjectName[$ii]}";
             echo '</h3>';
