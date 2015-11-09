@@ -32,6 +32,7 @@ mysqli_select_db("SE500spr", $con);
     $Search=$_GET["name"];
     //$searchPage = 1;
     $searchPage = $_GET["page"];
+    $SearchOrder = $_GET["OrderSearch"];
 //( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
@@ -406,6 +407,8 @@ mysqli_select_db("SE500spr", $con);
           
           echo '<div class="w-col w-col-6 w-clearfix"><a class="previous-page" href="../results/SearchResults.php?name=';
           echo $Search;
+          echo '$OrderSearch=';
+          echo $OrderSearch;
           echo '&page=';
           echo ($searchPage - 1);
           echo '">‍&lt;&nbsp;<span>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>';
@@ -418,6 +421,8 @@ mysqli_select_db("SE500spr", $con);
           
           echo '<div class="w-col w-col-6"><a href="../results/SearchResults.php?name=';
           echo $Search;
+          echo '$OrderSearch=';
+          echo $OrderSearch;
           echo '&page=';
           echo ($searchPage + 1);
           echo '">&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
