@@ -1,5 +1,5 @@
 <?php
-include('include/SE500loginprocess.php');
+include('include/loginprocess.php');
 ?>
 <html>
     <form action="" method="post">
