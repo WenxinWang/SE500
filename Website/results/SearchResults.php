@@ -58,7 +58,7 @@ mysqli_select_db("SE500spr", $con);
 				$ProjectDate = [];//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
 				$ProjectRating = [];//array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
 				//initial the array for saving results
-                $ProjectID = array(1,2,3,4,5,6)
+                $ProjectID = array(1,2,3,4,5,6);
 				$ii = 0;
 				//Code Below is designed to load the variables based on the returned query and the page number
 				$num = 0;
