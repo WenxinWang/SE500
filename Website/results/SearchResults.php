@@ -55,12 +55,15 @@ mysqli_select_db("SE500spr", $con);
 				//Code Below is designed to load the variables based on the returned query and the page number
 				$num = 0;
 				while($search_rs = mysqli_fetch_assoc($search_query)){
-                    if ($num >= ($searchpage * 15) && $num < (($searchpage + 1) * 15)){
-					$ProjectDesc[$num] = $search_rs["Project_Description"];
-					$ProjectName[$num] = $search_rs["Project_Name"];
-					$ProjectAuthors[$num] = $search_rs["Group_Members"];
-					$ProjectDate[$num] = $search_rs["Date_Uploaded"];
-					$ProjectRating[$num] = $search_rs["Rating_Total"];
+                    
+                    if ($num >= ($searchPage * 15) && $num < (($searchPage + 1) * 15)){
+                        
+                        $ProjectDesc[$num] = $search_rs["Project_Description"];
+                        $ProjectName[$num] = $search_rs["Project_Name"];
+                        $ProjectAuthors[$num] = $search_rs["Group_Members"];
+                        $ProjectDate[$num] = $search_rs["Date_Uploaded"];
+                        $ProjectRating[$num] = $search_rs["Rating_Total"];
+                        
                 }
 					$num ++;
 				}
@@ -370,15 +373,17 @@ mysqli_select_db("SE500spr", $con);
         
         <?php
         
-        echo $searchpage*15 + 1;
-        echo "to ";
-        if ((($searchpage + 1) * 15) < $NumResults){
+        echo (($searchPage*15) + 1);
+            
+        echo " to ";
+            
+        if ((($searchPage + 1) * 15) < $NumResults){
             
             echo $NumResults;
             
         }  else {
             
-            echo (($searchpage + 1) * 15);
+            echo (($searchPage + 1) * 15);
             
         }
             echo " of ";
