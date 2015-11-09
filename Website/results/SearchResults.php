@@ -30,7 +30,7 @@ mysqli_select_db("SE500spr", $con);
 // The below will take the results of the search from the previuos page Execute
 
     $Search=$_GET["name"];
-    $searchPage = 0; //( Page -1 (i.e. 0 is the first page))
+    $searchPage = 1; //( Page -1 (i.e. 0 is the first page))
 	$search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($con, $search_sql);
@@ -366,12 +366,12 @@ mysqli_select_db("SE500spr", $con);
   </div>
   <div class="w-section bottom-text">
     <div class="w-container">
-        <div class="results-text">Now displaying
+        <div class="results-text">Now displaying 
         
         <?php
         
         echo $searchpage*15 + 1;
-        echo "to";
+        echo "to ";
         if ((($searchpage + 1) * 15) < $NumResults){
             
             echo $NumResults;
@@ -381,11 +381,11 @@ mysqli_select_db("SE500spr", $con);
             echo (($searchpage + 1) * 15);
             
         }
-            echo "of";
+            echo " of ";
             echo $NumResults;
         
         ?>
-      Results </div>
+       Results </div>
       <div class="search-navigate">&lt;- Previous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next -&gt;</div>
     </div>
   </div>
