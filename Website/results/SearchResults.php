@@ -398,27 +398,33 @@ mysqli_select_db("SE500spr", $con);
         
         ?>
        Results </div>
-      <div class="search-navigate">&lt;- 
+      <div class="search-navigate">
           
           <?php
           
           if ($searchPage != 0){
           
-          echo "Previous";
+          echo '<div class="w-col w-col-6 w-clearfix"><a class="previous-page" href="../results/SearchResults.php?name=';
+          echo $Search;
+          echo '">‍&lt;&nbsp;<span>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>';
+          echo '</div>';
           
           }
           
-          echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          
+         
           if ((($searchPage + 1) * 15) < $NumResults){
           
-          echo "Next";
+          echo '<div class="w-col w-col-6"><a href="../results/SearchResults.php?name=';
+          echo $Search;
+          echo '>&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
+          echo '</div>';
               
           }
           
           ?>
           
-          -&gt;</div>
+           
+       
         
         
     </div>
