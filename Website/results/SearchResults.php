@@ -77,7 +77,7 @@ mysqli_select_db("SE500spr", $con);
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
                         $ProjectDate[$load] = $search_rs["Date_Uploaded"];
                         $ProjectRating[$load] = $search_rs["Rating_Total"];
-                        $ProjectID[$Load] = $search_rs["ID"];
+                        $ProjectID[$Load] = $search_rs[ID];
                         $load++;
                 }
 					$num ++;
@@ -247,7 +247,8 @@ mysqli_select_db("SE500spr", $con);
         echo '<div class="w-col w-col-10">';
           echo '<div class="w-row">';
             echo '<div class="w-col w-col-7 projectheadingcolumn">';
-            echo '<h3 class="resultheading"><a class="smallheaderlink" href="../project/project.php?ID='.$ProjectID[$ii];
+            echo '<h3 class="resultheading"><a class="smallheaderlink" href="../project/project.php?ID=';
+            echo $ProjectID[$ii];
             echo '">';
             echo "{$ProjectName[$ii]}{$ProjectID[$ii]}";
             echo '</a></h3>';
@@ -277,7 +278,7 @@ mysqli_select_db("SE500spr", $con);
             } elseif ($ProjectRating[$ii] < 4.25){
                 echo '<div><img src="../images/starImage/4.png">';
             } elseif ($ProjectRating[$ii] < 4.75){
-                echo '<div><img src="../images/starImage/05.png">';
+                echo '<div><img src="../images/starImage/45.png">';
             } else {
                  echo '<div><img src="../images/starImage/5.png">';
             }
