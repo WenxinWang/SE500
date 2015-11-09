@@ -406,7 +406,7 @@ mysqli_select_db("SE500spr", $con);
           
           echo '<div class="w-col w-col-6 w-clearfix"><a class="previous-page" href="../results/SearchResults.php?name=';
           echo $Search;
-          echo ',page=';
+          echo '&page=';
           echo ($searchPage - 1);
           echo '">‍&lt;&nbsp;<span>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>';
           echo '</div>';
@@ -418,7 +418,7 @@ mysqli_select_db("SE500spr", $con);
           
           echo '<div class="w-col w-col-6"><a href="../results/SearchResults.php?name=';
           echo $Search;
-          echo ',page=';
+          echo '&page=';
           echo ($searchPage + 1);
           echo '>&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
           echo '</div>';
