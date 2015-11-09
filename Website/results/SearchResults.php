@@ -398,7 +398,29 @@ mysqli_select_db("SE500spr", $con);
         
         ?>
        Results </div>
-      <div class="search-navigate">&lt;- Previous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next -&gt;</div>
+      <div class="search-navigate">&lt;- 
+          
+          <?php
+          
+          if ($searchPage != 0){
+          
+          echo "Previous";
+          
+          }
+          
+          echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+          
+          if ((($searchPage + 1) * 15) < $NumResults){
+          
+          echo "Next";
+              
+          }
+          
+          ?>
+          
+          -&gt;</div>
+        
+        
     </div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
