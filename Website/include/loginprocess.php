@@ -34,7 +34,7 @@
             //$password = mysqli_real_escape_string($password);
             
             // SQL query to fetch information of registerd users and finds user match.
-            $sql = "SELECT * FROM login WHERE Username = '" .$username. "' AND BINARY Password = BINARY '" .$password. "'";
+            $sql = "SELECT * FROM users WHERE Username = '" .$username. "' AND BINARY Password = BINARY '" .$password. "'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) 
