@@ -40,8 +40,8 @@ mysqli_select_db("SE500spr", $con);
     $Search=$_GET["name"];
     //$searchPage = 1;
     $searchPage = $_GET["page"];
-    $OrderSearch
-        = $_GET["OrderSearch"];
+    $OrderSearch = $_GET["OrderSearch"];
+
 if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' desc";
