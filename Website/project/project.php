@@ -13,8 +13,7 @@ echo " succeded logging into the database!";
 }
 mysqli_select_db("SE500spr", $con);
 
-<input name="" type="button" value="下载" onClick="location='http://服务器下载文件的url'" >
-<td valign="middle"><a href="服务器下载文件的url" class="sd" style="sd">下载</a>
+
 ?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
