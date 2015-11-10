@@ -68,7 +68,7 @@ mysqli_select_db("SE500spr", $con);
 		case"DL":
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
 			break;
-		default:	//(!$OrderSearch)
+		case""	//(!$OrderSearch)
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' desc";
 		}
 		
