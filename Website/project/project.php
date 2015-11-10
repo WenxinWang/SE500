@@ -17,7 +17,7 @@ mysqli_select_db("SE500spr", $con);
 ?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue Oct 20 2015 18:37:42 GMT+0000 (UTC) -->
+<!-- Last Published: Tue Nov 10 2015 20:34:35 GMT+0000 (UTC) -->
 <html data-wf-site="5615631c7481d047217c335f" data-wf-page="561bf1df71ffdcb9278e8127">
 <head>
   <meta charset="utf-8">
@@ -41,24 +41,27 @@ mysqli_select_db("SE500spr", $con);
 </head>
 <body>
   <div class="w-section head-panel">
-    <div class="w-container top-menu">
+    <div class="w-container top-menu"></div>
+  </div>
+  <div class="w-section toprowsection">
+    <div class="w-container toprowcontainer">
       <div class="w-row toprow">
-        <div class="w-col w-col-8"></div>
-        <div class="w-col w-col-2 about-column"><a class="about" href="../about/about.html">About</a>
+        <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.html">About</a>
         </div>
-        <div class="w-col w-col-2">
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div><span class="in-image-text">Jaiden91</span>
+              <div class="log-in-button"><span class="in-image-text">Log In</span>
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">Not you?</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/neweditproject.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/newedituser.html">New Project</a>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/newedituser.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
             </nav>
           </div>
         </div>
       </div>
-    </div><img class="top-image" src="../images/Function room2.jpg">
+    </div>
   </div>
   <div class="w-section smallheadsection">
     <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
@@ -123,7 +126,7 @@ mysqli_select_db("SE500spr", $con);
     </div>
   </div>
   <div class="w-section">
-    <div class="w-container favcontainer"><a class="w-button favorite-button">Favorite!</a>
+    <div class="w-container favcontainer"><a class="w-button favorite-button"><span>Favorite</span>!</a>
     </div>
     <div class="w-container">
       <div class="bottom-text-project-page">Back To Search Results</div>
@@ -134,7 +137,6 @@ mysqli_select_db("SE500spr", $con);
       <div class="w-row">
         <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a>
         </div>
-		 <div class="w-col w-col-8"><a class="w-button favorite-button">Download!</a>
         <div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
         </div>
       </div>

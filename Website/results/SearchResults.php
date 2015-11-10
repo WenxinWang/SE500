@@ -170,7 +170,7 @@ switch($OrderSearch){
 
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue Oct 27 2015 15:11:45 GMT+0000 (UTC) -->
+<!-- Last Published: Tue Nov 10 2015 20:34:35 GMT+0000 (UTC) -->
 <html data-wf-site="5615631c7481d047217c335f" data-wf-page="56157233ecd841d67a8f12df">
 <head>
   <meta charset="utf-8">
@@ -194,37 +194,40 @@ switch($OrderSearch){
 </head>
 <body>
   <div class="w-section head-panel">
-    <div class="w-container top-menu">
+    <div class="w-container top-menu"></div>
+  </div>
+  <div class="w-section toprowsection">
+    <div class="w-container toprowcontainer">
       <div class="w-row toprow">
-        <div class="w-col w-col-8"></div>
-        <div class="w-col w-col-2 about-column"><a class="about" href="../about/about.html">About</a>
+        <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.html">About</a>
         </div>
-        <div class="w-col w-col-2">
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div><span class="in-image-text">Jaiden91</span>
+              <div class="log-in-button"><span class="in-image-text">Log In</span>
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">Not you?</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/neweditproject.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/newedituser.html">New Project</a>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/newedituser.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
             </nav>
           </div>
         </div>
       </div>
-    </div><img class="top-image" src="../images/Function room2.jpg">
+    </div>
   </div>
   <div class="w-section search-page-search">
     <div class="w-container">
       <div class="w-form">
         <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php">
-          <div class="w-row">
-            <div class="w-col w-col-2">
+           <div class="w-row">
+            <div class="w-col w-col-2 w-col-small-2">
               <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
             </div>
-            <div class="w-col w-col-8">
+            <div class="w-col w-col-8 w-col-small-8">
               <input class="w-input" id="name" type="text" placeholder="<?php echo $Search;?>" name="name" data-name="name">
             </div>
-            <div class="w-col w-col-2">
+           <div class="w-col w-col-2 w-col-small-2">
               <input class="w-button" type="submit" value="Submit" data-wait="Please wait...">
             </div>
           </div>

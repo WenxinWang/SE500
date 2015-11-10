@@ -83,10 +83,6 @@ html.w-mod-touch * {
   cursor: pointer;
   border-radius: 0;
 }
-.w-button[href-disabled] {
-  color: white;
-  text-decoration: none;
-}
 input.w-button {
   -webkit-appearance: button;
 }
@@ -135,10 +131,6 @@ h6 {
 p {
   margin-top: 0;
   margin-bottom: 10px;
-}
-a {
-  color: #0082f3;
-  text-decoration: underline;
 }
 a:focus {
   outline: 0;
@@ -1173,10 +1165,6 @@ textarea.w-select {
   display: block;
   color: #222222;
 }
-.w-dropdown-link:hover {
-  color: #222222;
-  text-decoration: none;
-}
 .w-dropdown-link.w--current {
   color: #0082f3;
 }
@@ -1642,10 +1630,6 @@ textarea.w-select {
   text-decoration: none;
   color: #333333;
 }
-.w-nav-brand:hover {
-  text-decoration: none;
-  color: #333333;
-}
 .w-nav-link {
   position: relative;
   display: inline-block;
@@ -1656,10 +1640,6 @@ textarea.w-select {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-}
-.w-nav-link:hover {
-  text-decoration: none;
-  color: #222222;
 }
 .w-nav-link.w--current {
   color: #0082f3;

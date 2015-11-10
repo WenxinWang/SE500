@@ -1159,7 +1159,6 @@
 	  var inApp = env();
 	  var emptyFix = env.chrome && env.chrome < 35;
 	  var transNone = 'none 0s ease 0s';
-	  var fallbackProps = /width|height/;
 	  var $subs = $();
 	  var config = {};
 	  var anchors = [];
@@ -1447,8 +1446,7 @@
 	      transitions = transitions.split(',');
 	      for (var i = 0; i < transitions.length; i++) {
 	        var transition = transitions[i];
-	        var options = fallbackProps.test(transition) ? { fallback: true } : null;
-	        _tram[addMethod](transition, options);
+	        _tram[addMethod](transition);
 	      }
 	    }
 

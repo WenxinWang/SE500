@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue Oct 20 2015 18:37:42 GMT+0000 (UTC) -->
+<!-- Last Published: Tue Nov 10 2015 20:34:35 GMT+0000 (UTC) -->
 <html data-wf-site="5615631c7481d047217c335f" data-wf-page="562502f4202d244654cd186c">
 <head>
   <meta charset="utf-8">
@@ -24,24 +24,27 @@
 </head>
 <body>
   <div class="w-section head-panel">
-    <div class="w-container top-menu">
+    <div class="w-container top-menu"></div>
+  </div>
+  <div class="w-section toprowsection">
+    <div class="w-container toprowcontainer">
       <div class="w-row toprow">
-        <div class="w-col w-col-8"></div>
-        <div class="w-col w-col-2 about-column"><a class="about" href="../about/about.html">About</a>
+        <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.html">About</a>
         </div>
-        <div class="w-col w-col-2">
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div><span class="in-image-text">Jaiden91</span>
+              <div class="log-in-button"><span class="in-image-text">Log In</span>
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">Not you?</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/neweditproject.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/newedituser.html">New Project</a>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/newedituser.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
             </nav>
           </div>
         </div>
       </div>
-    </div><img class="top-image" src="../images/Function room2.jpg">
+    </div>
   </div>
   <div class="w-section">
     <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
@@ -50,9 +53,9 @@
     <div class="w-container">
       <div>* Indicates Required Field</div>
       <div>
-        <div class="w-form" >
+        <div class="w-form">
           <form id="email-form" method="post" action="base.php" name="email-form" data-name="Email Form">
-            <div>
+           <div>
               <div class="w-row">
                 <div class="w-col w-col-6">
                   <h4>Username*</h4>
@@ -66,7 +69,7 @@
                   <h4>Password*</h4>
                 </div>
                 <div class="w-col w-col-6">
-                  <input class="w-input" id="Password" type="password" placeholder="Enter Password" name="Password" required="required" data-name="Password">
+                  <input class="w-input" id="Password" type="text" placeholder="Enter Password" name="Password" required="required" data-name="Password">
                 </div>
               </div>
             </div>
@@ -75,7 +78,7 @@
                 <h4>Repeat Password*</h4>
               </div>
               <div class="w-col w-col-6">
-                <input class="w-input" id="PasswordCheck" type="password" placeholder="Re-enter Password" name="PasswordCheck" required="required" data-name="PasswordCheck">
+                <input class="w-input" id="PasswordCheck" type="text" placeholder="Re-enter Password" name="PasswordCheck" required="required" data-name="PasswordCheck">
               </div>
             </div>
             <div class="w-row">
@@ -107,7 +110,7 @@
                     <h4>Last Name*</h4>
                   </div>
                   <div class="w-col w-col-6">
-                    <input class="w-input" id="Last-Name" type="text" placeholder="Your Last Name Here" name="LastName" required="required" data-name="Last Name">
+                    <input class="w-input" id="Last-Name" type="text" placeholder="Your Last Name Here" name="Last-Name" required="required" data-name="Last Name">
                   </div>
                 </div>
                 <div>
@@ -130,9 +133,7 @@
                 </div>
               </div>
             </div>
-<!-- -------- LOG in Info----------------- -->
-            <input class="w-button" type="submit" value="Go!" name="submit" data-wait="Please wait...">
-<!-- ------------------------------------- -->
+            <input class="w-button submit-button" type="submit" value="Add User!" data-wait="Please wait...">
           </form>
           <div class="w-form-done">
             <p>Thank you! Your submission has been received!</p>
