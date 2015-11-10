@@ -56,7 +56,7 @@ mysqli_select_db("SE500spr", $con);
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/newedituser.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="../newedituser/newedituser.html">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" >Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
             </nav>
           </div>
         </div>
