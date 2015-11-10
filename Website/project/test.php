@@ -133,10 +133,10 @@ mysqli_select_db("SE500spr", $con);
   <div class="w-section">
     <div class="w-container">
       <div class="w-row">
-        <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a>
+        <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a> 
         </div>
 		
-        <div class="w-col w-col-6"><a class="Delete!" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" ></a>
+        <div class="w-col w-col-6"><a class="w-button favorite-button" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" >Downloads</a>
         </div>
       </div>
     </div>
