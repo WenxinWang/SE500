@@ -13,9 +13,8 @@ echo " succeded logging into the database!";
 }
 mysqli_select_db("SE500spr", $con);
 
-<input name="" type="button" value="xiazai" onClick="location='http://http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=bbf0a484563b8b9e9118a6f7ac9b9a64'" >
-<td valign="middle"><a href="tbl_get_field.php?db=SE500spr&amp;table=Projects&amp;where_clause=%60Projects%60.%60Project_ID%60+%3D+2&amp;transform_key=Source_Code&amp;sql_query=SELECT+%2A+FROM+%60Projects%60&amp;token=bbf0a484563b8b9e9118a6f7ac9b9a64" 
-class="disableAjax">[BLOB - 1 字节]</a> class="sd" style="sd">xiazai</a>
+
+
 ?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
@@ -136,7 +135,8 @@ class="disableAjax">[BLOB - 1 字节]</a> class="sd" style="sd">xiazai</a>
       <div class="w-row">
         <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a>
         </div>
-        <div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
+		
+        <div class="w-col w-col-6"><a class="Delete!" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" ></a>
         </div>
       </div>
     </div>
