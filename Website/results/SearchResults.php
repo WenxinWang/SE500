@@ -42,8 +42,15 @@ mysqli_select_db("SE500spr", $con);
     $searchPage = $_GET["page"];
     $OrderSearch
         = $_GET["OrderSearch"];
+if (!$OrderSearch){
+   
+    $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' desc";
+    
+}else {
+    
 
-	switch($OrderSearch){
+	
+switch($OrderSearch){
 		case"RL":
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 			break;
@@ -68,10 +75,9 @@ mysqli_select_db("SE500spr", $con);
 		case"DL":
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
 			break;
-		case""	//(!$OrderSearch)
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' desc";
+		 
 		}
-		
+}
 		//( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
