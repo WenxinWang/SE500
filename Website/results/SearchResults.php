@@ -50,44 +50,28 @@ mysqli_select_db("SE500spr", $con);
 				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 			break;
 		case"RH":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
+			$search_sql = "SELECT Project_ID, Project_Description,Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
 			break;
 		case"LH":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
+			$search_sql = "SELECT Project_ID, Project_Description,Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
 			break;
 		case"LL":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level ASC";
+			$search_sql = "SELECT Project_ID, Project_Description,Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level ASC";
 			break;
 		case"VH":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times DESC
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times DESC
 			break;
 		case"VL":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times ASC
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times ASC
 			break;
 		case"DH":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded DESC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded DESC";
 			break;
 		case"DL":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
 			break;
 		default:	//(!$OrderSearch)
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 		}
 		
 		//( Page -1 (i.e. 0 is the first page))
