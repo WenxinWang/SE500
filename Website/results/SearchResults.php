@@ -84,7 +84,7 @@ mysqli_select_db("SE500spr", $con);
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
     }
-	$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Project_ID DESC";
+	//$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Project_ID DESC";
 		//here can also return other items of the projects.
 	$search_query = mysqli_query($con, $search_sql);
 	
