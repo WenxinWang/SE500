@@ -45,9 +45,7 @@ mysqli_select_db("SE500spr", $con);
 
 	switch($OrderSearch){
 		case"RL":
-			$search_sql = "SELECT Project_ID, Project_Description,
-				Project_Name, Group_Members, Date_Uploaded, Rating_Total 
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 			break;
 		case"RH":
 			$search_sql = "SELECT Project_ID, Project_Description,Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
