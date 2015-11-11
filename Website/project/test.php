@@ -157,8 +157,10 @@ if(!$search_query){	//Error checking here / may want to reroute index page
 	//	header("Location:index.php");
 	}else{
 			//$num_rows = mysqli_num_rows($search_query);
-           $NumResults =  mysqli_num_rows($search_query);
-		   print_r(mysql_fetch_row($NumResults));
+	$NumResults =  mysqli_num_rows($search_query);
+		   if(!NumResults){	//Error checking here / may want to reroute index page
+			echo "No rows found, nothing to print so return to index page.";
+		   }	  
 //$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 //VALUES
 //('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
