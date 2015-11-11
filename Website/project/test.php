@@ -134,7 +134,7 @@ Project_Requirements: <input type="text" name="Project_Requirements" />
 $Table="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
+	$con = mysql_connect("localhost","spr_erau","asdf");
 
 if (!$con)
   {
@@ -143,7 +143,7 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-mysqli_select_db("SE500spr", $con);
+mysql_select_db("SE500spr", $con);
 if (!$con){		//check connection
 			die("Connection failed: " . mysqli_connect_error());
 	}	
@@ -151,11 +151,11 @@ if (!$con){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
-VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-$SOS = SELECT * FROM $Table WHERE Project_ID='22'；
-$result = mysql_query($SOS,$con);
+//$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
+//VALUES
+//('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
+$sql = SELECT * FROM $Table WHERE Project_ID='22'；
+$result = mysql_query($sql,$con);
 print_r(mysql_fetch_array($result));
 ?>
 </body>
