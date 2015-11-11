@@ -156,7 +156,7 @@ echo $_POST[Project_Description];
 echo $_POST[Project_Requirements];
 if (!mysqli_query($con,$sql))
   {
-  die("Could not successfully run query (mysqli_query($con, $search_sql);) from database"  . mysql_error());
+  die("Could not successfully run query (mysqli_query($con, $sql);) from database"  . mysql_error());
   }
 echo "1 record added";
 
