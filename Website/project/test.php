@@ -140,14 +140,15 @@ mysqli_select_db("SE500spr", $con);
 <body>
 
 <form action="test.php" method="post">
-<?php
+
 Project_ID: <input type="text" name="Project_ID" />
 Project_Name: <input type="text" name="Project_Name" />
 Project_Descroption: <input type="text" name="Project_Descroption" />
 Project_Requirements: <input type="text" name="Projec_Requirements" />
 <input type="submit" />
 </form>
-$sql="INSERT INTO Persons (Project ID, Project_Name, Project_Descroption)
+<?php
+$sql="INSERT INTO Projects (Project ID, Project_Name, Project_Descroption)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Descroption]','$POST[Projec_Requirements]')";
 
