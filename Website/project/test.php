@@ -144,7 +144,7 @@ else {
 echo " succeded logging into the database!"; 
 }
 mysqli_select_db("SE500spr", $con);
-if (!$conn){		//check connection
+if (!$con){		//check connection
 			die("Connection failed: " . mysqli_connect_error());
 	}	
 	else{
