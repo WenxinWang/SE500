@@ -92,7 +92,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
         <div class="w-col w-col-6"><img src="../images/ExampleImage3.jpg">
         </div>
         <div class="w-col w-col-6">
-          <h1 class="projectheading">Protecting Against SQL Injection</h1>
+          <h1 class="projectheading"><?php echo $ProjectName ?></h1>
           <div>
             <div class="w-form">
               <form id="email-form" name="email-form" data-name="Email Form">
@@ -119,12 +119,37 @@ if(!$search_query){	//Error checking here / may want to reroute index page
               </div>
             </div>
           </div>
-          <div><img src="../images/star rating.jpg">
+          <div>
+              <?php
+                         if ($ProjectRating[$ii] < 0.25){
+                echo '<div><img src="../images/starImage/0.png">';
+            } elseif ($ProjectRating[$ii] < 0.75){
+                echo '<div><img src="../images/starImage/05.png">';
+            } elseif ($ProjectRating[$ii] < 1.25){
+                echo '<div><img src="../images/starImage/1.png">';
+            } elseif ($ProjectRating[$ii] < 1.75){
+                echo '<div><img src="../images/starImage/15.png">';
+            } elseif ($ProjectRating[$ii] < 2.25){
+                echo '<div><img src="../images/starImage/2.png">';
+            } elseif ($ProjectRating[$ii] < 2.75){
+                echo '<div><img src="../images/starImage/25.png">';
+            } elseif ($ProjectRating[$ii] < 3.25){
+                echo '<div><img src="../images/starImage/3.png">';
+            } elseif ($ProjectRating[$ii] < 3.75){
+                echo '<div><img src="../images/starImage/35.png">';
+            } elseif ($ProjectRating[$ii] < 4.25){
+                echo '<div><img src="../images/starImage/4.png">';
+            } elseif ($ProjectRating[$ii] < 4.75){
+                echo '<div><img src="../images/starImage/45.png">';
+            } else {
+                 echo '<div><img src="../images/starImage/5.png">';
+            }
+              ?>
           </div>
-          <div><a href="../user/user.html">M. L. Alphabet</a>&nbsp;Completed on 05/27/2014</div>
+          <div><a href="../user/user.html"><?php echo $ProjectAuthors ?></a>&nbsp;Completed on <?php echo $ProjectDate ?></div>
         </div>
       </div>
-      <div class="projectdescriptiontext">An exciting new method designed to protect against a form of attack that has long since been made irrelevant by modern security techniques. Blah Blah Blah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blah&nbsp;&nbsp;h BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blahh BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blahh BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blahh BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blahh BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blahh BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blahh BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blah</div>
+      <div class="projectdescriptiontext"><?php echo $ProjectDesc ?></div>
     </div>
     <div>
       <div class="w-container">
