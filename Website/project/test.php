@@ -161,6 +161,13 @@ if(!$search_query){	//Error checking here / may want to reroute index page
 		   if(!NumResults){	//Error checking here / may want to reroute index page
 			echo "No rows found, nothing to print so return to index page.";
 		   }	  
+	while ($row = mysql_fetch_assoc($result)) {
+ 
+					echo $row["ID"];
+					echo $row["User_ID"];
+					echo $row["Project_Name"];
+					echo $row["Project_Description"];
+					echo $row["Requirements"];
 //$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 //VALUES
 //('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
