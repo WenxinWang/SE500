@@ -148,7 +148,7 @@ Project_Requirements: <input type="text" name="Projec_Requirements" />
 <input type="submit" />
 </form>
 <?php
-$sql="INSERT INTO Projects (Project ID, Project_Name, Project_Descroption)
+$sql="INSERT INTO $dbName (Project ID, Project_Name, Project_Descroption)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Descroption]','$POST[Projec_Requirements]')";
 
