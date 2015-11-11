@@ -144,22 +144,18 @@ else {
 echo " succeded logging into the database!"; 
 }
 mysqli_select_db("SE500spr", $con);
-if (!$con){		//check connection
-			die("Connection failed123: " . mysqli_connect_error());
-	}	
-	else{
-      echo " succeded logging into the database!";  
-    } 
+
 
 
 
 $sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$POST[Project_Requirements]')";
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
 
 if (!mysql_query($sql,$con))
   {
   die('Error: ' . mysql_error());
+  echo mysql_error();
   }
 echo "1 record added";
 
