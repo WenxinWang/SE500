@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Oct 20 2015 18:37:42 GMT+0000 (UTC) -->
@@ -115,7 +116,13 @@
   <div class="w-section">
     <div class="w-container">
       <div class="w-row">
-	  <form action="test.php" method="post">
+        <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a> 
+        </div>
+		<div class="w-col w-col-6"><a class="w-button favorite-button">upload!</a> 
+		<html>
+<body>
+
+<form action="test.php" method="post">
 
 Project_ID: <input type="text" name="Project_ID" />
 Project_Name: <input type="text" name="Project_Name" />
@@ -123,11 +130,45 @@ Project_Description: <input type="text" name="Project_Description" />
 Project_Requirements: <input type="text" name="Project_Requirements" />
 <input type="submit" />
 </form>
-        <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a> 
+<?php
+$Table="Projects";
+	
+	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
+	$con = mysqli_connect("localhost","spr_erau","asdf");
+
+if (!$con)
+  {
+    die('Could not connect: ' . mysqli_connect_error());
+  }
+else {
+echo " succeded logging into the database!"; 
+}
+mysqli_select_db("SE500spr", $con);
+
+
+
+
+$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
+VALUES
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
+
+if (!mysql_query($sql,$con))
+  {
+  die('Error: ' . mysql_error());
+  echo mysql_error();
+  }
+echo "1 record added";
+
+mysql_close($con)
+?>
+</body>
+</html>
+		<div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
+        <div class="w-col w-col-6"><a class="w-button favorite-button" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" >Downloads</a>
         </div>
-        <div class="w-col w-col-6"><a class="w-button favorite-button">Delete! </a>
-		 <div class="w-col w-col-8"><a class="w-button favorite-button">Download!</a>
-        </div>
+		<?php
+		$sql="SELECT Source_Code FROM Projects WHERE ID=2";
+		?>
       </div>
     </div>
   </div>
