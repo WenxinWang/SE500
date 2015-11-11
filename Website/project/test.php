@@ -154,18 +154,9 @@ if (!$con){		//check connection
 $sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-$result = mysqli_query("SELECT * FROM $Table WHERE Project_ID='22'");
-$search_query = mysqli_query($con, $result);
-if(search_query)
-	print_r(mysql_fetch_array($result));
-
-if (!mysqli_query($con,$sql))
-  {
-  die('Error:123 ' . mysql_error());
-  }
-else
-	echo "1111111111111111111111111";
-echo "222222222222222222222";
+$SOS = SELECT * FROM $Table WHERE Project_ID='22'；
+$result = mysql_query($SOS,$con);
+print_r(mysql_fetch_array($result));
 ?>
 </body>
 </html>
