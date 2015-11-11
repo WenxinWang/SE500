@@ -154,9 +154,10 @@ if (!$con){		//check connection
 //$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 //VALUES
 //('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-//$sql = SELECT * FROM $Table WHERE Project_ID='22'；
-//$result = mysqli_query($sql,$con);
-//print_r(mysql_fetch_array($result));
+$sql = SELECT * FROM Projects WHERE Project_ID='22'；
+$result = mysql_query($sql,$con);
+print_r(mysql_fetch_array($result));
+mysql_close($con);
 ?>
 </body>
 </html>
