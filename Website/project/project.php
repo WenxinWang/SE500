@@ -14,9 +14,9 @@ echo " succeded logging into the database!";
 mysqli_select_db("SE500spr", $con);
 
 
-$Project=$_GET["name"];
+$Project=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Search%'";
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Project%'";
 
 $search_query = mysqli_query($con, $search_sql);
 
