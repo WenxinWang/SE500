@@ -134,7 +134,7 @@ Project_Requirements: <input type="text" name="Project_Requirements" />
 $Table="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
+	$con = mysqli_connect("localhost","spr_erau","asdf");
 
 if (!$con)
   {
@@ -145,7 +145,7 @@ echo " succeded logging into the database!";
 }
 mysqli_select_db("SE500spr", $con);
 if (!$con){		//check connection
-			die("Connection failed: " . mysqli_connect_error());
+			die("Connection failed123: " . mysqli_connect_error());
 	}	
 	else{
       echo " succeded logging into the database!";  
