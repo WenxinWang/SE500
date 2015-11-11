@@ -1,21 +1,4 @@
-<?php
-$dbName="Projects";
-	
-	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
-if (!$con)
-  {
-    die('Could not connect: ' . mysqli_connect_error());
-  }
-else {
-echo " succeded logging into the database!"; 
-}
-mysqli_select_db("SE500spr", $con);
-
-
-
-?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Oct 20 2015 18:37:42 GMT+0000 (UTC) -->
@@ -143,14 +126,36 @@ mysqli_select_db("SE500spr", $con);
 
 Project_ID: <input type="text" name="Project_ID" />
 Project_Name: <input type="text" name="Project_Name" />
-Project_Descroption: <input type="text" name="Project_Descroption" />
-Project_Requirements: <input type="text" name="Projec_Requirements" />
+Project_Description: <input type="text" name="Project_Description" />
+Project_Requirements: <input type="text" name="Project_Requirements" />
 <input type="submit" />
 </form>
 <?php
-$sql="INSERT INTO $dbName (Project ID, Project_Name, Project_Descroption)
+$Table="Projects";
+	
+	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
+	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
+
+if (!$con)
+  {
+    die('Could not connect: ' . mysqli_connect_error());
+  }
+else {
+echo " succeded logging into the database!"; 
+}
+mysqli_select_db("SE500spr", $con);
+if (!$conn){		//check connection
+			die("Connection failed: " . mysqli_connect_error());
+	}	
+	else{
+      echo " succeded logging into the database!";  
+    } 
+
+
+
+$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Descroption]','$POST[Projec_Requirements]')";
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$POST[Project_Requirements]')";
 
 if (!mysql_query($sql,$con))
   {
