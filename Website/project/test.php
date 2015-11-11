@@ -144,22 +144,28 @@ else {
 echo " succeded logging into the database!"; 
 }
 mysqli_select_db("SE500spr", $con);
-
-echo "TEST For TEST";
+if (!$con){		//check connection
+			die("Connection failed: " . mysqli_connect_error());
+	}	
+	else{
+      echo " succededed logging into the SE500spr database!";  
+    } 
 
 $sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-echo $_POST[Project_ID];
-echo $_POST[Project_Name];
-echo $_POST[Project_Description];
-echo $_POST[Project_Requirements];
+$result = mysqli_query("SELECT * FROM $Table WHERE Project_ID='22'");
+$search_query = mysqli_query($con, $result);
+if(search_query)
+	print_r(mysql_fetch_array($result));
+
 if (!mysqli_query($con,$sql))
   {
-  die("Could not successfully run query (mysqli_query($con, $sql);) from database"  . mysql_error());
+  die('Error:123 ' . mysql_error());
   }
-echo "1 record added";
-
+else
+	echo "1111111111111111111111111";
+echo "222222222222222222222";
 ?>
 </body>
 </html>
