@@ -134,7 +134,7 @@ Project_Requirements: <input type="text" name="Project_Requirements" />
 $Table="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysql_connect("localhost","spr_erau","asdf");
+	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
 if (!$con)
   {
@@ -145,7 +145,6 @@ echo " succeded logging into the database!";
 }
 mysqli_select_db("SE500spr", $con);
 
-
 echo "TEST For TEST";
 
 $sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
@@ -155,9 +154,9 @@ echo $_POST[Project_ID];
 echo $_POST[Project_Name];
 echo $_POST[Project_Description];
 echo $_POST[Project_Requirements];
-if (!mysql_query($sql,$con))
+if (!mysqli_query($con,$sql))
   {
-  die('Error:123 ' . mysql_error());
+  die("Could not successfully run query (mysqli_query($con, $search_sql);) from database"  . mysql_error());
   }
 echo "1 record added";
 
