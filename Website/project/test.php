@@ -135,6 +135,32 @@ mysqli_select_db("SE500spr", $con);
       <div class="w-row">
         <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a> 
         </div>
+		<div class="w-col w-col-6"><a class="w-button favorite-button">upload!</a> 
+		<html>
+<body>
+
+<form action="test.php" method="post">
+<?php
+Project_ID: <input type="text" name="Project_ID" />
+Project_Name: <input type="text" name="Project_Name" />
+Project_Descroption: <input type="text" name="Project_Descroption" />
+Project_Requirements: <input type="text" name="Projec_Requirements" />
+<input type="submit" />
+</form>
+$sql="INSERT INTO Persons (Project ID, Project_Name, Project_Descroption)
+VALUES
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Descroption]','$POST[Projec_Requirements]')";
+
+if (!mysql_query($sql,$con))
+  {
+  die('Error: ' . mysql_error());
+  }
+echo "1 record added";
+
+mysql_close($con)
+?>
+</body>
+</html>
 		<div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
         <div class="w-col w-col-6"><a class="w-button favorite-button" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" >Downloads</a>
         </div>
