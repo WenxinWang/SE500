@@ -134,7 +134,7 @@ Project_Requirements: <input type="text" name="Project_Requirements" />
 $Table="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysql_connect("localhost","spr_erau","asdf");
+	$con = mysqli_connect("localhost","spr_erau","asdf","SE500spr");
 
 if (!$con)
   {
@@ -143,7 +143,7 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-mysql_select_db("SE500spr", $con);
+mysqli_select_db("SE500spr", $con);
 if (!$con){		//check connection
 			die("Connection failed: " . mysqli_connect_error());
 	}	
@@ -151,12 +151,12 @@ if (!$con){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
-VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-$sql1 = SELECT * FROM $Table WHERE Project_ID='22'；
-$result = mysql_query($sql1,$con);
-//print_r(mysql_fetch_array($result));
+//$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
+//VALUES
+//('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
+$sql = SELECT * FROM $Table WHERE Project_ID='22'；
+$result = mysqli_query($sql,$con);
+print_r(mysql_fetch_array($result));
 ?>
 </body>
 </html>
@@ -164,7 +164,7 @@ $result = mysql_query($sql1,$con);
         <div class="w-col w-col-6"><a class="w-button favorite-button" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" >Downloads</a>
         </div>
 		<?php
-		$sql="SELECT Source_Code FROM Projects WHERE ID=2";
+		//$sql="SELECT Source_Code FROM Projects WHERE ID=2";
 		?>
       </div>
     </div>
