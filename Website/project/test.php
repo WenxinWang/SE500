@@ -151,12 +151,12 @@ if (!$con){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-//$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
-//VALUES
-//('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-$sql = SELECT * FROM $Table WHERE Project_ID='22'；
-$result = mysql_query($sql,$con);
-print_r(mysql_fetch_array($result));
+$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
+VALUES
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
+$sql1 = SELECT * FROM $Table WHERE Project_ID='22'；
+$result = mysql_query($sql1,$con);
+//print_r(mysql_fetch_array($result));
 ?>
 </body>
 </html>
