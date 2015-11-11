@@ -150,24 +150,15 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name	FROM $table WHERE Project_ID='22'";
-$search_query = mysqli_query($con, $search_sql);
-if(!$search_query){	//Error checking here / may want to reroute index page
+$search_ssql = "SELECT Project_ID, Project_Description, Project_Name FROM $table WHERE Project_ID='22'";
+$ssearch_query = mysqli_query($con, $search_ssql);
+if(!$ssearch_query){	//Error checking here / may want to reroute index page
 	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
 	}else{
 			//$num_rows = mysqli_num_rows($search_query);
-	$NumResults =  mysqli_num_rows($search_query);
-		   if(!NumResults){	//Error checking here / may want to reroute index page
-			echo "No rows found, nothing to print so return to index page.";
-		   }	  
-	while ($row = mysql_fetch_assoc($result)) {
- 
-					echo $row["ID"];
-					echo $row["User_ID"];
-					echo $row["Project_Name"];
-					echo $row["Project_Description"];
-					echo $row["Requirements"];
+	
+	print_r(mysql_fetch_assoc($ssearch_query));
 //$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 //VALUES
 //('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
