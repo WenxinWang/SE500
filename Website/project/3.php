@@ -22,7 +22,7 @@ if (!$db){		//check connection
 
 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE ''%$Search%'' ORDER BY Rating_Total ASC";
+$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 $result = mysqli_query($con, $sql);
 
 if (!$result) {

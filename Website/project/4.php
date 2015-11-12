@@ -20,7 +20,7 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$result = "SELECT Project_ID,Project_Name,  FROM $dbName WHERE Project_Name LIKE '%Test%' ORDER BY Rating_Total ASC";
+$result = "SELECT Project_ID,Project_Name,  FROM $dbName WHERE Project_Name LIKE 'Test' ORDER BY Rating_Total ASC";
 $search_query = mysqli_query($con, $result);
 // Numeric array
 while($row=mysqli_fetch_array($search_query))

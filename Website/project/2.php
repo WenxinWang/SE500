@@ -23,8 +23,8 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$sql="SELECT * FROM $dbName"
-$result = mysqli_query($con,$sql);
+//$sql="SELECT * FROM $dbName"
+//$result = mysqli_query($con,$sql);
 //while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
 
 ////if(!$row) echo "$dbName buzai！";  
