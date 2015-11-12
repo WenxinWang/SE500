@@ -27,15 +27,14 @@ $row=mysqli_fetch_array($search_query,MYSQLI_NUM);
 printf ("%s (%s)n",$row[0],$row[1]);
 
 // Associative array
-$row=mysqli_fetch_array($search_query,MYSQLI_ASSOC);
-printf ("%s (%s)n",$row["Project_Name"],$row["Project_ID"]);
-
+while($row=mysqli_fetch_array($search_query,MYSQLI_ASSOC))
+{
+	printf ("%s (%s)\n",$row["Project_Name"],$row["Project_ID"]);
+}
 // Free result set
 mysqli_free_result($search_query);
 
 mysqli_close($con);
 
-
-mysql_close($con);
 ?>
 }

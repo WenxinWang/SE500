@@ -23,7 +23,7 @@ if (!$db){		//check connection
 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
 $sql = "SHOW TABLES FROM $dbname";
-$result = mysqli_query($sql);
+$result = mysqli_query($con, $sql);
 
 if (!$result) {
     echo "DB Error, could not list tables\n";
