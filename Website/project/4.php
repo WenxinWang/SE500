@@ -24,10 +24,11 @@ $result = "SELECT Project_ID,Project_Name,  FROM $dbName WHERE Project_Name LIKE
 $search_query = mysqli_query($con, $result);
 // Numeric array
 $row=mysqli_fetch_array($search_query,MYSQLI_BOTH);
-
+if(!$row)
+	echo "bengbengbengbengbeng";
+else
+	echo "diao diao diao diao diao";
 // Associative array
-while($row=mysqli_fetch_array($search_query,MYSQLI_ASSOC))
-{
 	printf ("%s,%s\n",$row["Project_Name"],$row["Project_ID"]);
 }
 // Free result set
@@ -36,4 +37,3 @@ mysqli_free_result($search_query);
 mysqli_close($con);
 
 ?>
-}

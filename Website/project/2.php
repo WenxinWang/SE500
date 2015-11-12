@@ -24,10 +24,11 @@ if (!$db){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 	
-}
 $result = mysqli_query($con,"SELECT * FROM $dbName");
 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
-{ if(!$row){ echo "$dbName不存在！"; } else{ echo "$dbName存在！"; } 
+{ 
+if(!$row) echo "$dbName buzai！";  
+else echo "$dbName zai！"; 
 }
 mysql_close($con);
 //$result =  "SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";
