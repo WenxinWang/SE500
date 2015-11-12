@@ -12,7 +12,7 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-$db=mysqli_select_db("SE500spr", $con);
+$db=mysqli_select_db($con，"SE500spr");
 
 if (!$db){		//check connection
 			die("failed to connect SE500spr: " . mysql_error());
@@ -30,7 +30,7 @@ echo "<table border='1'>
 <th>Project_Name</th>
 </tr>";
 
-print_r(mysql_fetch_array($result));
+print_r(mysqli_fetch_array($search_query));
 
 
 mysql_close($con);

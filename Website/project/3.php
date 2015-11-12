@@ -3,7 +3,7 @@ $dbName="Projects";
 
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysql_connect("localhost","spr_erau","asdf");
+	$con = mysqli_connect("localhost","spr_erau","asdf","SE500spr");
 
 if (!$con)
   {
@@ -12,8 +12,7 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-$db=mysqli_select_db("SE500spr", $con);
-
+$db=mysqli_select_db($con，"SE500spr");
 if (!$db){		//check connection
 			die("failed to connect SE500spr: " . mysql_error());
 	}	
@@ -23,7 +22,7 @@ if (!$db){		//check connection
 
 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-while ($row = mysql_fetch_row($result)){
+while ($row = mysqli_fetch_row($result)){
 foreach($row as $data){
     echo $data.' ';
 }
