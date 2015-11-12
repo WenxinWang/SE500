@@ -153,8 +153,8 @@ if (!$db){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-$search_sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description)
-VALUES('123','234','234')";
+$search_sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
+VALUES('25','Test123','lalalala')";
 //$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21'";
 $search_query = mysqli_query($con, $search_sql);
 if (!$search_query) 
