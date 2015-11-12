@@ -26,7 +26,7 @@ if (!$db){		//check connection
 $sql="SELECT * FROM $dbName"
 $result = mysqli_query($con,$sql);
 //while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
-{ 
+
 ////if(!$row) echo "$dbName buzai！";  
 //else echo "$dbName zai！"; 
 //}

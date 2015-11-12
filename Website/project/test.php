@@ -156,12 +156,12 @@ if (!$db){		//check connection
 
 $search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 $search_query = mysqli_query($con, $search_sql);
-while ($row = mysqli_fetch_row($search_query))
+/*while ($row = mysqli_fetch_row($search_query))
 {
-	echo $row['Project_ID'];
-	echo $row["Project_Description"];
-	echo $row["Project_Name"];
-}
+	echo $row[0];
+	echo $row[1];
+	echo $row[2];
+}*/
 
 //mysql_free_result($result);
 //if(!$search_query){	//Error checking here / may want to reroute index page
