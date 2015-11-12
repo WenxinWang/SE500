@@ -20,7 +20,7 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE 'T%' ORDER BY Rating_Total ASC";
+$sql = "SELECT Project_ID, Project_Name FROM $dbName WHERE Project_Name LIKE 'T%' ORDER BY Rating_Total ASC";
 $result = mysqli_query($con, $sql);
 
 if (!$result) {
@@ -32,9 +32,7 @@ else
 	echo "you dong xi";
 
 while ($row = mysqli_fetch_row($result)) {
-    echo "Table: $row[0]\n";
-	echo "Table: $row[1]\n";
-	echo "Table: $row[2]\n";
+     echo $row['Project_ID'] . " " . $row['Project_Name'];
 }
 mysqli_free_result($search_query);
 

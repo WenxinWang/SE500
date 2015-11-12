@@ -152,20 +152,21 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-//$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
 
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21'";
+$search_sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description)
+VALUES('123','234','234')";
+//$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21'";
 $search_query = mysqli_query($con, $search_sql);
 if (!$search_query) 
     echo "beng";
 else 
 	echo "hao";
-while ($row = mysqli_fetch_row($search_query))
+/*while ($row = mysqli_fetch_row($search_query))
 {
 	echo $row[0];
 	echo $row[1];
 	echo $row[2];
-}
+}*/
 
 //mysql_free_result($result);
 //if(!$search_query){	//Error checking here / may want to reroute index page
