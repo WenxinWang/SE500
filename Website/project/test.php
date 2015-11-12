@@ -151,12 +151,18 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$search_ssql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID='22'";
-$ssearch_query = mysqli_query($con, $search_ssql);
-if(!$ssearch_query){	//Error checking here / may want to reroute index page
-	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
+$result =  mysqli_query("SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
+while ($row = mysql_fetch_row($result)){
+foreach($row as $data){
+    echo $data.' ';
+}
+    echo '<br>';
+}
+mysql_free_result($result);
+//if(!$ssearch_query){	//Error checking here / may want to reroute index page
+	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
-	}else{
+	//}else{
 			//$num_rows = mysqli_num_rows($search_query);
 	
 	//print_r(mysql_fetch_assoc($ssearch_query));
