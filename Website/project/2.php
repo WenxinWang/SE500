@@ -1,4 +1,3 @@
-
 <?php
 $dbName="Projects";
 
@@ -13,24 +12,28 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-
 $db=mysqli_select_db($con, "SE500spr");
-
-
 if (!$db){		//check connection
 			die("failed to connect SE500spr: " . mysql_error());
 	}	
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-//$sql="SELECT * FROM $dbName"
-//$result = mysqli_query($con,$sql);
-//while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
 
-////if(!$row) echo "$dbName buzai！";  
-//else echo "$dbName zai！"; 
-//}
-mysql_close($con);
-//$result =  "SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";
-//$search_query = mysqli_query($con, $search_sql);
+
+//$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
+$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE 'T_' ORDER BY Rating_Total ASC";
+$result = mysqli_query($con, $sql);
+
+if (!$result) {
+    echo "DB Error, could not list tables\n";
+    echo 'MySQL Error: ' . mysql_error();
+    exit;
+}
+
+while ($row = mysqli_fetch_row($result)) {
+    echo "Table: $row[0]\n";
+	echo "Table: $row[1]\n";
+	echo "Table: $row[2]\n";
+}
 ?>
