@@ -131,35 +131,47 @@ Project_Requirements: <input type="text" name="Project_Requirements" />
 <input type="submit" />
 </form>
 <?php
-$Table="Projects";
+$dbName="Projects";
+
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysqli_connect("localhost","spr_erau","asdf");
+	$con = mysqli_connect("localhost","spr_erau","asdf","SE500spr");
 
 if (!$con)
   {
-    die('Could not connect: ' . mysqli_connect_error());
+    die('Could not connect: ' . mysql_connect_error());
   }
 else {
 echo " succeded logging into the database!"; 
 }
 mysqli_select_db("SE500spr", $con);
+if (!$con){		//check connection
+			die("Connection failed: " . mysqli_connect_error());
+	}	
+	else{
+      echo " succededed logging into the SE500spr database!";  
+    } 
+$result =  mysqli_query("SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
+while ($row = mysql_fetch_row($result)){
+foreach($row as $data){
+    echo $data.' ';
+}
+    echo '<br>';
+}
+error_reporting(E_ALL);
+mysql_free_result($result);
+//if(!$ssearch_query){	//Error checking here / may want to reroute index page
+	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
+	//	header("Location:index.php");
+	//}else{
+			//$num_rows = mysqli_num_rows($search_query);
+	
+	//print_r(mysql_fetch_assoc($ssearch_query));
+//$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
+//VALUES
+//('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
 
-
-
-
-$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
-VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
-
-if (!mysql_query($sql,$con))
-  {
-  die('Error: ' . mysql_error());
-  echo mysql_error();
-  }
-echo "1 record added";
-
-mysql_close($con)
+mysql_close($con);
 ?>
 </body>
 </html>
@@ -167,7 +179,7 @@ mysql_close($con)
         <div class="w-col w-col-6"><a class="w-button favorite-button" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" >Downloads</a>
         </div>
 		<?php
-		$sql="SELECT Source_Code FROM Projects WHERE ID=2";
+		//$sql="SELECT Source_Code FROM Projects WHERE ID=2";
 		?>
       </div>
     </div>
