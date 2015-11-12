@@ -160,7 +160,7 @@ foreach($row as $data){
 }
     echo '<br>';
 }
-
+error_log("You messed up!", 3, "1.log");
 //mysql_free_result($result);
 //if(!$ssearch_query){	//Error checking here / may want to reroute index page
 	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
