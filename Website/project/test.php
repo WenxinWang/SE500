@@ -151,13 +151,13 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-//$result =  mysql_query("SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-//while ($row = mysql_fetch_row($result)){
-//foreach($row as $data){
- //   echo $data.' ';
-//}
- //   echo '<br>';
-//}
+$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
+while ($row = mysql_fetch_row($result)){
+foreach($row as $data){
+    echo $data.' ';
+}
+    echo '<br>';
+}
 error_reporting(E_ALL);
 //mysql_free_result($result);
 //if(!$ssearch_query){	//Error checking here / may want to reroute index page
