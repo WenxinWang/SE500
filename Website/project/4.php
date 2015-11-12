@@ -22,15 +22,18 @@ if (!$db){		//check connection
     } 
 $result = "SELECT Project_ID,Project_Name,  FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 $search_query = mysqli_query($con, $result);
-//$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
+// Numeric array
+$row=mysqli_fetch_array($search_query,MYSQLI_NUM);
+printf ("%s (%s)n",$row[0],$row[1]);
 
-echo "<table border='1'>
-<tr>
-<th>Project_ID</th>
-<th>Project_Name</th>
-</tr>";
+// Associative array
+$row=mysqli_fetch_array($search_query,MYSQLI_ASSOC);
+printf ("%s (%s)n",$row["Project_Name"],$row["Project_ID"]);
 
-print_r(mysqli_fetch_array($search_query));
+// Free result set
+mysqli_free_result($search_query);
+
+mysqli_close($con);
 
 
 mysql_close($con);

@@ -22,17 +22,16 @@ if (!$db){		//check connection
 
 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-while ($row = mysqli_fetch_row($result)){
-foreach($row as $data){
-    echo $data.' ';
+$sql = "SHOW TABLES FROM $dbname";
+$result = mysqli_query($sql);
+
+if (!$result) {
+    echo "DB Error, could not list tables\n";
+    echo 'MySQL Error: ' . mysql_error();
+    exit;
 }
-    echo '<br>';
+
+while ($row = mysqli_fetch_row($result)) {
+    echo "Table: {$row[0]}\n";
 }
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
-$search_query = mysqli_query($con, $search_sql);
-while ($row = mysql_fetch_row($search_query)){
-foreach($row as $data){
-    echo $data.' ';
-}
-    echo '<br>';
-}
+?>
