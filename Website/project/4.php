@@ -23,7 +23,7 @@ if (!$db){		//check connection
 $result = "SELECT Project_ID,Project_Name,  FROM $dbName WHERE Project_Name LIKE '%test%' ORDER BY Rating_Total ASC";
 $search_query = mysqli_query($con, $result);
 // Numeric array
-while($row=mysqli_fetch_array($search_query,MYSQLI_BOTH))
+while($row=mysqli_fetch_array($search_query))
 {if(!$row)
 	echo "bengbengbengbengbeng";
 else

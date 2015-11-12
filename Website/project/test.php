@@ -158,7 +158,7 @@ $search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName
 $search_query = mysqli_query($con, $search_sql);
 while ($row = mysqli_fetch_row($search_query))
 {
-	echo $row["Project_ID"];
+	echo $row['Project_ID'];
 	echo $row["Project_Description"];
 	echo $row["Project_Name"];
 }
