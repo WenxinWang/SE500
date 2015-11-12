@@ -23,9 +23,13 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-	if ($mysqli->query("CREATE TEMPORARY TABLE myCity LIKE City") === TRUE) {
-    printf("Table myCity successfully created.\n");
+	
 }
-$result =  "SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";
-$search_query = mysqli_query($con, $search_sql);
+$result = mysqli_query("SELECT * FROM $dbName");
+while($row = mysqli_fetch_array($result))
+{ if(!$row){ echo "$dbName不存在！"; } else{ echo "$dbName存在！"; } 
+}
+mysql_close($con);
+//$result =  "SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";
+//$search_query = mysqli_query($con, $search_sql);
 ?>
