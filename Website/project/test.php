@@ -135,7 +135,7 @@ $dbName="Projects";
 
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysql_connect("localhost","spr_erau","asdf");
+	$con = mysqli_connect("localhost","spr_erau","asdf","SE500spr");
 
 if (!$con)
   {
