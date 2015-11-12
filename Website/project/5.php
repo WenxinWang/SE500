@@ -20,9 +20,7 @@ if (!$db){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-
-//$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE 'Test%' ORDER BY Rating_Total ASC";
 $result = mysqli_query($con, $sql);
 if (!$result) {
     echo "DB Error, could not list tables\n";
@@ -32,11 +30,11 @@ if (!$result) {
 else
 	echo "you jie guo de shu chu cuo le ";
 
-while ($row = mysqli_fetch_row($result)) {
+while ($row = mysqli_fetch_row($result)) 
     {
 		echo "Project_ID: $row['Project_ID']\n";
 		echo "Project_Description: $row['Project_Description']\n";
 		echo "Project_Name: $row['Project_Name']\n";
 	}
-}
+
 ?>
