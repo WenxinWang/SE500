@@ -131,7 +131,8 @@ Project_Requirements: <input type="text" name="Project_Requirements" />
 <input type="submit" />
 </form>
 <?php
-$table="Projects";
+$dbName="Projects";
+
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
 	$con = mysqli_connect("localhost","spr_erau","asdf","SE500spr");
@@ -150,7 +151,7 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$search_ssql = "SELECT Project_ID, Project_Description, Project_Name FROM $table WHERE Project_ID='22'";
+$search_ssql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID='22'";
 $ssearch_query = mysqli_query($con, $search_ssql);
 if(!$ssearch_query){	//Error checking here / may want to reroute index page
 	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
@@ -158,7 +159,7 @@ if(!$ssearch_query){	//Error checking here / may want to reroute index page
 	}else{
 			//$num_rows = mysqli_num_rows($search_query);
 	
-	print_r(mysql_fetch_assoc($ssearch_query));
+	//print_r(mysql_fetch_assoc($ssearch_query));
 //$sql="INSERT INTO $Table (Project_ID, Project_Name, Project_Description，Project_Requirements)
 //VALUES
 //('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[Project_Requirements]')";
