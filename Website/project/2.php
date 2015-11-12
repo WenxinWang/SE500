@@ -21,11 +21,6 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-while ($row = mysql_fetch_row($result)){
-foreach($row as $data){
-    echo $data.' ';
-}
-    echo '<br>';
-}
+$result =  mysql_query("SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";)or die('error12321'.mysql_error);
+
 ?>
