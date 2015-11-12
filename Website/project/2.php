@@ -13,7 +13,7 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-$db=mysqli_select_db($con，"SE500spr");
+$db=mysqli_select_db($con, "SE500spr");
 
 、
 

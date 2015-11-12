@@ -12,7 +12,7 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-$db=mysqli_select_db($con，"SE500spr");
+$db=mysqli_select_db($con, "SE500spr");
 
 if (!$db){		//check connection
 			die("failed to connect SE500spr: " . mysql_error());
