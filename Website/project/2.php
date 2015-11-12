@@ -22,4 +22,5 @@ if (!$con){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 $result =  "SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";
+$search_query = mysqli_query($con, $search_sql);
 ?>

@@ -144,10 +144,10 @@ if (!$con)
 else {
 echo " succeded logging into the database!"; 
 }
-mysql_select_db("SE500spr", $con);
+$db=mysqli_select_db("SE500spr", $con);
 
-if (!$con){		//check connection
-			die("Connection failed: " . mysql_error());
+if (!$db){		//check connection
+			die("failed to connect SE500spr: " . mysql_error());
 	}	
 	else{
       echo " succededed logging into the SE500spr database!";  
