@@ -152,15 +152,15 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-	error_reporting(E_ALL);
-$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-while ($row = mysql_fetch_row($result)){
-foreach($row as $data){
-    echo $data.' ';
-}
-    echo '<br>';
-}
-error_log("You messed up!", 3, "1.log");
+//$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
+//while ($row = mysql_fetch_row($result)){
+//foreach($row as $data){
+ //   echo $data.' ';
+//}
+ //   echo '<br>';
+//}
+$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+
 //mysql_free_result($result);
 //if(!$ssearch_query){	//Error checking here / may want to reroute index page
 	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
