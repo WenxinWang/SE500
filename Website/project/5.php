@@ -32,6 +32,10 @@ if (!$result) {
 }
 
 while ($row = mysqli_fetch_row($result)) {
-    echo "Table: {$row[Project_Name]}\n";
+    {
+		echo "Project_ID: {$row[Project_ID]}\n";
+		echo "Project_Description: {$row[Project_Description]}\n";
+		echo "Project_Name: {$row[Project_Name]}\n";
+	}
 }
 ?>
