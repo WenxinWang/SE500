@@ -154,7 +154,7 @@ if (!$db){		//check connection
     } 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
 
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21';
+$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21'";
 $search_query = mysqli_query($con, $search_sql);
 if (!$search_query) 
     echo "beng";
