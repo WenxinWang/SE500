@@ -154,14 +154,18 @@ if (!$db){		//check connection
     } 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
 
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21';
 $search_query = mysqli_query($con, $search_sql);
-/*while ($row = mysqli_fetch_row($search_query))
+if (!$search_query) 
+    echo "beng";
+else 
+	echo "hao";
+while ($row = mysqli_fetch_row($search_query))
 {
 	echo $row[0];
 	echo $row[1];
 	echo $row[2];
-}*/
+}
 
 //mysql_free_result($result);
 //if(!$search_query){	//Error checking here / may want to reroute index page
