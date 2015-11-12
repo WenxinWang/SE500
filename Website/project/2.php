@@ -21,6 +21,5 @@ if (!$con){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$result =  mysql_query("SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";)or die('error12321'.mysql_error);
-
+$result =  "SELECT * FROM $dbName WHERE Project_Name LIKE 't%'";
 ?>

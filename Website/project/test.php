@@ -159,14 +159,15 @@ foreach($row as $data){
 }
     echo '<br>';
 }
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 $search_query = mysqli_query($con, $search_sql);
-while ($row = mysql_fetch_row($search_query)){
-foreach($row as $data){
-    echo $data.' ';
+while ($row = mysql_fetch_row($search_query))
+{
+	echo $row["Project_ID"];
+	echo $row["Project_Description"];
+	echo $row["Project_Name"];
 }
-    echo '<br>';
-}
+echo "wth is that?";
 //mysql_free_result($result);
 //if(!$search_query){	//Error checking here / may want to reroute index page
 	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
