@@ -145,12 +145,14 @@ else {
 echo " succeded logging into the database!"; 
 }
 mysql_select_db("SE500spr", $con);
+
 if (!$con){		//check connection
 			die("Connection failed: " . mysql_error());
 	}	
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
+	error_reporting(E_ALL);
 $result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
 while ($row = mysql_fetch_row($result)){
 foreach($row as $data){
@@ -158,7 +160,7 @@ foreach($row as $data){
 }
     echo '<br>';
 }
-error_reporting(E_ALL);
+
 //mysql_free_result($result);
 //if(!$ssearch_query){	//Error checking here / may want to reroute index page
 	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
