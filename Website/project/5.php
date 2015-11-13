@@ -22,9 +22,9 @@ if (!$db){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description,Project_Requirements)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
 VALUES
-('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]','$_POST["Project_Requirements"]')";
+('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]')";
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
