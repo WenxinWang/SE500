@@ -22,8 +22,8 @@ if (!$db){		//check connection
 $sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES 
 ('27,'lulu','cc','dd')";
-//$search_query = mysqli_query($con, $sql);
-/*if (!$search_query) 
+$search_query = mysqli_query($con, $sql);
+if (!$search_query) 
     echo "beng";
 else 
 	echo "hao";
@@ -34,5 +34,5 @@ while ($row = mysqli_fetch_row($search_query))
 	echo $row[2];
 	echo $row[3];
 }
-*/
+
 ?>
