@@ -13,29 +13,26 @@ else {
 echo " succeded logging into the database!"; 
 }
 $db=mysqli_select_db($con, "SE500spr");
-
 if (!$db){		//check connection
 			die("failed to connect SE500spr: " . mysql_error());
 	}	
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$sql = "SELECT Project_ID, Project_Name FROM $dbName WHERE Project_Name LIKE 'T%' ORDER BY Rating_Total ASC";
-$result = mysqli_query($con, $sql);
-
-if (!$result) {
-    echo "DB Error, could not list tables\n";
-    echo 'MySQL Error: ' . mysql_error();
-    exit;
+//$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description，Project_Requirements)
+//VALUES
+//('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]','$_POST["Project_Requirements"]')";
+//$search_query = mysqli_query($con, $sql);
+/*if (!$search_query) 
+    echo "beng";
+else 
+	echo "hao";
+while ($row = mysqli_fetch_row($search_query))
+{
+	echo $row[0];
+	echo $row[1];
+	echo $row[2];
+	echo $row[3];
 }
-else
-	echo "you dong xi";
-
-while ($row = mysqli_fetch_row($result)) {
-     echo $row['Project_ID'] . " " . $row['Project_Name'];
-}
-mysqli_free_result($search_query);
-
-mysqli_close($con);
-
+*/
 ?>
