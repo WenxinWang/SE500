@@ -23,8 +23,6 @@ if (!$db){		//check connection
     } 
 	echo $_POST["Project_ID"];
 	echo $_POST["Project_Name"];
-	echo $_POST["Project_Description"]
-	echo $_POST["Project_Requirements"];
 /*$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES
 ('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]','$_POST["Project_Requirements"]')";

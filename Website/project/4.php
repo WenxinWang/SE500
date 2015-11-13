@@ -19,9 +19,9 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description，Project_Requirements)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name)
 VALUES 
-('27','lulu','cc','dd')";
+('27','lulu')";
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
@@ -34,5 +34,5 @@ while ($row = mysqli_fetch_row($search_query))
 	echo $row[2];
 	echo $row[3];
 }
-
+mysqli_close($con);
 ?>
