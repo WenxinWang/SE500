@@ -22,14 +22,14 @@ if (!$db){		//check connection
       echo " succededed logging into the SE500spr database!";  
     } 
 
-$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name)
 VALUES
-('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]')";
+('$_POST["Project_ID"]','$_POST["Project_Name"]')";
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
 else 
-	echo "hao";*/
+	echo "hao";
 /*while ($row = mysqli_fetch_row($search_query))
 {
 	echo $row[0];
