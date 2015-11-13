@@ -30,8 +30,7 @@ if (!$db){		//check connection
 $sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description，Project_Requirements)
 VALUES
 ('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]','$_POST["Project_Requirements"]')";
-$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21'";
-$search_query = mysqli_query($con, $search_sql);
+$search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
 else 
@@ -43,19 +42,5 @@ while ($row = mysqli_fetch_row($search_query))
 	echo $row[2];
 	echo $row[3];
 }
-//$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-//$sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
-//$result = mysqli_query($con, $sql);
 
-if (!$result) {
-    echo "DB Error, could not list tables\n";
-    echo 'MySQL Error: ' . mysql_error();
-    exit;
-}
-
-while ($row = mysqli_fetch_row($result)) {
-    echo "Table: $row[0]\n";
-	echo "Table: $row[1]\n";
-	echo "Table: $row[2]\n";
-}
 ?>
