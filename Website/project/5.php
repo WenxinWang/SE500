@@ -21,8 +21,9 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-
-$sql="INSERT INTO $dbName (Project_ID, Project_Name)
+echo $_POST["Project_ID"];
+echo $_POST["Project_Name"];
+/*$sql="INSERT INTO $dbName (Project_ID, Project_Name)
 VALUES
 ('$_POST["Project_ID"]','$_POST["Project_Name"]')";
 $search_query = mysqli_query($con, $sql);

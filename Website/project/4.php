@@ -21,14 +21,16 @@ if (!$db){		//check connection
     } 
 $sql="INSERT INTO $dbName (Project_ID, Project_Name)
 VALUES 
-('27','lulu')";
-$sql1="UPDATE $dbName SET Project_Description like 'asdzxcasdzxc' WHERE Project_ID like '27'";
+('30','ll50')";
 $search_query = mysqli_query($con, $sql);
-$search_query1 = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng1";
 else 
 	echo "hao1";
+$sql1="UPDATE $dbName SET Project_Description like 'asdzxcasdzxc' WHERE Project_ID like '30'";
+
+$search_query1 = mysqli_query($con, $sql1);
+
 if (!$search_query1) 
     echo "beng2";
 else 
