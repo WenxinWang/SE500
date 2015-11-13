@@ -19,14 +19,20 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$sql="INSERT INTO $dbName (Project_ID, Project_Name,Project_Description)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name)
 VALUES 
-('27','lulu','abcc')";
+('27','lulu')";
+$sql1="UPDATE $dbName SET Project_Description like 'asdzxcasdzxc' WHERE Project_ID like '27'";
 $search_query = mysqli_query($con, $sql);
+$search_query1 = mysqli_query($con, $sql);
 if (!$search_query) 
-    echo "beng";
+    echo "beng1";
 else 
-	echo "hao";
+	echo "hao1";
+if (!$search_query1) 
+    echo "beng2";
+else 
+	echo "hao2";
 while ($row = mysqli_fetch_row($search_query))
 {
 	echo $row[0];
