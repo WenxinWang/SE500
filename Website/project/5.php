@@ -1,12 +1,5 @@
-<form action="5.php" method="post">
-Project_ID: <input type="text" name="Project_ID" />
-Project_Name: <input type="text" name="Project_Name" />
-Project_Description: <input type="text" name="Project_Description" />
-Project_Requirements: <input type="text" name="Project_Requirements" />
-<input type="submit" />
- <div class="w-form-done">
-          <p>Thank you! Your submission has been received!</p>
-</form>
+
+
 <?php
 $dbName="Projects";
 
@@ -42,6 +35,7 @@ while ($row = mysqli_fetch_row($search_query))
 	echo $row[1];
 	echo $row[2];
 	echo $row[3];
+	echo $row[4];
 }
 */
 ?>
