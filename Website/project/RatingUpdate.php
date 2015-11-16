@@ -33,7 +33,7 @@ $Project=$_GET["ID"];
 	 	
 	
 	if (mysqli_query($con, $query)) {
-    header("Location:project.php?ID='$Project'");
+    header("Location:project.php?ID=$Project");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }
