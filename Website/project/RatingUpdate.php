@@ -5,7 +5,7 @@ if(isset($_POST['submit'])){
 	echo "RatingUpdate";
     $Project=$_GET["ID"];
     echo $Project;
-	//UpdateRating();
+	UpdateRating();
     
 }
 
