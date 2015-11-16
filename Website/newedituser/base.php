@@ -3,7 +3,6 @@
 
 
 if(isset($_POST['submit'])){
-	echo "New record created successfully";
 	createUser();
 }
 
