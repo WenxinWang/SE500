@@ -8,7 +8,8 @@ if(isset($_POST['submit'])){
 function createProject()
 {
 
-
+echo "New record created successfully";
+/*
 $con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
 if (!$con)
@@ -35,6 +36,6 @@ $Description = $_POST['Description'];
 
 	
 	mysqli_close($con);
-	
+	*/
 }
 ?>
