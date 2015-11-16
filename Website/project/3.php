@@ -62,17 +62,16 @@
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
-<form action="6.php" method="post">
-
+<form action="6.php" method="post"
+enctype="multipart/form-data">
 Project_ID: <input type="text" name="Project_ID" />
 Project_Name: <input type="text" name="Project_Name" />
 Project_Description: <input type="text" name="Project_Description" />
 Project_Requirements: <input type="text" name="Project_Requirements" />
-enctype="multipart/form-data">
+
 <label for="file">Filename:</label>
 <input type="file" name="file" id="file" /> 
-<br />
-<input type="submit" />
+<input type="submit" name="submit" value="Submit" />
  <div class="w-form-done">
           <p>Thank you! Your submission has been received!</p>
 </form>

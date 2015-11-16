@@ -24,9 +24,10 @@ if (!$db){		//check connection
 /*echo $_POST["Project_ID"];
 echo $_POST["Project_Name"];
 echo $_POST["Project_Description"];*/
+$filename = $_POST['filename'];
 $sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
 VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]')";
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[file]')";
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
