@@ -283,7 +283,7 @@ switch($OrderSearch){
         echo '<div class="w-row">';
            echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/Project/';
            echo $ProjectID[$ii];
-           echo '">';
+           echo '.jpg">';
             echo '</div>';
         echo '<div class="w-col w-col-10">';
           echo '<div class="w-row">';
