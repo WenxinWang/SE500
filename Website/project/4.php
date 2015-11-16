@@ -27,7 +27,7 @@ if (!$search_query)
     echo "beng1";
 else 
 	echo "hao1";
-$sql1="UPDATE $dbName SET Project_Description like 'asdzxcasdzxc' WHERE Project_ID like '30'";
+$sql1="UPDATE $dbName SET Project_Name like 'axiba' WHERE Project_ID like '22'";
 
 $search_query1 = mysqli_query($con, $sql1);
 
@@ -39,8 +39,6 @@ while ($row = mysqli_fetch_row($search_query))
 {
 	echo $row[0];
 	echo $row[1];
-	echo $row[2];
-	echo $row[3];
 }
 mysqli_close($con);
 ?>
