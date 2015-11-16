@@ -89,7 +89,12 @@ if(!$search_query){	//Error checking here / may want to reroute index page
   <div class="w-section project-title">
     <div class="w-container">
       <div class="w-row">
-        <div class="w-col w-col-6"><img src="../images/ExampleImage3.jpg">
+        <div class="w-col w-col-6">
+            <?php
+            echo '<img src="../images/Project/';
+            echo $Project;
+            echo '.jpg">';
+                ?>
         </div>
         <div class="w-col w-col-6">
           <h1 class="projectheading"><?php echo $ProjectName ?></h1>
