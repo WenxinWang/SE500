@@ -30,7 +30,7 @@ $Project=$_GET["ID"];
   $query = "
   UPDATE Projects SET Rating_Total = (Rating_Total + $Value) AND Number_of_Ratings = (Number_of_Ratings + 1) WHERE Project_ID = $Project";
 		
-		
+	 	
 	
 	if (mysqli_query($con, $query)) {
     header("Location:project.php?ID='$Project'");
