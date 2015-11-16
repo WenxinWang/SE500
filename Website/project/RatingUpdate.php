@@ -28,7 +28,7 @@ $Project=$_GET["ID"];
    echo $Project;
   
   $query = "
-  UPDATE Projects AS p SET Rating_Total = ($Value + Rating_Total) AND Number_of_Ratings = (1 + Number_of_Ratings) WHERE Project_ID = $Project";
+  UPDATE Projects AS p SET p.Rating_Total = ($Value + p.Rating_Total) AND p.Number_of_Ratings = (1 + p.Number_of_Ratings) WHERE Project_ID = $Project";
 		
 	
 	if (mysqli_query($con, $query)) {
