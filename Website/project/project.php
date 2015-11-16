@@ -92,7 +92,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
         <div class="w-col w-col-6"><img src="../images/ExampleImage3.jpg">
         </div>
         <div class="w-col w-col-6">
-          <h1 class="projectheading"><?php echo $ProjectName ?><?php echo $Project ?></h1>
+          <h1 class="projectheading"><?php echo $ProjectName ?></h1>
           <div>
             <div class="w-form">
               <form id="email-form" name="email-form" data-name="Email Form">
