@@ -100,7 +100,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
           <h1 class="projectheading"><?php echo $ProjectName ?></h1>
           <div>
             <div class="w-form">
-              <form id="email-form" name="email-form" data-name="Email Form">
+              <form id="email-form" method = "post" action = "RatingUpdate.php?ID=<?php echo $Project ?>" name="email-form" data-name="Email Form">
                 <div class="w-row">
                   <div class="w-col w-col-8">
                     <select class="w-select ratingbutton" id="Rating" name="Rating" data-name="Rating">
@@ -112,7 +112,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                     </select>
                   </div>
                   <div class="w-col w-col-4">
-                    <input class="w-button ratebutton" type="submit" value="Rate!" data-wait="Please wait...">
+                    <input class="w-button ratebutton" name= "submit" type="submit" value="Rate!" data-wait="Please wait...">
                   </div>
                 </div>
               </form>
