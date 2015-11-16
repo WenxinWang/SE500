@@ -281,7 +281,9 @@ switch($OrderSearch){
         
         while($ii < count($ProjectName)){
         echo '<div class="w-row">';
-           echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">';
+           echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/Project/';
+           echo $ProjectID[$ii];
+           echo '">';
             echo '</div>';
         echo '<div class="w-col w-col-10">';
           echo '<div class="w-row">';
