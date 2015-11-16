@@ -1,8 +1,9 @@
 <?php
 
-echo "New record created successfully";
+
 
 if(isset($_POST['submit'])){
+	echo "New record created successfully";
 	createUser();
 }
 
