@@ -13,28 +13,32 @@ else {
 echo " succeded logging into the database!"; 
 }
 $db=mysqli_select_db($con, "SE500spr");
-
 if (!$db){		//check connection
 			die("failed to connect SE500spr: " . mysql_error());
 	}	
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-$result = "SELECT Project_ID,Project_Name,  FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
-$search_query = mysqli_query($con, $result);
-// Numeric array
-$row=mysqli_fetch_array($search_query,MYSQLI_NUM);
-printf ("%s (%s)n",$row[0],$row[1]);
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
+VALUES 
+('30','ll50','asdzcas')";
+$search_query = mysqli_query($con, $sql);
+if (!$search_query) 
+    echo "beng1";
+else 
+	echo "hao1";
+$sql1="UPDATE $dbName SET Project_Name = 'axiba' WHERE Project_ID like '22'";
 
-// Associative array
-while($row=mysqli_fetch_array($search_query,MYSQLI_ASSOC))
+$search_query1 = mysqli_query($con, $sql1);
+
+if (!$search_query1) 
+    echo "beng2";
+else 
+	echo "hao2";
+while ($row = mysqli_fetch_row($search_query))
 {
-	printf ("%s (%s)\n",$row["Project_Name"],$row["Project_ID"]);
+	echo $row[0];
+	echo $row[1];
 }
-// Free result set
-mysqli_free_result($search_query);
-
 mysqli_close($con);
-
 ?>
-}

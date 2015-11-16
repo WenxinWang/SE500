@@ -2,12 +2,15 @@
 
 
 if(isset($_POST['submit'])){
-	echo "New record created successfully";
-	createProject();
+	echo "RatingUpdate";
+    
+   
+	UpdateRating();
+    
 }
 
 /* session_start(); */
-function createProject()
+function UpdateRating()
 {
 
 
@@ -20,17 +23,16 @@ if (!$con)
 
 mysqli_select_db("SE500spr", $con);
 
-$Title = $_POST['Title']; 
-$Description = $_POST['Description'];
-  
+$Value = $_POST['Rating']; 
+$Project=$_GET["ID"];
+   echo $Project;
   
   $query = "
-  INSERT INTO Projects (Project_Name, Project_Description) VALUES ('$Title',
-        '$Description')";
+  UPDATE Projects AS p SET p.Rating_Total = ($Value + p.Rating_Total) AND p.Number_of_Ratings = (1 + p.Number_of_Ratings) WHERE Project_ID = $Project";
 		
 	
 	if (mysqli_query($con, $query)) {
-    header("Location:../index.html");
+    header("Location:project.php?ID='$Project'");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }

@@ -1,5 +1,7 @@
 <?php
 
+
+
 if(isset($_POST['submit'])){
 	createUser();
 }
@@ -44,7 +46,7 @@ $users_name = mysql_real_escape_string($users_name);
 	//mysqli_query($query);
 	
 	if (mysqli_query($con, $query)) {
-    echo "New record created successfully";
+	header("Location:../index.html");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }

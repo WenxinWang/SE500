@@ -16,7 +16,7 @@ mysqli_select_db("SE500spr", $con);
 
 $Project=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Project%'";
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = $Project";
 
 $search_query = mysqli_query($con, $search_sql);
 
@@ -89,13 +89,18 @@ if(!$search_query){	//Error checking here / may want to reroute index page
   <div class="w-section project-title">
     <div class="w-container">
       <div class="w-row">
-        <div class="w-col w-col-6"><img src="../images/ExampleImage3.jpg">
+        <div class="w-col w-col-6">
+            <?php
+            echo '<img src="../images/Project/';
+            echo $Project;
+            echo '.jpg">';
+                ?>
         </div>
         <div class="w-col w-col-6">
           <h1 class="projectheading"><?php echo $ProjectName ?></h1>
           <div>
             <div class="w-form">
-              <form id="email-form" name="email-form" data-name="Email Form">
+              <form id="email-form" method = "post" action = "RatingUpdate.php?ID=<?php echo $Project ?>" name="email-form" data-name="Email Form">
                 <div class="w-row">
                   <div class="w-col w-col-8">
                     <select class="w-select ratingbutton" id="Rating" name="Rating" data-name="Rating">
@@ -107,7 +112,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                     </select>
                   </div>
                   <div class="w-col w-col-4">
-                    <input class="w-button ratebutton" type="submit" value="Rate!" data-wait="Please wait...">
+                    <input class="w-button ratebutton" name= "submit" type="submit" value="Rate!" data-wait="Please wait...">
                   </div>
                 </div>
               </form>
