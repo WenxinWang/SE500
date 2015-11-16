@@ -4,8 +4,9 @@
 if(isset($_POST['submit'])){
 	echo "RatingUpdate";
     $Project=$_GET["ID"];
-	UpdateRating();
     echo $Project;
+	//UpdateRating();
+    
 }
 
 /* session_start(); */
