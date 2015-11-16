@@ -1,5 +1,3 @@
-
-
 <?php
 $dbName="Projects";
 
@@ -21,24 +19,21 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-echo $_POST["Project_ID"];
-echo $_POST["Project_Name"];
-echo $_POST["Project_Description"];
-$sql="INSERT INTO $dbName (Project_ID, Project_Name,Project_Description)
-VALUES
-('$_POST["Project_ID"]','$_POST["Project_Name"]','$_POST["Project_Description"]')";
+$sql="INSERT INTO $dbName (Project_ID, Project_Name)
+VALUES 
+('30','ll50')";
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
-    echo "beng";
+    echo "beng1";
 else 
-	echo "hao";
-/*while ($row = mysqli_fetch_row($search_query))
+	echo "hao1";
+
+while ($row = mysqli_fetch_row($search_query))
 {
 	echo $row[0];
 	echo $row[1];
 	echo $row[2];
 	echo $row[3];
-	echo $row[4];
 }
-*/
+mysqli_close($con);
 ?>
