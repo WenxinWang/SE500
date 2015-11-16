@@ -30,7 +30,7 @@ $Description = $_POST['Description'];
 		
 	
 	if (mysqli_query($con, $query)) {
-    echo "New record created successfully";
+    header("Location:../index.html");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }
