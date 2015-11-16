@@ -3,8 +3,8 @@
 
 if(isset($_POST['submit'])){
 	echo "RatingUpdate";
-    $Project=$_GET["ID"];
-    echo $Project;
+    
+   
 	UpdateRating();
     
 }
@@ -24,8 +24,8 @@ if (!$con)
 mysqli_select_db("SE500spr", $con);
 
 $Value = $_POST['Rating']; 
-
-  
+$Project=$_GET["ID"];
+   echo $Project;
   
   $query = "
   UPDATE Projects SET Rating_Total AS (Rating_Total + $Value) AND Number_of_Ratings AS (Number_of_Ratings + 1) WHERE Project_ID = $Project";
