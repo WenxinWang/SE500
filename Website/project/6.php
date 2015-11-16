@@ -19,6 +19,9 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
+echo $_POST["Project_ID"];
+echo $_POST["Project_Name"];
+echo $_POST["Project_Description"];
 
 if ($_FILES["file"]["error"] > 0)
   {
@@ -31,4 +34,13 @@ else
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
+
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
+VALUES
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[file]')";
+$search_query = mysqli_query($con, $sql);
+if (!$search_query) 
+    echo "beng";
+else 
+	echo "hao";
 ?>
