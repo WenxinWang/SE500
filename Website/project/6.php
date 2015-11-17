@@ -37,15 +37,15 @@ $COMPRESS_CONTENT = addslashes(fread(fopen($filename, "r"), filesize($filename))
 //展示：
 
 
-$sql="INSERT INTO $dbName (Source_Code)/数据插入到数据库test表中
+$sql="INSERT INTO $dbName (Source_Code)
 VALUES
-('$COMPRESS_CONTENT'))";
+('$COMPRESS_CONTENT'))";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
 else 
 	echo "hao";
 ob_end_clean();
-Header( "Content-type: image/gif");
+//Header( "Content-type: image/gif");
 echo $search_query["COMPRESS_CONTENT"];
 ?>
