@@ -61,14 +61,42 @@
 	  
 <!--get the form information "email-form" from advanced search page-->
 
+<!--what can we advanced search
+
+---------------- all the choices should be the lowest tolerance or being contained-----------------------------
+
+
+
+Project_ID		//ID
+Project_Name	//[main key]Keyword
+Project_Description	//Description
+Recommended_Grade_Level	//Level
+Recommended_Team_Size	//Team_Size
+Completion_Status		//Status
+University
+Group_Members	
+Rating_Total	//at least rating
+
+Project_Privacy_Level
+Date_Uploaded
+Date_Last_Updated
+Primary_Programming_Language	//Language
+Secondary_Programming_Languages
+
+
+
+
+ -->
+
+
         <form id="email-form" name="email-form" data-name="Email Form" method="GET" action="../results/SearchResults.php">
           <label for="name">Keyword</label>
           <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name">
-<!--          <label for="email">DateRange (MM/DD/YYYY)</label>
+		  <label for="email">UploadDateRange (MM/DD/YYYY)</label>
           <div class="w-row">
             <div class="w-col w-col-6">
-             <input class="w-input" id="BeginDate" type="text" placeholder="Example Text" name="BeginDate" required="required" data-name="BeginDate">
-              <label for="email">Participants</label>
+             <input class="w-input" id="BeginUploadDate" type="text" placeholder="Example Text" name="BeginUploadDate" required="required" data-name="BeginDate">
+              <label for="email">Recommended_Grade_Level</label>
             </div>
             <div class="w-col w-col-6">
               <input class="w-input" id="End-Date" type="text" placeholder="Example Text" name="End-Date" required="required" data-name="End Date">
