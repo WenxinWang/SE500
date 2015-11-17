@@ -1,3 +1,6 @@
+<? php
+include('../include/session.php');
+?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Nov 10 2015 20:34:35 GMT+0000 (UTC) -->
