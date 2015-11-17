@@ -17,6 +17,6 @@ $login_session = $row['First_Name'];
 if(!isset($login_session))
     {
     $connection->close(); // Closing Connection
-    header('Location: ../error.html'); // Redirecting To Home Page
+    header('Location: ../login.php'); // Redirecting To Home Page
     }
 ?>
