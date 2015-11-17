@@ -32,10 +32,11 @@ else
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
 $filename="$_FILES["file"]["tmp_name"]" //这里填入图片路径 
+echo $filename;
 //展示：
 
 
-$sql="INSERT INTO $dbName (Source_Code)
+/*$sql="INSERT INTO $dbName (Source_Code)
 VALUES
 ('$filename')";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
@@ -43,6 +44,6 @@ if (!$search_query)
     echo "beng";
 else 
 	echo "hao";
-
+*/
 //echo $search_query["COMPRESS_CONTENT"];
 ?>
