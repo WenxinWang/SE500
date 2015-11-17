@@ -10,8 +10,8 @@
         else
         {
             // Define $username and $password
-            $username=$_POST['username'];
-            $password=$_POST['password'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
             
             // Establishing Connection with Server by passing server_name, user_id and password as a parameter
             $servername = "localhost";
@@ -39,8 +39,8 @@
 
             if ($result->num_rows > 0) 
             {
-                $_SESSION['login_user']=$username; // Initializing Session
-                header("location: loggedin.php"); // Redirecting To Other Page
+                $_SESSION['login_user'] = $username; // Initializing Session
+                header("location: index.php"); // Redirecting To Other Page
             }
             else
             {

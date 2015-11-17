@@ -116,67 +116,17 @@
   <div class="w-section">
     <div class="w-container">
       <div class="w-row">
-        <div class="w-col w-col-6"><a class="w-button favorite-button">Modify!</a> 
-        </div>
+<input type="button" onclick="window.location.href='5.php'" value="点击跳转">Downloads
+        <!--<div class="w-col w-col-6"><a class="w-button favorite-button" >Downloads</a> 
+		</form>
+        </div>-->
 		<<div class="w-col w-col-6 "><a class="w-button favorite-button" href="../project/3.php">Upload</a>
 		<html>
 <body>
 
-
-<?php
-$dbName="Projects";
-
-	
-	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
-	$con = mysqli_connect("localhost","spr_erau","asdf","SE500spr");
-
-if (!$con)
-  {
-    die('Could not connect: ' . mysql_connect_error());
-  }
-else {
-echo " succeded logging into the database!"; 
-}
-
-$db=mysqli_select_db($con, "SE500spr");
-if (!$db){		//check connection
-			die("failed to connect SE500spr: " . mysqli_error());
-	}	
-	else{
-      echo " succededed logging into the SE500spr database!";  
-    } 
-
-/*$search_sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
-//VALUES('25','Test123','lalalala')";
-//$search_sql = "SELECT Project_ID, Project_Description, Project_Name FROM $dbName WHERE Project_ID LIKE '21'";
-//$search_query = mysqli_query($con, $search_sql);
-if (!$search_query) 
-    echo "beng";
-else 
-	echo "hao";
-/*while ($row = mysqli_fetch_row($search_query))
-{
-	echo $row[0];
-	echo $row[1];
-	echo $row[2];
-}*/
-
-//mysql_free_result($result);
-//if(!$search_query){	//Error checking here / may want to reroute index page
-	//echo "Could not successfully run query ($search_query) from database" . mysqli_error();
-	//	header("Location:index.php");
-	//}else{
-			//$num_rows = mysqli_num_rows($search_query);
-	
-	//print_r(mysql_fetch_assoc($ssearch_query));
-
-
-mysqli_close($con);
-?>
 </body>
 </html>
 		<div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
-        <div class="w-col w-col-6"><a class="w-button favorite-button" href="http://192.168.1.128/phpmyadmin/tbl_get_field.php?db=SE500spr&table=Projects&where_clause=%60Projects%60.%60Project_ID%60+%3D+2&transform_key=Source_Code&sql_query=SELECT+%2A+FROM+%60Projects%60&token=0d9a5799457c28b6eb669f851c2919d5'" >Downloads</a>
         </div>
 		<?php
 		//$sql="SELECT Source_Code FROM Projects WHERE ID=2";
