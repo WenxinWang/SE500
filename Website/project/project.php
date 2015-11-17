@@ -1,4 +1,5 @@
 <?php
+include('include/session.php');
 $dbName="Projects";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
