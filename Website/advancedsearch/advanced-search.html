@@ -64,45 +64,41 @@
 <!--what can we advanced search
 
 ---------------- all the choices should be the lowest tolerance or being contained-----------------------------
-
-
-
+Project_Name	//Keyword
 Project_ID		//ID
-Project_Name	//[main key]Keyword
-Project_Description	//Description
+Date_Uploaded	//Begin_UploadDateRange
+Date_Last_Updated	//End_UploadDateRange
+X University // University
+Source_Code//Artefacts
+Rating_Total	//Rating
 Recommended_Grade_Level	//Level
-Recommended_Team_Size	//Team_Size
 Completion_Status		//Status
-University
-Group_Members	
-Rating_Total	//at least rating
+Group_Members	//Authors
+X Primary_Programming_Language	//Language
 
+%%Not included:
+Project_Description	//Description
+Recommended_Team_Size	//Team_Size
 Project_Privacy_Level
-Date_Uploaded
-Date_Last_Updated
-Primary_Programming_Language	//Language
 Secondary_Programming_Languages
-
-
-
-
+-----------------------------------------------------------------------------------------------------------------
  -->
 
 
         <form id="email-form" name="email-form" data-name="Email Form" method="GET" action="../results/SearchResults.php">
           <label for="name">Keyword</label>
-          <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name">
+          <input class="w-input" id="Keyword" type="text" placeholder="Enter your name" name="Keyword" required="required" data-name="Keyword">
 		  <label for="email">UploadDateRange (MM/DD/YYYY)</label>
           <div class="w-row">
             <div class="w-col w-col-6">
-             <input class="w-input" id="BeginUploadDate" type="text" placeholder="Example Text" name="BeginUploadDate" required="required" data-name="BeginDate">
-              <label for="email">Recommended_Grade_Level</label>
+             <input class="w-input" id="Begin_UploadDateRange" type="text" placeholder="Example Text" name="Begin_UploadDateRange"  data-name="Begin_UploadDateRange">
+              <label for="email">University</label>
             </div>
             <div class="w-col w-col-6">
-              <input class="w-input" id="End-Date" type="text" placeholder="Example Text" name="End-Date" required="required" data-name="End Date">
+              <input class="w-input" id="End_UploadDateRange" type="text" placeholder="Example Text" name="End_UploadDateRange" data-name="End_UploadDateRange">
             </div>
           </div>
-          <input class="w-input" id="FieldField" type="text" placeholder="Example Text" name="FieldField" required="required" data-name="FieldField">
+          <input class="w-input" id="University" type="text" placeholder="Example Text" name="University" data-name="University">
           <div class="w-row">
             <div class="w-col w-col-2">
               <label for="Artefacts">Artefacts</label>
@@ -117,10 +113,10 @@ Secondary_Programming_Languages
               <label for="email">Status</label>
             </div>
             <div class="w-col w-col-2">
-              <label for="email">Username</label>
+              <label for="email">Authors</label>
             </div>
             <div class="w-col w-col-2">
-              <label for="email">Views</label>
+              <label for="email">Language</label>
             </div>
           </div>
           <div class="w-row">
@@ -132,7 +128,7 @@ Secondary_Programming_Languages
               </select>
             </div>
             <div class="w-col w-col-2">
-              <select class="w-select rating" id="field" name="field">
+              <select class="w-select rating" id="Rating" name="Rating">
                 <option value="">Any</option>
                 <option value="1">1 Star +</option>
                 <option value="2">2 Star +</option>
@@ -158,14 +154,20 @@ Secondary_Programming_Languages
               </select>
             </div>
             <div class="w-col w-col-2">
-              <input class="w-input" id="Username" type="text" placeholder="Jaiden91" name="Username" required="required" data-name="Username">
+              <input class="w-input" id="Username" type="text" placeholder="Jaiden91" name="Authors" data-name="Authors">
             </div>
             <div class="w-col w-col-2">
-              <select class="w-select view" id="View-Count" name="View-Count" data-name="View Count">
-                <option value="0">Any</option>
-                <option value="100">100+</option>
-                <option value="1000">1000+</option>
-                <option value="10000">10 000 +</option>
+              <select class="w-select language" id="Language" name="Language" data-name="Language">
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Php">Php</option>
+                <option value="Python">Python</option>
+				<option value="JavaScript">JavaScript</option>
+				<option value="CSS">CSS</option>
+				<option value="Ruby">Ruby</option>
+				<option value="Java">Java</option>
+				<option value="HTML">HTML</option>
+				<option value="Shell">Shell</option>
               </select>
             </div>
           </div>
