@@ -45,27 +45,27 @@ mysqli_select_db("SE500spr", $con);
     $OrderSearch = $_GET["OrderSearch"];
 
 $Advanced_Search_beginDate=$_GET["BeginDate"];
-$Advanced_Search_endDate=$_GET["EndDate"];
-$Advanced_Search_artefacts=$_GET["Artefacts"];
-$Advanced_Search_field=$_GET["field"];
-$Advanced_Search_level=$_GET["Level"];
-$Advanced_Search_status=$_GET["Status"];
-$Advanced_Search_username=$_GET["Username"];
-$Advanced_Search_viewCount=$_GET["View-Count"];
+//$Advanced_Search_endDate=$_GET["EndDate"];
+//$Advanced_Search_artefacts=$_GET["Artefacts"];
+//$Advanced_Search_field=$_GET["field"];
+//$Advanced_Search_level=$_GET["Level"];
+//$Advanced_Search_status=$_GET["Status"];
+//$Advanced_Search_username=$_GET["Username"];
+//$Advanced_Search_viewCount=$_GET["View-Count"];
 
 if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-	FROM $dbName WHERE Project_Name LIKE '%$Search%' AND
-	Begin_Date >= $Advanced_Search_beginDate AND
-	End_Date <= $Advanced_Search_endDate AND 
-		Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-		Rating_Total >= $Advanced_Search_field AND
-		Recommended_Grade_Level = $Advanced_Search_level AND
-		Completion_Status = $Advanced_Search_status AND
-		Group_Members LIKE '"$Advanced_Search_username"' AND 
-		View_Count >= $Advanced_Search_viewCount ";
+	FROM $dbName WHERE Project_Name LIKE '%$Search%'";// AND
+//	Begin_Date >= $Advanced_Search_beginDate AND
+//	End_Date <= $Advanced_Search_endDate AND 
+//		Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//		Rating_Total >= $Advanced_Search_field AND
+//		Recommended_Grade_Level = $Advanced_Search_level AND
+//		Completion_Status = $Advanced_Search_status AND
+//		Group_Members LIKE '"$Advanced_Search_username"' AND 
+//		View_Count >= $Advanced_Search_viewCount ";
 		
 }else {
     
@@ -75,112 +75,112 @@ switch($OrderSearch){
 		case"RL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount 
-				ORDER BY Rating_Total ASC";
+				FROM $dbName WHERE Project_Name LIKE '%$Search%'"; //AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount 
+//				ORDER BY Rating_Total ASC";
 			break;
 		case"RH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount 
-				ORDER BY Rating_Total DESC";
+				FROM $dbName WHERE Project_Name LIKE '%$Search%' ";//AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount 
+//				ORDER BY Rating_Total DESC";
 			break;
 		case"LH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount 
-				ORDER BY Recommended_Grade_Level DESC";
+				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount 
+//				ORDER BY Recommended_Grade_Level DESC";
 			break;
 		case"LL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount 
-				ORDER BY Recommended_Grade_Level ASC";
+				FROM $dbName WHERE Project_Name LIKE '%$Search%'";// AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount 
+//				ORDER BY Recommended_Grade_Level ASC";
 			break;
 		case"VH":
 			$search_sql = "SELECT Project_ID, Project_Description,
-			Project_Name, Group_Members, Date_Uploaded, Rating_Total
-			FROM $dbName WHERE Project_Name LIKE '%$Search%' AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount ";//ORDER BY View_times DESC
+				Project_Name, Group_Members, Date_Uploaded, Rating_Total
+				FROM $dbName WHERE Project_Name LIKE '%$Search%' ";//AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount ";//ORDER BY View_times DESC
 			break;
 		case"VL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount ";//ORDER BY View_times ASC
+				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount ";//ORDER BY View_times ASC
 			break;
 		case"DH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount 
-				ORDER BY Date_Uploaded DESC";
+				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount 
+//				ORDER BY Date_Uploaded DESC";
 			break;
 		case"DL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' AND
-				Begin_Date >= $Advanced_Search_beginDate AND
-				End_Date <= $Advanced_Search_endDate AND 
-				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-				Rating_Total >= $Advanced_Search_field AND
-				Recommended_Grade_Level = $Advanced_Search_level AND
-				Completion_Status = $Advanced_Search_status AND
-				Group_Members LIKE '"$Advanced_Search_username"' AND 
-				View_Count >= $Advanced_Search_viewCount 
-				ORDER BY Date_Uploaded ASC";
+				FROM $dbName WHERE Project_Name LIKE '%$Search%'";// AND
+//				Begin_Date >= $Advanced_Search_beginDate AND
+//				End_Date <= $Advanced_Search_endDate AND 
+//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
+//				Rating_Total >= $Advanced_Search_field AND
+//				Recommended_Grade_Level = $Advanced_Search_level AND
+//				Completion_Status = $Advanced_Search_status AND
+//				Group_Members LIKE '"$Advanced_Search_username"' AND 
+//				View_Count >= $Advanced_Search_viewCount 
+//				ORDER BY Date_Uploaded ASC";
 			break;
 		 
 		}
@@ -441,6 +441,12 @@ switch($OrderSearch){
             
         $ii++;
         }
+		
+		echo "$Advanced_Search_beginDate";
+		echo "$Advanced_Search_beginDate";
+		echo "$Advanced_Search_beginDate";
+		echo "$Advanced_Search_beginDate";
+		echo "$Advanced_Search_beginDate";
         ?>
         <div> 
         
