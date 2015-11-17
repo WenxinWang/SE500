@@ -31,21 +31,19 @@ else
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
-$filename="$_FILES["file"]["tmp_name"]" //这里填入图片路径 
-$COMPRESS_CONTENT = addslashes(fread(fopen($filename, "r"), filesize($filename)));//打开文件并规范化数据存入变量$data中
-
+$filename=$_FILES["file"]["tmp_name"];//这里填入图片路径 
+echo "$filename";
 //展示：
 
 
 $sql="INSERT INTO $dbName (Source_Code)
 VALUES
-('$COMPRESS_CONTENT'))";//数据插入到数据库test表中
+('$filename')";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
 else 
 	echo "hao";
-ob_end_clean();
-//Header( "Content-type: image/gif");
-echo $search_query["COMPRESS_CONTENT"];
+
+//echo $search_query["COMPRESS_CONTENT"];
 ?>

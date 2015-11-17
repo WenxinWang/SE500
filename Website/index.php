@@ -38,7 +38,7 @@ include('include/unauthsession.php');
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div class="log-in-button"><span class="in-image-text"><i><?php echo $login_session; ?></i></span>
+              <div class="log-in-button"><span class="in-image-text"><i><? php echo $login_session; ?></i></span>
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
