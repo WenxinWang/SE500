@@ -1,4 +1,4 @@
-<? php
+<?php
 include('include/unauthsession.php');
 ?>
 <!DOCTYPE html>
