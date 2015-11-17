@@ -1,99 +1,4 @@
-<?php
 
-// Tiffany code (Database connection and Query here
-    // Code to include MYSQL, connect  to the database, select  the database to use, query  the database table 
-
-$Advanced_dbName="Projects";
-$Advanced_ProjectDesc = [];
-$Advanced_ProjectName = [];
-$Advanced_ProjectAuthors = [];
-$Advanced_ProjectDate = [];
-$Advanced_ProjectRating = [];
-$Advanced_ProjectID = [];
-$Advanced_ii = 0;
-$Advanced_num = 0;
-$Advanced_load = 0; 
-
-//create connection
-//mysqli_connect($serverName, $userName, $password);	
-	//$serverName="192.168.1.128/localhost";
-	//$userName="spr_erau";
-	//$password="asdf";
-	//$database_name = "SE500spr";
-$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
-
-if (!$con){
-    die('Could not connect: ' . mysqli_connect_error());
-}
-else{
-	echo " succeded logging into the database!"; 
-}
-mysqli_select_db("SE500spr", $con);
-
-
-// The below will take the results of the search from the previuos page
-
-$Advanced_Search_projectName=$_GET["name"];
-$Advanced_Search_beginDate=$_GET["BeginDate"];
-$Advanced_Search_endDate=$_GET["EndDate"];
-$Advanced_Search_artefacts=$_GET["Artefacts"];
-$Advanced_Search_field=$_GET["field"];
-$Advanced_Search_level=$_GET["Level"];
-$Advanced_Search_status=$_GET["Status"];
-$Advanced_Search_username=$_GET["Username"];
-$Advanced_Search_viewCount=$_GET["View-Count"];
-	
-	
-//$searchPage = 1;
-$Advanced_SearchPage = $_GET["page"];
-	
-//Can have more multiple choices
-	
-$Advanced_Search_sql = "SELECT * FROM $dbName WHERE Project_Name LIKE '%"$Advanced_Search_projectName"%' AND
-		Begin_Date >= $Advanced_Search_beginDate AND
-		End_Date <= $Advanced_Search_endDate AND 
-		Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-		Rating_Total >= $Advanced_Search_field AND
-		Recommended_Grade_Level = $Advanced_Search_level AND
-		Completion_Status = $Advanced_Search_status AND
-		Group_Members LIKE '"$Advanced_Search_username"' AND 
-		View_Count >= $Advanced_Search_viewCount ";
-				
-//( Page -1 (i.e. 0 is the first page))
-
-if(!$Advanced_SearchPage){ 
-// If no search page has been provided - straight from index or advanced search page. 
-	$Advanced_SearchPage = 0;
-}
-
-// $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Project_ID DESC";
-//here can also return other items of the projects.
-$Advanced_Search_query = mysqli_query($con, $Advanced_Search_sql);
-
-if(!$Advanced_Search_query){	//Error checking here / may want to reroute index page
-	echo "Could not successfully run query ($Advanced_Search_query) from database" . mysqli_error();
-}else{
-    $Advanced_NumResults =  mysqli_num_rows($Advanced_Search_query);
-	if(!$Advanced_NumResults){	//Error checking here / may want to reroute index page
-		echo "No rows found, nothing to print so return to index page.";
-		//header("Location:index.php");
-	}else{	//initial the array for saving results
-		while($Advanced_Search_rs = mysqli_fetch_assoc($Advanced_Search_query)){
-			if ($Advanced_num >= ($Advanced_SearchPage * 15) && $Advanced_num < (($Advanced_SearchPage + 1) * 15)){
-						
-				$Advanced_ProjectDesc[$Advanced_load] = $Advanced_Search_rs["Project_Description"];
-				$Advanced_ProjectName[$Advanced_load] = $Advanced_Search_rs["Project_Name"];
-				$Advanced_ProjectAuthors[$Advanced_load] = $Advanced_Search_rs["Group_Members"];
-				$Advanced_ProjectDate[$Advanced_load] = $Advanced_Search_rs["Date_Uploaded"];
-				$Advanced_ProjectRating[$Advanced_load] = $Advanced_Search_rs["Rating_Total"];
-				$Advanced_ProjectID[$Advanced_load] = $Advanced_Search_rs["Project_ID"];
-				$Advanced_load++;
-			}
-			$Advanced_num ++;
-		}
-	}
-}
-?>
 
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
@@ -153,7 +58,10 @@ if(!$Advanced_Search_query){	//Error checking here / may want to reroute index p
   <div class="w-section advancedsearchsection">
     <div class="w-container advancedsearchcontainer">
       <div class="w-form">
-        <form id="email-form" name="email-form" data-name="Email Form">
+	  
+<!--get the form information "email-form" from advanced search page-->
+
+        <form id="email-form" name="email-form" data-name="Email Form" method="GET" action="results/SearchResults.php">
           <label for="name">Keyword</label>
           <input class="w-input" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name">
           <label for="email">DateRange (MM/DD/YYYY)</label>
