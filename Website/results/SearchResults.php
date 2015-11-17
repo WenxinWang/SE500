@@ -44,7 +44,7 @@ mysqli_select_db("SE500spr", $con);
     $searchPage = $_GET["page"];
     $OrderSearch = $_GET["OrderSearch"];
 
-$Advanced_Search_beginDate=$_GET["BeginDate"];
+//$Advanced_Search_beginDate=$_GET["BeginDate"];
 //$Advanced_Search_endDate=$_GET["EndDate"];
 //$Advanced_Search_artefacts=$_GET["Artefacts"];
 //$Advanced_Search_field=$_GET["field"];
