@@ -13,4 +13,9 @@ $user_check=$_SESSION['login_user'];
 $ses_sql=mysqli_query($connection, "SELECT First_Name FROM Users WHERE Username='" .$user_check. "'");
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session =$row['First_Name'];
+if(!isset($login_session))
+    {
+    $connection->close(); // Closing Connection
+    echo Log In; // Redirecting To Home Page
+    }
 ?>
