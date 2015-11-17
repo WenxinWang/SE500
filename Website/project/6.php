@@ -1,5 +1,3 @@
-
-
 <?php
 $dbName="Projects";
 
@@ -21,10 +19,23 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-/*echo $_POST["Project_ID"];
+echo $_POST["Project_ID"];
 echo $_POST["Project_Name"];
-echo $_POST["Project_Description"];*/
-$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description)
+echo $_POST["Project_Description"];
+
+if ($_FILES["file"]["error"] > 0)
+  {
+  echo "Error: " . $_FILES["file"]["error"] . "<br />";
+  }
+else
+  {
+  echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+  echo "Type: " . $_FILES["file"]["type"] . "<br />";
+  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+  echo "Stored in: " . $_FILES["file"]["tmp_name"];
+  }
+
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[file]')";
 $search_query = mysqli_query($con, $sql);
@@ -32,13 +43,4 @@ if (!$search_query)
     echo "beng";
 else 
 	echo "hao";
-/*while ($row = mysqli_fetch_row($search_query))
-{
-	echo $row[0];
-	echo $row[1];
-	echo $row[2];
-	echo $row[3];
-	echo $row[4];
-}
-*/
 ?>
