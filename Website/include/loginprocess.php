@@ -40,7 +40,7 @@
             if ($result->num_rows > 0) 
             {
                 $_SESSION['login_user']=$username; // Initializing Session
-                header("location: loggedin.php"); // Redirecting To Other Page
+                header("location: index.php"); // Redirecting To Other Page
             }
             else
             {
