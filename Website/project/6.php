@@ -19,9 +19,6 @@ if (!$db){		//check connection
 	else{
       echo " succededed logging into the SE500spr database!";  
     } 
-echo $_POST["Project_ID"];
-echo $_POST["Project_Name"];
-echo $_POST["Project_Description"];
 
 if ($_FILES["file"]["error"] > 0)
   {
@@ -34,13 +31,21 @@ else
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
+$filename="$_FILES["file"]["tmp_name"]" //这里填入图片路径 
+$COMPRESS_CONTENT = addslashes(fread(fopen($filename, "r"), filesize($filename)));//打开文件并规范化数据存入变量$data中
 
-$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
+//展示：
+
+
+$sql="INSERT INTO $dbName (Source_Code)/数据插入到数据库test表中
 VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$_POST[file]')";
+('$COMPRESS_CONTENT'))";
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
 else 
 	echo "hao";
+ob_end_clean();
+Header( "Content-type: image/gif");
+echo $search_query["COMPRESS_CONTENT"];
 ?>
