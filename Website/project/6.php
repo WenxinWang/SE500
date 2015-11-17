@@ -36,9 +36,9 @@ echo "$filename";
 //展示：
 
 
-$sql="INSERT INTO $dbName (Source_Code)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
 VALUES
-('$filename')";//数据插入到数据库test表中
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$filename')";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
