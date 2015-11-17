@@ -1,3 +1,6 @@
+<? php
+include('include/unauthsession.php');
+?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Nov 10 2015 20:34:35 GMT+0000 (UTC) -->
@@ -35,7 +38,7 @@
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div class="log-in-button"><span class="in-image-text">Log In</span>
+              <div class="log-in-button"><span class="in-image-text"><i><?php echo $login_session; ?></i></span>
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
