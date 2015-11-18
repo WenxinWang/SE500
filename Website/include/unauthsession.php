@@ -14,10 +14,12 @@ $ses_sql = mysqli_query($connection, "SELECT First_Name, ID FROM Users WHERE Use
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session = $row['First_Name'];
 $UserId = $row['ID'];
+$LoggedIn = 1;
 if(!isset($login_session))
     {
+    
     $connection->close();
-    $login_session = "Log In";
-    $UserId = "LoggedOut";
+    //$login_session = "Log In";
+    $LoggedIn = 0;
     }
 ?>
