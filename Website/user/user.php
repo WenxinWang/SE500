@@ -47,9 +47,9 @@ include('../include/session.php');
             echo  '</div>';
             echo  '<div class="w-icon-dropdown-toggle usermenu"></div>';
             echo  '</div>';
-            echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="user/user.php?ID=';
+            echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
             echo  $UserId;
-            echo  '">Profile</a><a class="w-dropdown-link" href="logouttest.php">Log Out</a><a class="w-dropdown-link" href="neweditproject/neweditproject.php">New Project</a>';
+            echo  '">Profile</a><a class="w-dropdown-link" href="../logouttest.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.php">New Project</a>';
             echo '</nav>';    
             
               
@@ -59,8 +59,8 @@ include('../include/session.php');
              echo '</div>';
              echo '<div class="w-icon-dropdown-toggle usermenu"></div>';
              echo '</div>';
-             echo '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="login.php">Log In</a>';
-             echo '<a class="w-dropdown-link" href="newedituser/newedituser.php">New User</a>';
+             echo '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../login.php">Log In</a>';
+             echo '<a class="w-dropdown-link" href="../newedituser/newedituser.php">New User</a>';
              echo '</nav>';
            
               
