@@ -39,7 +39,7 @@ include('include/unauthsession.php');
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
                 <?php  
-                if(UserId == "loggedOut"){
+                if(UserId == "LoggedOut"){
                 ?>
               <div class="log-in-button"><span class="in-image-text"><i>Log In</i></span>
               </div>
@@ -55,7 +55,7 @@ include('include/unauthsession.php');
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="user/user.html?ID=<?php echo UserId ?>">Profile</a><a class="w-dropdown-link" >Log Out</a><a class="w-dropdown-link" href="neweditproject/neweditproject.html">New Project</a>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="user/user.html?ID=<?php echo $UserId ?>">Profile</a><a class="w-dropdown-link" >Log Out</a><a class="w-dropdown-link" href="neweditproject/neweditproject.html">New Project</a>
             </nav>
               
               <?php
