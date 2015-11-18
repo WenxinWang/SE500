@@ -32,7 +32,7 @@ $Description = $_POST['Description'];
 		
 	
 	if (mysqli_query($con, $query)) {
-    header("Location:../index.html");
+    header("Location:../index.php");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }
