@@ -31,19 +31,19 @@ else
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
-$filename=$_FILES["file"]["tmp_name"];//这里填入图片路径 
-echo "$filename";
 //展示：
 
-
+ //if(is_uploaded_file($_FILES["file"]["tmp_name"])) {
+  //  echo "转成二进制";// 转成二进制
+    $imgBlob=file_get_contents($_FILES["file"]["tmp_name"]); 
 $sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
 VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$filename')";//数据插入到数据库test表中
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$imgBlob')";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
 else 
 	echo "hao";
-
+*/
 //echo $search_query["COMPRESS_CONTENT"];
 ?>

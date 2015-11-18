@@ -110,13 +110,13 @@
     <div class="w-container favcontainer"><a class="w-button favorite-button">Favorite!</a>
     </div>
     <div class="w-container">
-      <div class="bottom-text-project-page">Back To Search Results</div>
+     <!-- <div class="bottom-text-project-page">Back To Search Results</div>-->
     </div>
   </div>
   <div class="w-section">
     <div class="w-container">
       <div class="w-row">
-<input type="button" onclick="window.location.href='5.php'" value="点击跳转">Downloads
+<input type="button" onclick="window.location.href='5.php'" value="Downloads">
         <!--<div class="w-col w-col-6"><a class="w-button favorite-button" >Downloads</a> 
 		</form>
         </div>-->
