@@ -1,5 +1,5 @@
 <?php
-include('include/session.php');
+include('../include/session.php');
 ?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
