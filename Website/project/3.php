@@ -70,7 +70,7 @@ Project_Description: <input type="text" name="Project_Description" />
 Project_Requirements: <input type="text" name="Project_Requirements" />
 
 <label for="file">Filename:</label>
-<input type="file" name="file" id="file" /> 
+<input type="file" name="files" id="file" /> 
 <input type="submit" name="submit" value="Submit" />
  <div class="w-form-done">
           <p>Thank you! Your submission has been received!</p>
