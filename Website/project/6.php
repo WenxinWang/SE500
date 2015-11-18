@@ -35,7 +35,7 @@ else
 
  if(is_uploaded_file($_FILES["file"]["tmp_name"])) {
     echo "转成二进制";// 转成二进制
-    $imgBlob =addslashes(file_get_contents($_FILES["file"]['tmp_name'])); 
+    $imgBlob =addslashes(file_get_contents($_FILES["file"]["tmp_name"])); 
 /*$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$imgBlob')";//数据插入到数据库test表中
