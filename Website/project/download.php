@@ -33,8 +33,8 @@ if (!$result) {
 else
 	echo "you dong xi";
 header("Content-Disposition:attachment".'image/jpeg');
-while ($row = mysqli_fetch_object($result)) {
-    echo "$row[0]\n";
+//while ($row = mysqli_fetch_object($result)) {
+    //echo "$row[0]\n";
 	//echo $row["Source_Code"];
 }
 ?>
