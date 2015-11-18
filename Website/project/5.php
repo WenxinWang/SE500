@@ -34,6 +34,6 @@ else
 	echo "you dong xi";
 header("Content-type:image/jpeg'");
 while ($row = mysqli_fetch_object($result)) {
-    echo $row["Source_Code"];
+    echo $row[Source_Code];
 }
 ?>
