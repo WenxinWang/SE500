@@ -41,7 +41,7 @@ include('include/unauthsession.php');
             
             <?php  
                 if($LoggedIn){
-              echo '<div class="log-in-button"><span class="in-image-text" href="login.php"><i><?php echo $login_session; ?></i></span>';
+              echo '<div class="log-in-button" href="login.php"><span class="in-image-text" ><i><?php echo $login_session; ?></i></span>';
             echo  '</div>';
             echo  '<div class="w-icon-dropdown-toggle usermenu"></div>';
             echo  '</div>';
