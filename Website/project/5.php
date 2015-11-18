@@ -32,7 +32,7 @@ if (!$result) {
 }
 else
 	echo "you dong xi";
-while ($row = mysqli_fetch_row($result)) {
+while ($row = mysqli_fetch_object($result)) {
     echo "Table: $row[0]\n";
 	echo "Table: $row[1]\n";
 	echo "Table: $row[2]\n";
