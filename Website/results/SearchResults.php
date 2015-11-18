@@ -38,34 +38,78 @@ mysqli_select_db("SE500spr", $con);
 
 // The below will take the results of the search from the previuos page Execute
 
-    $Search=$_GET["name"];
+    $Search_Name=$_GET["name"];
 	//the same with $Advanced_Search_projectName=$_GET["name"];
     //$searchPage = 1;
     $searchPage = $_GET["page"];
     $OrderSearch = $_GET["OrderSearch"];
+/*what can we advanced search
 
-//$Advanced_Search_beginDate=$_GET["BeginDate"];
-//$Advanced_Search_endDate=$_GET["EndDate"];
-//$Advanced_Search_artefacts=$_GET["Artefacts"];
-//$Advanced_Search_field=$_GET["field"];
-//$Advanced_Search_level=$_GET["Level"];
-//$Advanced_Search_status=$_GET["Status"];
-//$Advanced_Search_username=$_GET["Username"];
-//$Advanced_Search_viewCount=$_GET["View-Count"];
+---------------- all the choices should be the lowest tolerance or being contained-----------------------------
+Project_Name	//Keyword
+Project_ID		//ID
+Date_Uploaded	//Begin_UploadDateRange
+Date_Last_Updated	//End_UploadDateRange
+University // University
+Source_Code//Artefacts
+Rating_Total	//Rating
+Recommended_Grade_Level	//Level
+Completion_Status		//Status
+Group_Members	//Authors
+Primary_Programming_Language	//Language
+
+-----------------------------------------------------------------------------------------------------------------
+*/
+
+
+//-----------------------------------------------------------------------------------------------------------------
+$Advanced_Search_Keyword=$_GET["Keyword"];
+$Advanced_Search_ID=$_GET["ID"];
+$Advanced_Search_Begin_UploadDateRange=$_GET["Begin_UploadDateRange"];
+$Advanced_Search_End_UploadDateRange=$_GET["End_UploadDateRange"];
+$Advanced_Search_University=$_GET["University"];
+$Advanced_Search_Artefacts=$_GET["Artefacts"];
+$Advanced_Search_Rating=$_GET["Rating"];
+$Advanced_Search_Level=$_GET["Level"];
+$Advanced_Search_Status=$_GET["Status"];
+$Advanced_Search_Authors=$_GET["Authors"];
+$Advanced_Search_Language=$_GET["Language"];
+//------------------------------------------------------------------------------------------------------------------
+
+
+
+//the advanced choices after "where" 
+$where_sentence = "(Project_Name Like '%$$Search_Name' OR
+				Project_Name Like $Advanced_Search_Keyword) AND
+				Project_ID = $Advanced_Search_ID AND
+				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
+				Date_Last_Updated <= $Advanced_Search_End_UploadDateRange AND
+				University LIKE '%$Advanced_Search_University%' AND
+				// = $Advanced_Search_Artefacts AND
+				Rating_Total LIKE '%$Advanced_Search_Rating%' AND
+				Recommended_Grade_Level LIKE '%$Advanced_Search_Level%' AND
+				Completion_Status LIKE '%$Advanced_Search_Status%' AND
+				Group_Members LIKE '%$Advanced_Search_Authors%' AND
+				Primary_Programming_Language LIKE '%$Advanced_Search_Language%'";
+
+/*				
+Project_ID		//ID
+Date_Uploaded	//Begin_UploadDateRange
+Date_Last_Updated	//End_UploadDateRange
+University // University
+Source_Code//Artefacts
+Rating_Total	//Rating
+Recommended_Grade_Level	//Level
+Completion_Status		//Status
+Group_Members	//Authors
+Primary_Programming_Language	//Language
+*/
 
 if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-	FROM $dbName WHERE Project_Name LIKE '%$Search%'";// AND
-//	Begin_Date >= $Advanced_Search_beginDate AND
-//	End_Date <= $Advanced_Search_endDate AND 
-//		Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//		Rating_Total >= $Advanced_Search_field AND
-//		Recommended_Grade_Level = $Advanced_Search_level AND
-//		Completion_Status = $Advanced_Search_status AND
-//		Group_Members LIKE '"$Advanced_Search_username"' AND 
-//		View_Count >= $Advanced_Search_viewCount ";
+	FROM $dbName WHERE {$where_sentence}";
 		
 }else {
     
@@ -75,112 +119,42 @@ switch($OrderSearch){
 		case"RL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'"; //AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount 
-//				ORDER BY Rating_Total ASC";
+				FROM $dbName WHERE {$where_sentence} ORDER BY Rating_Total ASC";
 			break;
 		case"RH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ";//AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount 
-//				ORDER BY Rating_Total DESC";
+				FROM $dbName WHERE {$where_sentence} ORDER BY Rating_Total DESC";
 			break;
 		case"LH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount 
-//				ORDER BY Recommended_Grade_Level DESC";
+				FROM $dbName WHERE {$where_sentence} ORDER BY Recommended_Grade_Level DESC";
 			break;
 		case"LL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";// AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount 
-//				ORDER BY Recommended_Grade_Level ASC";
+				FROM $dbName WHERE {$where_sentence} ORDER BY Recommended_Grade_Level ASC";
 			break;
 		case"VH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%' ";//AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount ";//ORDER BY View_times DESC
+				FROM $dbName WHERE {$where_sentence}"; // doesn't exsist the view_number choices.
 			break;
 		case"VL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount ";//ORDER BY View_times ASC
+				FROM $dbName WHERE {$where_sentence}";// doesn't exsist the view_number choices.
 			break;
 		case"DH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";//AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount 
-//				ORDER BY Date_Uploaded DESC";
+				FROM $dbName WHERE {$where_sentence} ORDER BY Date_Uploaded DESC";
 			break;
 		case"DL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name LIKE '%$Search%'";// AND
-//				Begin_Date >= $Advanced_Search_beginDate AND
-//				End_Date <= $Advanced_Search_endDate AND 
-//				Artifacts_Amount = '"$Advanced_Search_artefacts"' AND 
-//				Rating_Total >= $Advanced_Search_field AND
-//				Recommended_Grade_Level = $Advanced_Search_level AND
-//				Completion_Status = $Advanced_Search_status AND
-//				Group_Members LIKE '"$Advanced_Search_username"' AND 
-//				View_Count >= $Advanced_Search_viewCount 
-//				ORDER BY Date_Uploaded ASC";
+				FROM $dbName WHERE {$where_sentence} ORDER BY Date_Uploaded ASC";
 			break;
 		 
 		}
@@ -197,24 +171,14 @@ switch($OrderSearch){
 	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
 	}else{
-			//$num_rows = mysqli_num_rows($search_query);
            $NumResults =  mysqli_num_rows($search_query);
 			if(!NumResults){	//Error checking here / may want to reroute index page
 			echo "No rows found, nothing to print so return to index page.";
-	//			header("Location:index.php");
-		}else{
-				//array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
-				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array("Eample1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
-				//initial the array for saving results
+
+			}else{
                
 				while($search_rs = mysqli_fetch_assoc($search_query)){
-                    
-                    if ($num >= ($searchPage * 15) && $num < (($searchPage + 1) * 15)){
-                        
-                        
+                    if ($num >= ($searchPage * 15) && $num < (($searchPage + 1) * 15)){       
                         $ProjectDesc[$load] = $search_rs["Project_Description"];
                         $ProjectName[$load] = $search_rs["Project_Name"];
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
@@ -225,54 +189,6 @@ switch($OrderSearch){
                 }
 					$num ++;
 				}
-			//	<p>Search results</p>
-				// While a row of data exists, put that row in $row as an associative array
-				// Note: If you're expecting just one row, no need to use a loop
-				// Note: If you put extract($row); inside the following loop, you'll
-				//       then create $userid, $fullname, and $userstatus
-				//while ($row = mysql_fetch_assoc($result)) {
-// results need to be send back to GUI interface.
-				//	echo $row["ID"];
-				//	echo $row["User_ID"];
-				//	echo $row["Project_Name"];
-				//	echo $row["Project_Description"];
-			//		echo $row["Requirements"];
-				//	echo $row["Source_Code"];
-				//	echo $row["UML _Diagram_1"];
-				//	echo $row["UML_Diagram_2"];
-				//	echo $row["UML_Diagram_3"];
-				//	echo $row["UML_Diagram_4"];
-				//	echo $row["UML_Diagram_5"];
-				//	echo $row["UML_Diagram_6"];
-				//	echo $row["UML_Diagram_7"];
-				//	echo $row["UML_Diagram_8"];
-				//	echo $row["UML_Diagram_9"];
-				//	echo $row["UML_Diagram_10"];
-				//	echo $row["Recommended_Grade_Level"];
-				//	echo $row["Recommended_Team_Size"];
-				//	echo $row["Completion_Status"];
-				//	echo $row["University"];
-				//	echo $row["Group_Members"];
-				//	echo $row["Rating_Total"];
-				//	echo $row["Number_of_Ratings"];
-		//			echo $row["Project_Security_Level"];
-	//				echo $row["Date_Uploaded"];
-	//				echo $row["Primary_Programming_Language"];
-		}
-		}
-	//}
-		
-	//mysqli_free_result($search_query);
-	//mysqli_close($conn);
-    //$NumResults = mysql_num_rows($DB);
-    //$NumResults = 20;
-    //$ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
-    //$ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    //$ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    //$ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    //$ProjectRating = array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
-    //$ii = 0;
-       
 ?>
 
 <!DOCTYPE html>
@@ -441,103 +357,10 @@ switch($OrderSearch){
             
         $ii++;
         }
-		
-		echo "$Advanced_Search_beginDate";
-		echo "$Advanced_Search_beginDate";
-		echo "$Advanced_Search_beginDate";
-		echo "$Advanced_Search_beginDate";
-		echo "$Advanced_Search_beginDate";
+
         ?>
         <div> 
-        
-        <!-- Old results code used to display 
-        
-      <div class="w-row">
-        <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
-        </div>
-        <div class="w-col w-col-10">
-          <div class="w-row">
-            <div class="w-col w-col-7 projectheadingcolumn">
-              <h3 class="resultheading">Amazing Fantastic Project</h3>
-              <div>Created by P. J. Kim. A, R, Cullen. 2015</div>
-            </div>
-            <div class="w-col w-col-5">
-              <div>Includes: SRS, Source Code, Proposal</div>
-              <div><img src="../images/star rating.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="result-text">This Exciting Project Seeks to demonstrate blah blah blah blah blah blah blah blah&nbsp;blah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blahblah blah blah blah ....&nbsp;</div>
-        </div>
       </div>
-      <div>
-        <div class="w-row">
-          <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage2.jpeg">
-          </div>
-          <div class="w-col w-col-10">
-            <div class="w-row">
-              <div class="w-col w-col-7">
-                <h3 class="resultheading">Revolutionary Payment system</h3>
-                <div>Created by M. L. Tight</div>
-              </div>
-              <div class="w-col w-col-5">
-                <div>Includes: Idea Only</div>
-                <div><img src="../images/star rating.jpg">
-                </div>
-              </div>
-            </div>
-            <div>I would like someone to attempt to redesign the card payment system to allow blah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blah...</div>
-          </div>
-        </div>
-        <div>
-          <div class="w-row">
-            <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage3.jpg">
-            </div>
-            <div class="w-col w-col-10">
-              <div class="w-row">
-                <div class="w-col w-col-7">
-                  <h3 class="resultheading">Protecting against SQL Inject...</h3>
-                  <div>
-                    <div>Created by M. L. Alphabet</div>
-                  </div>
-                </div>
-                <div class="w-col w-col-5">
-                  <div>Includes: Requirements, Description</div>
-                  <div><img src="../images/star rating.jpg">
-                  </div>
-                </div>
-              </div>
-              <div>An exciting new method designed to protect against a form of attack that has long since been made irrelevant by modern security techniques. Blah Blah&nbsp;Blah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah BlahBlah Blah ...</div>
-            </div>
-          </div>
-          <div>
-            <div class="w-row">
-              <div class="w-col w-col-2"><img class="resultimage" src="../images/exampleimage4.jpg">
-              </div>
-              <div class="w-col w-col-10">
-                <div class="w-row">
-                  <div class="w-col w-col-7">
-                    <h3 class="resultheading">Optimising Control of Death Ray</h3>
-                    <div>
-                      <div>Created by Dr. Evil</div>
-                    </div>
-                  </div>
-                  <div class="w-col w-col-5">
-                    <div>Includes: Requirements, Idea</div>
-                    <div><img src="../images/star rating.jpg">
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div>My Death Ray is not functioning well enough to reliably hit targets from orbit. I am seeking assistance to calibrate its targeting. Suitable for PhD level students looking for a career in..... EVIL. muahahah</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
--->
-    </div>
   </div>
   <div class="w-section bottom-text">
     <div class="w-container">
