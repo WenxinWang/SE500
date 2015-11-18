@@ -32,9 +32,9 @@ if (!$result) {
 }
 else
 	echo "you dong xi";
+header("Content-Disposition:attachment".'downloaded.jpg');
 while ($row = mysqli_fetch_object($result)) {
-    echo "Table: $row[0]\n";
-	echo "Table: $row[1]\n";
-	echo "Table: $row[2]\n";
+    echo "$row[0]\n";
+	echo $row["Source_Code"];
 }
 ?>
