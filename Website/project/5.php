@@ -32,13 +32,14 @@ if (!$result) {
 }
 else
 	echo "you dong xi";
-header("Content-type:image/jpeg"); 
-ob_clean(); //防止php将utf8的bom头输出
+
 while ($row = mysqli_fetch_object($result)) {
     //echo "$row[0]\n";
 	echo $row->Project_ID;
 	echo $row->Project_Name;
 	echo $row->Project_Description;
+	header("Content-type:image/jpeg"); 
+ob_clean(); //防止php将utf8的bom头输出
 	echo $row->Source_Code;
 }
 ?>
