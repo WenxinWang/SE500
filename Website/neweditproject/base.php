@@ -1,6 +1,8 @@
 <?php
 
 
+include('../include/session.php');
+
 if(isset($_POST['submit'])){
 	echo "New record created successfully";
 	createProject();
@@ -25,8 +27,8 @@ $Description = $_POST['Description'];
   
   
   $query = "
-  INSERT INTO Projects (Project_Name, Project_Description) VALUES ('$Title',
-        '$Description')";
+  INSERT INTO Projects (Project_Name, Project_Description, Uploader) VALUES ('$Title',
+        '$Description', $UserID)";
 		
 	
 	if (mysqli_query($con, $query)) {
