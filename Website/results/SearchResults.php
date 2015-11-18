@@ -110,7 +110,7 @@ if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-	FROM $dbName WHERE (Project_Name Like '%$Search_Name' OR
+	FROM $dbName WHERE Project_Name Like '%$Search_Name'";/* OR
 				Project_Name Like '%$Advanced_Search_Keyword%') AND
 				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
@@ -121,7 +121,7 @@ if (!$OrderSearch){
 				Recommended_Grade_Level LIKE '%$Advanced_Search_Level%' AND
 				Completion_Status LIKE '%$Advanced_Search_Status%' AND
 				Group_Members LIKE '%$Advanced_Search_Authors%' AND
-				Primary_Programming_Language LIKE '%$Advanced_Search_Language%'";
+				Primary_Programming_Language LIKE '%$Advanced_Search_Language%'";*/
 		
 }
 
@@ -212,7 +212,7 @@ switch($OrderSearch){
 <html data-wf-site="5615631c7481d047217c335f" data-wf-page="56157233ecd841d67a8f12df">
 <head>
   <meta charset="utf-8">
-  <title>Search Results</title>
+  <title><?php echo "$Advanced_Search_KeywordSearch" ?> Results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="../css/normalize.css">
