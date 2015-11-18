@@ -41,13 +41,13 @@ include('include/unauthsession.php');
             
             <?php  
                 if($LoggedIn){
-              echo '<div class="log-in-button"><span class="in-image-text"><i><?php echo $login_session; ?></i></span>';
+              echo '<div class="log-in-button"><span class="in-image-text" href="login.php"><i><?php echo $login_session; ?></i></span>';
             echo  '</div>';
             echo  '<div class="w-icon-dropdown-toggle usermenu"></div>';
             echo  '</div>';
             echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="user/user.php?ID=';
             echo  $UserId;
-            echo  '">Profile</a><a class="w-dropdown-link" >Log Out</a><a class="w-dropdown-link" href="neweditproject/neweditproject.php">New Project</a>';
+            echo  '">Profile</a><a class="w-dropdown-link" href="login.php">Log Out</a><a class="w-dropdown-link" href="neweditproject/neweditproject.php">New Project</a>';
             echo '</nav>';    
             
               
