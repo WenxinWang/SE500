@@ -58,7 +58,7 @@ include('include/unauthsession.php');
              echo '<div class="w-icon-dropdown-toggle usermenu"></div>';
              echo '</div>';
              echo '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="login.php">Login</a>';
-             echo '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="newedituser/newedituser.php">New User</a>';
+             echo '<a class="w-dropdown-link" href="newedituser/newedituser.php">New User</a>';
              echo '</nav>';
            
               
