@@ -122,7 +122,9 @@ if (!$OrderSearch){
 				Group_Members LIKE '%$Advanced_Search_Authors%' AND
 				Primary_Programming_Language LIKE '%$Advanced_Search_Language%'";
 		
-}else {
+}
+
+/*else {
     
 
 	
@@ -170,6 +172,7 @@ switch($OrderSearch){
 		 
 		}
 }
+*/
 		//( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
