@@ -38,12 +38,29 @@ include('include/unauthsession.php');
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div class="log-in-button"><span class="in-image-text"><i><?php echo $login_session; ?></i></span>
+                <?php  
+                if(UserId == "loggedOut"){
+                ?>
+              <div class="log-in-button"><span class="in-image-text"><i>Log In</i></span>
               </div>
               <div class="w-icon-dropdown-toggle usermenu"></div>
             </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="newedituser/newedituser.html">New User</a><a class="w-dropdown-link" href="user/user.html">Profile</a><a class="w-dropdown-link" >Settings</a><a class="w-dropdown-link" href="neweditproject/neweditproject.html">New Project</a>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="newedituser/newedituser.html">New User</a>
             </nav>
+              <?php
+                }else{
+                ?>
+              
+            <div class="log-in-button"><span class="in-image-text"><i><?php echo $login_session; ?></i></span>
+              </div>
+              <div class="w-icon-dropdown-toggle usermenu"></div>
+            </div>
+            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="user/user.html?ID=<?php echo UserId ?>">Profile</a><a class="w-dropdown-link" >Log Out</a><a class="w-dropdown-link" href="neweditproject/neweditproject.html">New Project</a>
+            </nav>
+              
+              <?php
+                }
+                ?>
           </div>
         </div>
       </div>

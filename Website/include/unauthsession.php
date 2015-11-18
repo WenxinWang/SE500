@@ -10,12 +10,14 @@ session_start();// Starting Session
 // Storing Session
 $user_check = $_SESSION['login_user'];
 // SQL Query To Fetch Complete Information Of User
-$ses_sql = mysqli_query($connection, "SELECT First_Name FROM Users WHERE Username='" .$user_check. "'");
+$ses_sql = mysqli_query($connection, "SELECT First_Name, ID FROM Users WHERE Username='" .$user_check. "'");
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session = $row['First_Name'];
+$UserId = $row['ID']
 if(!isset($login_session))
     {
     $connection->close();
     $login_session = "Log In";
+    $UserId = "LoggedOut";
     }
 ?>
