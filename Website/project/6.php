@@ -32,7 +32,7 @@ else
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
 //展示： 
-	 $image = mysqli_escape_string(file_get_contents($_FILES["file"]["tmp_name"]));    
+	 $image = file_get_contents($_FILES["file"]["tmp_name"]);    
 	$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$image')";//数据插入到数据库test表中
