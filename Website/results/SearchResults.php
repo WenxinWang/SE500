@@ -59,7 +59,7 @@ Group_Members	//Authors
 Primary_Programming_Language	//Language
 
 -----------------------------------------------------------------------------------------------------------------
-*/
+
 
 
 //-----------------------------------------------------------------------------------------------------------------
@@ -76,10 +76,15 @@ $Advanced_Search_Authors=$_GET["Authors"];
 $Advanced_Search_Language=$_GET["Language"];
 //------------------------------------------------------------------------------------------------------------------
 
+*/
+
+$Advanced_Search_Keyword=$_GET["Keyword"];
+
+
 
 
 //the advanced choices after "where" 
-/*$where_sentence = "(Project_Name Like '%$Search_Name' OR
+/*$where_sentence = "(Project_Name Like '%$Search_Name%' OR
 				Project_Name Like '%$Advanced_Search_Keyword%') AND
 				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
@@ -110,7 +115,7 @@ if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-	FROM $dbName WHERE Project_Name Like '%$Search_Name'";/* OR
+	FROM $dbName WHERE Project_Name Like '%$Advanced_Search_Keyword%'";/* OR
 				Project_Name Like '%$Advanced_Search_Keyword%') AND
 				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
