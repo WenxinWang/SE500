@@ -13,7 +13,7 @@ $user_check = $_SESSION['login_user'];
 $ses_sql = mysqli_query($connection, "SELECT First_Name, ID FROM Users WHERE Username='" .$user_check. "'");
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session = $row['First_Name'];
-$UserId = $row['ID']
+$UserId = $row['ID'];
 if(!isset($login_session))
     {
     $connection->close();
