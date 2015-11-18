@@ -53,7 +53,7 @@ include('include/unauthsession.php');
               
                 }else{
                 
-               echo '<div class="log-in-button"><span class="in-image-text" href="login.php"><i>Log In</i></span>';
+               echo '<div class="log-in-button" href="login.php"><span class="in-image-text" href="login.php"><i>Log In</i></span>';
              echo '</div>';
              echo '<div class="w-icon-dropdown-toggle usermenu"></div>';
              echo '</div>';
