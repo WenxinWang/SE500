@@ -79,9 +79,9 @@ $Advanced_Search_Language=$_GET["Language"];
 
 
 //the advanced choices after "where" 
-/*$where_sentence = "(Project_Name Like '%$$Search_Name' OR
-				Project_Name Like $Advanced_Search_Keyword) AND
-				Project_ID = $Advanced_Search_ID AND
+/*$where_sentence = "(Project_Name Like '%$Search_Name' OR
+				Project_Name Like '%$Advanced_Search_Keyword%') AND
+				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
 				Date_Last_Updated <= $Advanced_Search_End_UploadDateRange AND
 				University LIKE '%$Advanced_Search_University%' AND
@@ -91,6 +91,7 @@ $Advanced_Search_Language=$_GET["Language"];
 				Completion_Status LIKE '%$Advanced_Search_Status%' AND
 				Group_Members LIKE '%$Advanced_Search_Authors%' AND
 				Primary_Programming_Language LIKE '%$Advanced_Search_Language%'";
+		
 */
 /*				
 Project_ID		//ID
@@ -109,9 +110,9 @@ if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-	FROM $dbName WHERE (Project_Name Like '%$$Search_Name' OR
-				Project_Name Like $Advanced_Search_Keyword) AND
-				Project_ID = $Advanced_Search_ID AND
+	FROM $dbName WHERE (Project_Name Like '%$Search_Name' OR
+				Project_Name Like '%$Advanced_Search_Keyword%') AND
+				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
 				Date_Last_Updated <= $Advanced_Search_End_UploadDateRange AND
 				University LIKE '%$Advanced_Search_University%' AND
