@@ -4,15 +4,15 @@ include('include/session.php');
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Nov 10 2015 20:34:35 GMT+0000 (UTC) -->
-<html data-wf-site="5615631c7481d047217c335f" data-wf-page="5615631c7481d047217c3360">
+<html data-wf-site="5615631c7481d047217c335f" data-wf-page="5625023f932c368504a4bd81">
 <head>
   <meta charset="utf-8">
-  <title>Project Hunter GUI</title>
+  <title>User</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="css/jaidens-supercool-site.webflow.css">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="../css/jaidens-supercool-site.webflow.css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
@@ -21,7 +21,7 @@ include('include/session.php');
       }
     });
   </script>
-  <script type="text/javascript" src="js/modernizr.js"></script>
+  <script type="text/javascript" src="../js/modernizr.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
   <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
 </head>
@@ -29,17 +29,17 @@ include('include/session.php');
   <div class="w-section head-panel">
     <div class="w-container top-menu"></div>
   </div>
-  <div class="w-section toprowsection">
-    <div class="w-container toprowcontainer">
-      <div class="w-row toprow">
-        <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
-        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="about/about.html">About</a>
-        </div>
-        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
-          <div class="w-dropdown" data-delay="0">
-            <div class="w-dropdown-toggle topmenu">
-            
-            <?php  
+  <div class="w-section">
+    <div class="w-section toprowsection">
+      <div class="w-container toprowcontainer">
+        <div class="w-row toprow">
+          <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
+          <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.html">About</a>
+          </div>
+          <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
+            <div class="w-dropdown" data-delay="0">
+              <div class="w-dropdown-toggle topmenu">
+                  <?php  
                 if($LoggedIn){
               echo '<div class="log-in-button"><span class="in-image-text" ><i>';
                 echo $login_session;
@@ -67,11 +67,11 @@ include('include/session.php');
               
                 }
              ?>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
     <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
   </div>
   <div class="w-section">
