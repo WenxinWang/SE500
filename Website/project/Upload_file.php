@@ -45,5 +45,4 @@ if (!$search_query)
 else 
 	echo "hao";
 
-//echo $search_query["COMPRESS_CONTENT"];
 ?>
