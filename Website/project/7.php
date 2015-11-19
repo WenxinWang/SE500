@@ -37,5 +37,7 @@ else
 while ($row = mysqli_fetch_object($result))
 	//header("Content-type: image/jpeg; charset=utf-8");
 	header("Content-type: "."image/jpeg;"." charset=utf-8");
+	ob_clean(); //防止php将utf8的bom头输出
+	echo $row->Source_Code;
 
 ?>
