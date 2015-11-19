@@ -38,7 +38,7 @@ echo "$filetype". "<br />";
 //展示：
 
 
-/*$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code, type1)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code, type1)
 VALUES
 ('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$filename','$filetype')";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
@@ -46,6 +46,6 @@ if (!$search_query)
     echo "beng";
 else 
 	echo "hao";
-*/
+
 //echo $search_query["COMPRESS_CONTENT"];
 ?>
