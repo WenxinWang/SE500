@@ -35,6 +35,6 @@ else
 
 //ob_clean(); //防止php将utf8的bom头输出
 while ($row = mysqli_fetch_object($result))
-	echo $row[5];
+	header("Content-type: "."image/jpeg");
 
 ?>
