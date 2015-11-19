@@ -62,7 +62,7 @@
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
-<form action="6.php" method="post"
+<form action="INSERT1.php" method="post"
 enctype="multipart/form-data">
 Project_ID: <input type="text" name="Project_ID" />
 Project_Name: <input type="text" name="Project_Name" />

@@ -35,9 +35,9 @@ else
 
 //$type= $row->type1;
 
-$row = mysqli_fetch_object($result)
-	//ob_clean(); //防止php将utf8的bom头输出
-	header("Content-type: $row->type1; charset=utf-8");
+$row = mysqli_fetch_object($result)；
+	ob_clean(); //防止php将utf8的bom头输出
+	header("Content-type: $row->type1");
 	echo $row->Source_Code;
 
 
