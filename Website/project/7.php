@@ -32,9 +32,10 @@ if (!$result) {
 }
 else
 	echo "you dong xi";
-while ($row = mysqli_fetch_object($result));
+
 //$type= $row->type1;
-Header("Content-type: image/jpeg"); 
-ob_clean(); //防止php将utf8的bom头输出
+header("Content-type: $row->type1; charset=utf-8");
+while ($row = mysqli_fetch_object($result)); 
+//ob_clean(); //防止php将utf8的bom头输出
 	echo $row->Source_Code;
 ?>
