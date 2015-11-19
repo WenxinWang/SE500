@@ -81,7 +81,7 @@ $Advanced_Search_Language=$_GET["Language"];
 
 */
 
-$Advanced_Search_Keyword=$_GET["Keyword"];
+//$Advanced_Search_Keyword=$_GET["Keyword"];
 
 
 
@@ -118,7 +118,7 @@ if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-	FROM $dbName WHERE Project_Name Like '%$Advanced_Search_Keyword%'";/* OR
+		FROM $dbName WHERE Project_Name Like '%$Search_Name=$_GET["name"]%'";/* OR
 				Project_Name Like '%$Advanced_Search_Keyword%') AND
 				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
@@ -133,7 +133,7 @@ if (!$OrderSearch){
 		
 }
 
-/*else {
+else {
     
 
 	
@@ -181,7 +181,6 @@ switch($OrderSearch){
 		 
 		}
 }
-*/
 		//( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
@@ -220,7 +219,7 @@ switch($OrderSearch){
 <html data-wf-site="5615631c7481d047217c335f" data-wf-page="56157233ecd841d67a8f12df">
 <head>
   <meta charset="utf-8">
-  <title><?php echo "$Advanced_Search_KeywordSearch" ?> Results</title>
+  <title> Results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="../css/normalize.css">
