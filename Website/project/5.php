@@ -33,7 +33,7 @@ if (!$result) {
 else
 	echo "you dong xi";
 
-while ($row = mysqli_fetch_object($result)) {
+while ($row = mysqli_fetch_object($result)); 
     //echo "$row[0]\n";
 	//echo $row->Project_ID;
 	//echo $row->Project_Name;
@@ -42,5 +42,5 @@ while ($row = mysqli_fetch_object($result)) {
 	Header("Content-type: $row->type1"); 
 //ob_clean(); //防止php将utf8的bom头输出
 	echo $row->Source_Code;
-}
+
 ?>
