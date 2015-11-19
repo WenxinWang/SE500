@@ -32,13 +32,15 @@ else
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
 $filename=$_FILES["file"]["tmp_name"];//这里填入图片路径 
+$filetype=$_FILES["file"]["type"];
 echo "$filename";
+echo "filetype"
 //展示：
 
 
-$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code)
+$sql="INSERT INTO $dbName (Project_ID, Project_Name, Project_Description, Source_Code, type1)
 VALUES
-('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$filename')";//数据插入到数据库test表中
+('$_POST[Project_ID]','$_POST[Project_Name]','$_POST[Project_Description]','$filename','$filetype')";//数据插入到数据库test表中
 $search_query = mysqli_query($con, $sql);
 if (!$search_query) 
     echo "beng";
