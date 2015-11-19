@@ -33,8 +33,8 @@ else
   }
 $filename=$_FILES["file"]["tmp_name"];//这里填入图片路径 
 $filetype=$_FILES["file"]["type"];//这里填入图片类型
-echo "$filename";
-echo "$filetype";
+echo "$filename". "<br />";
+echo "$filetype". "<br />";
 //展示：
 
 
