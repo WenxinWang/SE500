@@ -33,8 +33,8 @@ else
   }
 $filename = mysql_escape_string(file_get_contents($_FILES['file']['tmp_name']));
 $filetype=$_FILES['file']['type'];//这里填入图片类型
-echo "$filename". "<br />";
-echo "$filetype". "<br />";
+//echo "$filename". "<br />";
+//echo "$filetype". "<br />";
 //展示：
 
 
