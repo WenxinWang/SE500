@@ -40,6 +40,6 @@ while ($row = mysqli_fetch_object($result)) {
 	//echo $row->Project_Description;
 	header('Content-type:'.$row->type1); 
 //ob_clean(); //防止php将utf8的bom头输出
-	//echo $row->Source_Code;
+	echo $row->Source_Code;
 }
 ?>
