@@ -22,7 +22,7 @@ if (!$db){		//check connection
 
 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-$sql = "SELECT * FROM $dbName WHERE Project_Id = '36' ";
+$sql = "SELECT * FROM $dbName WHERE Project_Id = '35' ";
 $result = mysqli_query($con, $sql);
 
 if (!$result) {
@@ -36,9 +36,9 @@ else
 //$type= $row->type1;
 
 $row = mysqli_fetch_object($result)；
-	ob_clean(); //防止php将utf8的bom头输出
-	header("Content-type: $row->type1");
-	echo $row->Source_Code;
+	//ob_clean(); //防止php将utf8的bom头输出
+	//header("Content-type: $row->type1");
+	//echo $row->Source_Code;
 
 
 ?>
