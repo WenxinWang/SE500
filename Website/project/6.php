@@ -31,7 +31,7 @@ else
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
-$filename=$_FILES["file"]["tmp_name"];//这里填入图片路径 
+$filename=$_FILES["file"]["name"];//这里填入图片路径 
 $filetype=$_FILES["file"]["type"];//这里填入图片类型
 echo "$filename". "<br />";
 echo "$filetype". "<br />";
