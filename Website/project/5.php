@@ -34,12 +34,12 @@ else
 	echo "you dong xi";
 
 while ($row = mysqli_fetch_object($result)); 
-    //echo "$row[0]\n";
-	//echo $row->Project_ID;
+{
+	//echo "$row[0]\n";//echo $row->Project_ID;
 	//echo $row->Project_Name;
 	//echo $row->Project_Description;
 	header("Content-type:" .$row->type1); 
 //ob_clean(); //防止php将utf8的bom头输出
 	echo $row->Source_Code;
-
+	}
 ?>
