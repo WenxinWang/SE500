@@ -1,5 +1,8 @@
+
 <?php
    
+
+include('../include/unauthsession.php');
 
 
 // Tiffany code (Database connection and Query here
@@ -243,17 +246,39 @@ switch($OrderSearch){
     <div class="w-container toprowcontainer">
       <div class="w-row toprow">
         <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
-        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.html">About</a>
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.php">About</a>
         </div>
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div class="log-in-button"><span class="in-image-text">Log In</span>
-              </div>
-              <div class="w-icon-dropdown-toggle usermenu"></div>
-            </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="../newedituser/newedituser.html">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" >Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
-            </nav>
+                  <?php  
+                if($LoggedIn){
+              echo '<div class="log-in-button"><span class="in-image-text" ><i>';
+                echo $login_session;
+                  echo  '</i></span>';
+            echo  '</div>';
+            echo  '<div class="w-icon-dropdown-toggle usermenu"></div>';
+            echo  '</div>';
+            echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
+            echo  $UserId;
+            echo  '">Profile</a><a class="w-dropdown-link" href="../logouttest.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/newproject.php">New Project</a>';
+            echo '</nav>';    
+            
+              
+                }else{
+                
+               echo '<div class="log-in-button"><span class="in-image-text"><i>Log In</i></span>';
+             echo '</div>';
+             echo '<div class="w-icon-dropdown-toggle usermenu"></div>';
+             echo '</div>';
+             echo '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../login.php">Log In</a>';
+             echo '<a class="w-dropdown-link" href="../newedituser/newedituser.php">New User</a>';
+             echo '</nav>';
+           
+              
+              
+                }
+             ?>
           </div>
         </div>
       </div>
@@ -265,7 +290,7 @@ switch($OrderSearch){
         <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php">
            <div class="w-row">
             <div class="w-col w-col-2 w-col-small-2">
-              <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+              <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a class="smallheaderlink" href="../index.php"></a></h1>
             </div>
             <div class="w-col w-col-8 w-col-small-8">
               <input class="w-input" id="name" type="text" placeholder="<?php echo $Search;?>" name="name" data-name="name">
@@ -280,7 +305,7 @@ switch($OrderSearch){
               <div class="w-col w-col-3">
                 <h5>Order Search</h5>
               </div>
-              <div class="w-col w-col-2"><a href="../advancedsearch/advanced-search.html">Advanced Search</a>
+              <div class="w-col w-col-2"><a href="../advancedsearch/advanced-search.php">Advanced Search</a>
               </div>
             </div>
             <div class="w-row">
@@ -336,7 +361,7 @@ switch($OrderSearch){
             echo '">';
             echo $ProjectName[$ii];
             echo '</a></h3>';
-            //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+            //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a class="smallheaderlink" href="../index.php"></a></h1>
               echo '<div>Created by';
               echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
             echo '</div>';

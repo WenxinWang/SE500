@@ -46,7 +46,7 @@ $users_name = mysql_real_escape_string($users_name);
 	//mysqli_query($query);
 	
 	if (mysqli_query($con, $query)) {
-	header("Location:../index.html");
+	header("Location:../index.php");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }

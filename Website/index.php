@@ -33,7 +33,7 @@ include('include/unauthsession.php');
     <div class="w-container toprowcontainer">
       <div class="w-row toprow">
         <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
-        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="about/about.html">About</a>
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="about/about.php">About</a>
         </div>
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
@@ -101,7 +101,7 @@ include('include/unauthsession.php');
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-10"></div>
-        <div class="w-col w-col-2 advanced-column"><a class="advanced" href="advancedsearch/advanced-search.html">Advanced?&nbsp;</a>
+        <div class="w-col w-col-2 advanced-column"><a class="advanced" href="advancedsearch/advanced-search.php">Advanced?&nbsp;</a>
         </div>
       </div>
     </div>
