@@ -34,7 +34,7 @@ include('../include/unauthsession.php');
     <div class="w-container toprowcontainer">
       <div class="w-row toprow">
         <div class="w-col w-col-8 w-col-small-8 w-col-tiny-4"></div>
-        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.html">About</a>
+        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4 about-column"><a class="about" href="../about/about.php">About</a>
         </div>
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
@@ -73,7 +73,7 @@ include('../include/unauthsession.php');
     </div>
   </div>
   <div>
-    <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+    <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a class="smallheaderlink" href="../index.php"></a></h1>
   </div>
   <div class="w-container">
     <div class="invalidmessage"><em>Incorrect Date Range - Please Use MM/DD/YYYY format</em>
