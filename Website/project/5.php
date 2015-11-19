@@ -34,11 +34,12 @@ else
 	echo "you dong xi";
 
 $row = mysqli_fetch_object($result);
+$a=$row->type1;
 
 	//echo "$row[0]\n";//echo $row->Project_ID;
 	//echo $row->Project_Name;
 	//echo $row->Project_Description;
-	header("Content-type: image/jpeg"); 
+	header("Content-type: ".$a); 
 	ob_clean(); //防止php将utf8的bom头输出
 	//header("Content-type: image/jpeg; charset=utf-8");
 //ob_clean(); //防止php将utf8的bom头输出
