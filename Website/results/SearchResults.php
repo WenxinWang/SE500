@@ -1,5 +1,5 @@
 <?php
-   
+   include('../include/unauthsession.php');
 // Tiffany code (Database connection and Query here
     // Code to include MYSQL, connect  to the database, select  the database to use, query  the database table 
 	//$serverName="192.168.1.128/phpmyadmin";
@@ -198,12 +198,34 @@ switch($OrderSearch){
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-              <div class="log-in-button"><span class="in-image-text">Log In</span>
-              </div>
-              <div class="w-icon-dropdown-toggle usermenu"></div>
-            </div>
-            <nav class="w-dropdown-list"><a class="w-dropdown-link" href="#">New User</a><a class="w-dropdown-link" href="../user/user.html">Profile</a><a class="w-dropdown-link" href="../newedituser/newedituser.html">Settings</a><a class="w-dropdown-link" href="../neweditproject/neweditproject.html">New Project</a>
-            </nav>
+               <?php  
+                if($LoggedIn){
+              echo '<div class="log-in-button"><span class="in-image-text" ><i>';
+                echo $login_session;
+                  echo  '</i></span>';
+            echo  '</div>';
+            echo  '<div class="w-icon-dropdown-toggle usermenu"></div>';
+            echo  '</div>';
+            echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
+            echo  $UserId;
+            echo  '">Profile</a><a class="w-dropdown-link" href="../logouttest.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/newproject.php">New Project</a>';
+            echo '</nav>';    
+            
+              
+                }else{
+                
+               echo '<div class="log-in-button"><span class="in-image-text"><i>Log In</i></span>';
+             echo '</div>';
+             echo '<div class="w-icon-dropdown-toggle usermenu"></div>';
+             echo '</div>';
+             echo '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../login.php">Log In</a>';
+             echo '<a class="w-dropdown-link" href="../newedituser/newedituser.php">New User</a>';
+             echo '</nav>';
+           
+              
+              
+                }
+             ?>
           </div>
         </div>
       </div>
