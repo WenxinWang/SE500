@@ -22,7 +22,7 @@ if (!$db){		//check connection
 
 
 //$result =  mysql_query("SELECT Project_Description FROM $dbName WHERE Project_ID='21'";)or die('error12321'.mysql_error);
-$sql = "SELECT Source_Code FROM $dbName WHERE Project_Id = '36' ";
+$sql = "SELECT * FROM $dbName WHERE Project_Id = '36' ";
 $result = mysqli_query($con, $sql);
 
 if (!$result) {
@@ -32,11 +32,9 @@ if (!$result) {
 }
 else
 	echo "you dong xi";
-
-header("Content-type: image/jpeg; charset=utf-8"); 
+header("Content-type:image/jpeg;charset=utf-8");
 ob_clean(); //防止php将utf8的bom头输出
-while ($row = mysqli_fetch_object($result)) {
-    //echo "$row[0]\n";
+while ($row = mysqli_fetch_object($result))
 	echo $row->Source_Code;
 }
 ?>
