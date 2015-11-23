@@ -37,6 +37,27 @@ mysqli_select_db("SE500spr", $con);
     $searchPage = $_GET["page"];
     $OrderSearch = $_GET["OrderSearch"];
 
+/*what can we advanced search
+
+---------------- all the choices should be the lowest tolerance or being contained-----------------------------
+Project_Name	//Keyword
+Project_ID		//ID
+Date_Uploaded	//Begin_UploadDateRange
+Date_Last_Updated	//End_UploadDateRange
+University // University
+Source_Code//Artefacts
+Rating_Total	//Rating
+Recommended_Grade_Level	//Level
+Completion_Status		//Status
+Group_Members	//Authors
+Primary_Programming_Language	//Language
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+*/
 $Advanced_Search_Keyword=$_GET["Keyword"];
 $Advanced_Search_ID=$_GET["ID"];
 $Advanced_Search_Begin_UploadDateRange=$_GET["Begin_UploadDateRange"];
