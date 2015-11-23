@@ -131,9 +131,7 @@ if (!$OrderSearch){
 				Group_Members LIKE '%$Advanced_Search_Authors%' AND
 				Primary_Programming_Language LIKE '%$Advanced_Search_Language%'";*/
 		
-}
-
-else {
+}else {
     
 
 	
