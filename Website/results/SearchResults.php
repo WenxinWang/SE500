@@ -118,7 +118,7 @@ if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-		FROM $dbName WHERE Project_Name Like $Search_Name";/* OR
+		FROM $dbName WHERE Project_Name Like '%$Search_Name%'";/* OR
 				Project_Name Like '%$Advanced_Search_Keyword%') AND
 				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
@@ -141,42 +141,42 @@ switch($OrderSearch){
 		case"RL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name ORDER BY Rating_Total ASC";
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Rating_Total ASC";
 			break;
 		case"RH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name ORDER BY Rating_Total DESC";
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Rating_Total DESC";
 			break;
 		case"LH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name ORDER BY Recommended_Grade_Level DESC";
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Recommended_Grade_Level DESC";
 			break;
 		case"LL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name ORDER BY Recommended_Grade_Level ASC";
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Recommended_Grade_Level ASC";
 			break;
 		case"VH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name"; // doesn't exsist the view_number choices.
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%'"; // doesn't exsist the view_number choices.
 			break;
 		case"VL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name";// doesn't exsist the view_number choices.
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%'";// doesn't exsist the view_number choices.
 			break;
 		case"DH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name ORDER BY Date_Uploaded DESC";
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Date_Uploaded DESC";
 			break;
 		case"DL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-				FROM $dbName WHERE Project_Name Like $Search_Name ORDER BY Date_Uploaded ASC";
+				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Date_Uploaded ASC";
 			break;
 		 
 		}
