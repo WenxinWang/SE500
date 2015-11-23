@@ -36,6 +36,19 @@ mysqli_select_db("SE500spr", $con);
     //$searchPage = 1;
     $searchPage = $_GET["page"];
     $OrderSearch = $_GET["OrderSearch"];
+
+$Advanced_Search_Keyword=$_GET["Keyword"];
+$Advanced_Search_ID=$_GET["ID"];
+$Advanced_Search_Begin_UploadDateRange=$_GET["Begin_UploadDateRange"];
+$Advanced_Search_End_UploadDateRange=$_GET["End_UploadDateRange"];
+$Advanced_Search_University=$_GET["University"];
+$Advanced_Search_Artefacts=$_GET["Artefacts"];
+$Advanced_Search_Rating=$_GET["Rating"];
+$Advanced_Search_Level=$_GET["Level"];
+$Advanced_Search_Status=$_GET["Status"];
+$Advanced_Search_Authors=$_GET["Authors"];
+$Advanced_Search_Language=$_GET["Language"];
+
 if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
