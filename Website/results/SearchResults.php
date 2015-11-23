@@ -73,7 +73,7 @@ $Advanced_Search_Language=$_GET["Language"];
 
 if (!$OrderSearch){
    
-    $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' "; OR Project_Name Like '%$Advanced_Search_Keyword%' /*OR Project_ID = '%$Advanced_Search_ID%' OR Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange OR Date_Last_Updated <= $Advanced_Search_End_UploadDateRange OR University LIKE '%$Advanced_Search_University%' OR Rating_Total LIKE '%$Advanced_Search_Rating%' OR Recommended_Grade_Level LIKE '%$Advanced_Search_Level%' OR Completion_Status LIKE '%$Advanced_Search_Status%' OR Group_Members LIKE '%$Advanced_Search_Authors%' OR Primary_Programming_Language LIKE '%$Advanced_Search_Language%'*/
+    $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' OR Project_Name Like '%$Advanced_Search_Keyword%'"; /*OR Project_ID = '%$Advanced_Search_ID%' OR Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange OR Date_Last_Updated <= $Advanced_Search_End_UploadDateRange OR University LIKE '%$Advanced_Search_University%' OR Rating_Total LIKE '%$Advanced_Search_Rating%' OR Recommended_Grade_Level LIKE '%$Advanced_Search_Level%' OR Completion_Status LIKE '%$Advanced_Search_Status%' OR Group_Members LIKE '%$Advanced_Search_Authors%' OR Primary_Programming_Language LIKE '%$Advanced_Search_Language%'*/
     
 }else {
     
