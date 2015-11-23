@@ -1,5 +1,40 @@
 <?php
 include('../include/session.php');
+
+$dbName="User";
+	
+	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
+	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
+
+if (!$con)
+  {
+    die('Could not connect: ' . mysqli_connect_error());
+  }
+else {
+echo " succeded logging into the database!"; 
+}
+mysqli_select_db("SE500spr", $con);
+
+
+$Project=$_GET["ID"];
+
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = $Project";
+
+$search_query = mysqli_query($con, $search_sql);
+
+if(!$search_query){	//Error checking here / may want to reroute index page
+	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
+	//	header("Location:index.php");
+	}else{
+                        $search_rs = mysqli_fetch_assoc($search_query);
+                        $ProjectDesc = $search_rs["Project_Description"];
+                        $ProjectName = $search_rs["Project_Name"];
+                        $ProjectAuthors = $search_rs["Group_Members"];
+                        $ProjectDate = $search_rs["Date_Uploaded"];
+                        $ProjectRating = $search_rs["Rating_Total"];
+    
+}
+
 ?>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
