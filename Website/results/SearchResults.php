@@ -141,74 +141,42 @@ switch($OrderSearch){
 		case"RL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%' ORDER BY Rating_Total ASC";
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Rating_Total ASC";
->>>>>>> origin/master
 			break;
 		case"RH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%' ORDER BY Rating_Total DESC";
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Rating_Total DESC";
->>>>>>> origin/master
 			break;
 		case"LH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%' ORDER BY Recommended_Grade_Level DESC";
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Recommended_Grade_Level DESC";
->>>>>>> origin/master
 			break;
 		case"LL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%' ORDER BY Recommended_Grade_Level ASC";
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Recommended_Grade_Level ASC";
->>>>>>> origin/master
 			break;
 		case"VH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%'"; // doesn't exsist the view_number choices.
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%'"; // doesn't exsist the view_number choices.
->>>>>>> origin/master
 			break;
 		case"VL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%'";// doesn't exsist the view_number choices.
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%'";// doesn't exsist the view_number choices.
->>>>>>> origin/master
 			break;
 		case"DH":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%' ORDER BY Date_Uploaded DESC";
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Date_Uploaded DESC";
->>>>>>> origin/master
 			break;
 		case"DL":
 			$search_sql = "SELECT Project_ID, Project_Description,
 				Project_Name, Group_Members, Date_Uploaded, Rating_Total
-<<<<<<< HEAD
-				FROM $dbName WHERE Project_Name Like '%$Search%' ORDER BY Date_Uploaded ASC";
-=======
 				FROM $dbName WHERE Project_Name Like '%$Search_Name%' ORDER BY Date_Uploaded ASC";
->>>>>>> origin/master
 			break;
 		 
 		}
