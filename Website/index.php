@@ -97,7 +97,7 @@ include('include/unauthsession.php');
           <p>Oops! Something went wrong while submitting the form</p>
         </div>
       </div>
-    </div>
+    </div>  
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-10"></div>
