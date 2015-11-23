@@ -118,7 +118,7 @@ if (!$OrderSearch){
    
     $search_sql = "SELECT Project_ID, Project_Description,
 	Project_Name, Group_Members, Date_Uploaded, Rating_Total
-		FROM $dbName WHERE Project_Name Like '%$Search_Name=$_GET["name"]%'";/* OR
+		FROM $dbName WHERE Project_Name Like '%$Search_Name%'";/* OR
 				Project_Name Like '%$Advanced_Search_Keyword%') AND
 				Project_ID = '%$Advanced_Search_ID%' AND
 				Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange AND
