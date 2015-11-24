@@ -312,7 +312,7 @@ switch($OrderSearch){
         <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php">
            <div class="w-row">
             <div class="w-col w-col-2 w-col-small-2">
-              <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+              <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a class="smallheaderlink" href="../index.php"></a></h1>
             </div>
             <div class="w-col w-col-8 w-col-small-8">
               <input class="w-input" id="name" type="text" placeholder="<?php echo $Search;?>" name="name" data-name="name">
