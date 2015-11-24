@@ -38,7 +38,7 @@ mysqli_select_db("SE500spr", $con);
     $OrderSearch = $_GET["OrderSearch"];
 
 
-if ($OrderSearch){
+if (!$OrderSearch){
 		$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 }else {
     
