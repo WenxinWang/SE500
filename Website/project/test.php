@@ -126,6 +126,7 @@
 
 </body>
 </html>
+<div class="w-col w-col-6 "><a class="w-button favorite-button" href="../project/3.php">Upload</a>
 		<div class="w-col w-col-6"><a class="w-button favorite-button">Delete!</a>
         </div>
 		<?php
