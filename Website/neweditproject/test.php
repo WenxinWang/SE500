@@ -77,26 +77,23 @@ include('../include/session.php');
   <div class="w-section">
     <div class="w-container">
       <div class="w-form">
-        <form id="email-form" method="post" action="base.php" name="email-form" data-name="Email Form">
+        <form action="base_test.php" method="post"
+enctype="multipart/form-data">
           <label for="name">Project Title:</label>
-          <input class="w-input" id="Title" type="text" placeholder="Enter your name" name="Title" data-name="Name" required="required">
+          <input class="w-input" id="Title" type="text" placeholder="Enter your name" name="Project_ID" data-name="Name" required="required">
           <div class="w-row">
             <div class="w-col w-col-2">
               <label for="email">Project Description:</label>
             </div>
             <div class="w-col w-col-10">
-              <textarea class="w-input" id="field" placeholder="Project Description Here" name="Description"></textarea>
+              <textarea class="w-input" id="field" placeholder="Project Description Here" name="Project_Description"></textarea>
             </div>
           </div>
           <div class="w-row">
             <div class="w-col w-col-8">
-              <label for="IMGSRC">Main Image</label>
-              <div class="w-row">
-                <div class="w-col w-col-9">
-                  <input class="w-input" id="IMGSRC" type="text" placeholder="Upload Image" name="IMGSRC" data-name="IMGSRC">
-                </div>
-                <div class="w-col w-col-3"><a class="w-button" href="#">Upload/Search</a>
-                </div>
+			<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<input type="submit" name="submit" value="Submit" />
               </div>
             </div>
             <div class="w-col w-col-4"><img class="editprojectscreen" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg">
