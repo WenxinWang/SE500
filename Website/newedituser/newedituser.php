@@ -137,7 +137,7 @@ include('../include/register.php');
                     <h4>Last Name*</h4>
                   </div>
                   <div class="w-col w-col-6">
-                    <input class="w-input" id="Last-Name" type="text" placeholder="Your Last Name Here" name="Last-Name" required="required" data-name="Last Name">
+                    <input class="w-input" id="LastName" type="text" placeholder="Your Last Name Here" name="Last-Name" required="required" data-name="Last Name">
                   </div>
                 </div>
                 <div>
