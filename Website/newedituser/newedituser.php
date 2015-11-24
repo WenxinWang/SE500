@@ -95,7 +95,7 @@ include('../include/unauthsession.php');
                   <h4>Password*</h4>
                 </div>
                 <div class="w-col w-col-6">
-                  <input class="w-input" id="Password" type="text" placeholder="Enter Password" name="Password" required="required" data-name="Password">
+                  <input class="w-input" id="Password" type="password" placeholder="Enter Password" name="Password" required="required" data-name="Password">
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ include('../include/unauthsession.php');
                 <h4>Repeat Password*</h4>
               </div>
               <div class="w-col w-col-6">
-                <input class="w-input" id="PasswordCheck" type="text" placeholder="Re-enter Password" name="PasswordCheck" required="required" data-name="PasswordCheck">
+                <input class="w-input" id="PasswordCheck" type="password" placeholder="Re-enter Password" name="PasswordCheck" required="required" data-name="PasswordCheck">
               </div>
             </div>
             <div class="w-row">
