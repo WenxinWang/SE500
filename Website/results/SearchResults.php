@@ -59,7 +59,7 @@ Primary_Programming_Language	//Language
 
 //---------------------------------------------------------------------------------------------------------------
 */
-$Advanced_Search_ID= 0;
+
 $Advanced_Search_ID=$_GET["ID"];
 $Advanced_Search_Begin_UploadDateRange=$_GET["Begin_UploadDateRange"];
 $Advanced_Search_End_UploadDateRange=$_GET["End_UploadDateRange"];
@@ -72,9 +72,8 @@ $Advanced_Search_Authors=$_GET["Authors"];
 $Advanced_Search_Language=$_GET["Language"];
 
 if ($OrderSearch){
-	if(!$Advanced_Search_ID){
-    $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID LIKE '%$Advanced_Search_ID%' 
-	/*OR Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange OR Date_Last_Updated <= $Advanced_Search_End_UploadDateRange OR University LIKE '%$Advanced_Search_University%' OR Rating_Total LIKE '%$Advanced_Search_Rating%' OR Recommended_Grade_Level LIKE '%$Advanced_Search_Level%' OR Completion_Status LIKE '%$Advanced_Search_Status%' OR Group_Members LIKE '%$Advanced_Search_Authors%' OR Primary_Programming_Language LIKE '%$Advanced_Search_Language%'*/
+	if($Advanced_Search_ID){
+    $search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID LIKE '%$Advanced_Search_ID%' /*OR Date_Uploaded >= $Advanced_Search_Begin_UploadDateRange OR Date_Last_Updated <= $Advanced_Search_End_UploadDateRange OR University LIKE '%$Advanced_Search_University%' OR Rating_Total LIKE '%$Advanced_Search_Rating%' OR Recommended_Grade_Level LIKE '%$Advanced_Search_Level%' OR Completion_Status LIKE '%$Advanced_Search_Status%' OR Group_Members LIKE '%$Advanced_Search_Authors%' OR Primary_Programming_Language LIKE '%$Advanced_Search_Language%'*/
 	";
 	}else{
 		$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
@@ -84,60 +83,36 @@ if ($OrderSearch){
 	
 switch($OrderSearch){
 		case"RL":
-		if(!$Advanced_Search_ID){
+		if($Advanced_Search_ID){
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Rating_Total ASC";
 		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 		}
 			break;
 		case"RH":
-		if(!$Advanced_Search_ID){
+		if($Advanced_Search_ID){
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Rating_Total DESC";
 		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
 		}
 			break;
 		case"LH":
-		if(!$Advanced_Search_ID){
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Recommended_Grade_Level DESC";
-		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
-		}
 			break;
 		case"LL":
-		if(!$Advanced_Search_ID){
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Recommended_Grade_Level ASC";
-		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level ASC";
-		}
 			break;
 		case"VH":
-		if(!$Advanced_Search_ID){
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ";
-		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times DESC
-		}
 			break;
 		case"VL":
-		if(!$Advanced_Search_ID){
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ";
-		}else{
 				$search_sql = "SELECT Project_ID, Project_Description,	Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times ASC
-		}
 			break;
 		case"DH":
-		if(!$Advanced_Search_ID){
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Date_Uploaded DESC";
-		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded DESC";
-		}
 			break;
 		case"DL":
-		if(!$Advanced_Search_ID){
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Date_Uploaded ASC";
-		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
-		}
 			break;
 		 
 		}
