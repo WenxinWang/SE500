@@ -21,10 +21,11 @@ if (!$con)
 mysqli_select_db("SE500spr", $con);
 
 $First_Name = $_POST['FirstName']; //Take "name" from the form
-$Last_Name = $_POST['LastName'];
+$Last_Name = $_POST['Last-Name'];
 $Email = $_POST['Email'];
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
+$Description = $_POST['Blurb'];
 
 //echo "Data", $First_Name, $Last_Name;
 /*
@@ -39,7 +40,7 @@ $users_name = mysql_real_escape_string($users_name);
   $query = "
   INSERT INTO Users (First_Name, Last_Name, Email, Username,
          Password) VALUES ('$First_Name',
-        '$Last_Name', '$Email', '$Username', '$Password')";
+        '$Last_Name', '$Email', '$Username', '$Password', '$Description')";
 		
 		//$First_Name,
         //$Last_Name, $Email, $Username, $Password)";
