@@ -143,8 +143,9 @@ switch($OrderSearch){
 		}
 }
 
-	$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = $Advanced_Search_ID";//bad try
-
+	//$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM //$dbName WHERE Project_ID = $Advanced_Search_ID";//bad try
+	//up lines worked well
+	
 		//( Page -1 (i.e. 0 is the first page))
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
