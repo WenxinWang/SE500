@@ -1,5 +1,6 @@
 <?php
 include('../include/unauthsession.php');
+include('../include/register.php');
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +81,7 @@ include('../include/unauthsession.php');
       <div>* Indicates Required Field</div>
       <div>
         <div class="w-form">
-          <form id="email-form" method="post" action"register.php" name="email-form" data-name="Email Form">
+          <form id="email-form" method="post" name="email-form" data-name="Email Form">
            <div>
               <div class="w-row">
                 <div class="w-col w-col-6">
