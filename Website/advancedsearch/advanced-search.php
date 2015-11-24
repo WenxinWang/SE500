@@ -110,19 +110,19 @@ Secondary_Programming_Languages
 
 
         <form id="email-form" name="email-form" data-name="Email Form" method="GET" action="../results/SearchResults.php">
-          <label for="name">Keyword</label>
-          <input class="w-input" id="Keyword" type="text" placeholder="Enter your name" name="Keyword" required="required" data-name="Keyword">
+          <label for="name">ID</label>
+          <input class="w-input" id="ID" type="text" placeholder="Enter ID of project you want" name="ID" required="required" data-name="ID">
 		  <label for="email">UploadDateRange (MM/DD/YYYY)</label>
           <div class="w-row">
             <div class="w-col w-col-6">
-             <input class="w-input" id="Begin_UploadDateRange" type="text" placeholder="Example Text" name="Begin_UploadDateRange"  data-name="Begin_UploadDateRange">
+             <input class="w-input" id="Begin_UploadDateRange" type="text" placeholder="Begin upload date" name="Begin_UploadDateRange"  data-name="Begin_UploadDateRange">
               <label for="email">University</label>
             </div>
             <div class="w-col w-col-6">
-              <input class="w-input" id="End_UploadDateRange" type="text" placeholder="Example Text" name="End_UploadDateRange" data-name="End_UploadDateRange">
+              <input class="w-input" id="End_UploadDateRange" type="text" placeholder="End upload date" name="End_UploadDateRange" data-name="End_UploadDateRange">
             </div>
           </div>
-          <input class="w-input" id="University" type="text" placeholder="Example Text" name="University" data-name="University">
+          <input class="w-input" id="University" type="text" placeholder="   University" name="University" data-name="University">
           <div class="w-row">
             <div class="w-col w-col-2">
               <label for="Artefacts">Artefacts</label>
