@@ -80,7 +80,7 @@ include('../include/unauthsession.php');
       <div>* Indicates Required Field</div>
       <div>
         <div class="w-form">
-          <form id="email-form" method="post" action="register.php" name="email-form" data-name="Email Form">
+          <form id="email-form" method="post" action="base.php" name="email-form" data-name="Email Form">
            <div>
               <div class="w-row">
                 <div class="w-col w-col-6">
@@ -161,7 +161,12 @@ include('../include/unauthsession.php');
             </div>
             <input class="w-button" type="submit" value="Add User!" name="submit" data-wait="Please wait...">
           </form>
-          <?php echo $error; ?>
+          <div class="w-form-done">
+            <p>Thank you! Your submission has been received!</p>
+          </div>
+          <div class="w-form-fail">
+            <p>Oops! Something went wrong while submitting the form</p>
+          </div>
         </div>
       </div>
     </div>
