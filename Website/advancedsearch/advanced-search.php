@@ -111,7 +111,7 @@ Secondary_Programming_Languages
 
         <form id="email-form" name="email-form" data-name="Email Form" method="GET" action="../results/SearchResults.php">
           <label for="name">ID</label>
-          <input class="w-input" id="ID" type="text" placeholder="Enter ID of project you want" name="ID" required="required" data-name="ID">
+          <input class="w-input" id="ID" type="text" placeholder="Enter ID of project you want" name="ID"  data-name="ID">
 		  <label for="email">UploadDateRange (MM/DD/YYYY)</label>
           <div class="w-row">
             <div class="w-col w-col-6">
