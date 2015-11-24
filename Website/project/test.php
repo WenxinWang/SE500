@@ -120,7 +120,7 @@
         <!--<div class="w-col w-col-6"><a class="w-button favorite-button" >Downloads</a> 
 		</form>
         </div>-->
-		<div class="w-col w-col-6 "><a class="w-button favorite-button" href="../project/3.php">Upload</a>
+		
 		<html>
 <body>
 

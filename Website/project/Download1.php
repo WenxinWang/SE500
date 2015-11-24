@@ -36,5 +36,5 @@ header("Content-type:image/jpeg;charset=utf-8");
 ob_clean(); //防止php将utf8的bom头输出
 while ($row = mysqli_fetch_object($result))
 	echo $row->Source_Code;
-}
+
 ?>
