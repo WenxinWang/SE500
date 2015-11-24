@@ -83,10 +83,18 @@ if ($OrderSearch){
 	
 switch($OrderSearch){
 		case"RL":
+		if($Advanced_Search_ID){
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Rating_Total ASC";
+		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+		}
 			break;
 		case"RH":
+		if($Advanced_Search_ID){
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = '%$Advanced_Search_ID% ORDER BY Rating_Total DESC";
+		}else{
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
+		}
 			break;
 		case"LH":
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
