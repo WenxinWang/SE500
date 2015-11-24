@@ -101,13 +101,9 @@ include('include/unauthsession.php');
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-10"></div>
-<<<<<<< HEAD
-		
+
         <div class="w-col w-col-2 advanced-column"><a class="advanced" href="advancedsearch/advanced-search.php">Advanced?&nbsp;</a>
-=======
-        <div class="w-col w-col-2 advanced-column"><a class="advanced" href="advancedsearch/advanced-search.php">Advanced?&nbsp;</a> 
-            
->>>>>>> origin/master
+
         </div>
       </div>
     </div>
