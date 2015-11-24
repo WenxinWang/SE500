@@ -1,5 +1,6 @@
 <?php
 include('../include/unauthsession.php');
+include('../include/register.php');
 ?>
 
 <!DOCTYPE html>
