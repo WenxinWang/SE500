@@ -161,6 +161,7 @@ include('../include/unauthsession.php');
             </div>
             <input class="w-button" type="submit" value="Add User!" name="submit" data-wait="Please wait...">
           </form>
+          <?php echo $error; ?>
         </div>
       </div>
     </div>
