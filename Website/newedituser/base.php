@@ -39,7 +39,7 @@ $users_name = mysql_real_escape_string($users_name);
   
   $query = "
   INSERT INTO Users (First_Name, Last_Name, Email, Username,
-         Password) VALUES ('$First_Name',
+         Password, User_Description) VALUES ('$First_Name',
         '$Last_Name', '$Email', '$Username', '$Password', '$Description')";
 		
 		//$First_Name,
