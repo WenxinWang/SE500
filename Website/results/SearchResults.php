@@ -231,7 +231,7 @@ switch($OrderSearch){
       </div>
     </div>
   </div>
-  <div class="w-section search-page-search">
+  <!--<div class="w-section search-page-search">
     <div class="w-container">
       <div class="w-form">
         <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php">
@@ -282,9 +282,84 @@ switch($OrderSearch){
         </div>
       </div>
       <div>
-          <!--Syntax Requires checking -->
+         
         <h1 class="results-heading"><?php echo "Your Search for {$Search} returned {$NumResults} results!"; ?> </h1>
         
+      </div>
+    </div>
+  </div> -->
+<div class="w-section search-page-search">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a href="../index.html" class="smallheaderlink"></a></h1>
+        </div>
+        <div class="w-col w-col-8">
+          <div class="w-form">
+            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method = "get" action = "../results/SearchResults.php">
+              <div class="w-row">
+                <div class="w-col w-col-10 w-col-small-10 w-col-tiny-6">
+                  <input class="w-input" id="name" type="text" placeholder="<?php echo $Search;?>" name="name" data-name="name">
+                </div>
+                <div class="w-col w-col-2 w-col-small-2 w-col-tiny-6">
+                  <input type="submit" value="Submit" data-wait="Please wait..." class="w-button">
+                </div>
+              </div>
+            </form>
+            <div class="w-form-done">
+              <p>Thank you! Your submission has been received!</p>
+            </div>
+            <div class="w-form-fail">
+              <p>Oops! Something went wrong while submitting the form</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="w-row">
+          <div class="w-col w-col-7"></div>
+          <div class="w-col w-col-3">
+            <h5>Order Search</h5>
+          </div>
+          <div class="w-col w-col-2"><a href="../advancedsearch/advanced-search.html">Advanced Search</a>
+          </div>
+        </div>
+        <div class="w-row">
+          <div class="w-col w-col-6"><a href="#" class="w-button">Save Search</a>
+          </div>
+          <div class="w-col w-col-6">
+            <div class="w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php?name=<?php echo $Search ?>">
+                <div class="w-row">
+                  <div class="w-col w-col-10 w-col-medium-6 w-col-small-6 w-col-tiny-6">
+                    <select id="OrderSearch" name="OrderSearch" data-name="OrderSearch" class="w-select ordersearch">
+                      <option value="RH">Rating (High - Low)</option>
+                      <option value="RL">Rating (Low - Hi)</option>
+                      <option value="LH">Level (High - Low)</option>
+                      <option value="LL">Level (low - High)</option>
+                      <option value="VH">Views (High - Low)</option>
+                      <option value="VL">Views (Low - High)</option>
+                      <option value="DH">Dates (Eariler first)</option>
+                      <option value="DL">Dates (Oldest first)</option>
+                    </select>
+                  </div>
+                  <div class="w-col w-col-2 w-col-medium-6 w-col-small-6 w-col-tiny-6">
+                    <input type="submit" value="Rearrange" data-wait="Please wait..." class="w-button">
+                  </div>
+                </div>
+              </form>
+              <div class="w-form-done">
+                <p>Thank you! Your submission has been received!</p>
+              </div>
+              <div class="w-form-fail">
+                <p>Oops! Something went wrong while submitting the form</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="results-heading"><?php echo "Your Search for {$Search} returned {$NumResults} results!"; ?> </h1>
       </div>
     </div>
   </div>
