@@ -24,7 +24,7 @@ mysqli_select_db("SE500spr", $con);
 
 $Title = $_POST['Title']; 
 $Description = $_POST['Description'];
-$Authors = $_POST['Authors']
+$Authors = $_POST['Authors'];
   
   
   $query = "
