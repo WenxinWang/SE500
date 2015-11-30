@@ -105,7 +105,7 @@ include('../include/session.php');
           <label for="email">Project Users:</label>
           <div class="w-row">
             <div class="w-col w-col-2">
-              <label for="email">Authors?</label>
+              <label for="email">Authors</label>
             </div>
             <div class="w-col w-col-10">
               <input class="w-input" id="field" type="text" placeholder="Enter Author Names (Harvard style reference preferred)" name="field">
@@ -113,7 +113,7 @@ include('../include/session.php');
           </div>
           <div class="w-row">
             <div class="w-col w-col-6">
-              <label for="email">Completed?</label>
+              <label for="email">Completed</label>
             </div>
             <div class="w-col w-col-6">
               <select class="w-select" id="Completed" name="Completed" data-name="Completed">
@@ -143,7 +143,7 @@ include('../include/session.php');
           <div>
             <div class="w-row">
               <div class="w-col w-col-2">
-                <label for="email">Artefacts</label>
+                <label for="email">Artifacts</label>
               </div>
               <div class="w-col w-col-8">
                 <input class="w-input" id="field-3" type="text" placeholder="Artefact Path" name="field-3" data-name="Field 3">
