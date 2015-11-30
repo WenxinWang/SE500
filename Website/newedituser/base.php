@@ -26,6 +26,7 @@ $Email = $_POST['Email'];
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 $Description = $_POST['Blurb'];
+$University = $_POST['University']
 
 //echo "Data", $First_Name, $Last_Name;
 /*
@@ -39,8 +40,8 @@ $users_name = mysql_real_escape_string($users_name);
   
   $query = "
   INSERT INTO Users (First_Name, Last_Name, Email, Username,
-         Password, User_Description) VALUES ('$First_Name',
-        '$Last_Name', '$Email', '$Username', '$Password', '$Description')";
+         Password, User_Description, University) VALUES ('$First_Name',
+        '$Last_Name', '$Email', '$Username', '$Password', '$Description', '$University')";
 		
 		//$First_Name,
         //$Last_Name, $Email, $Username, $Password)";

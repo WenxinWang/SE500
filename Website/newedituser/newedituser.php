@@ -148,6 +148,16 @@ include('../include/unauthsession.php');
                       <input class="w-input" id="Email" type="text" placeholder="Your Email Here" name="Email" required="required" data-name="Email">
                     </div>
                   </div>
+                    <div>
+                    <div class="w-row">
+                      <div class="w-col w-col-6">
+                        <h4>University</h4>
+                      </div>
+                      <div class="w-col w-col-6">
+                        <input id="University" type="text" placeholder="Your University Here" name="University" data-name="University" class="w-input">
+                      </div>
+                    </div>
+                  </div>
                   <div class="w-row">
                     <div class="w-col w-col-3">
                       <h4>Your Blurb Here</h4>
