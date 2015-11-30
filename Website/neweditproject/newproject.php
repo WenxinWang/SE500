@@ -102,7 +102,6 @@ include('../include/session.php');
             <div class="w-col w-col-4"><img class="editprojectscreen" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg">
             </div>
           </div>
-          <label for="email">Project Users:</label>
           <div class="w-row">
             <div class="w-col w-col-2">
               <label for="email">Authors</label>
