@@ -112,7 +112,7 @@ Secondary_Programming_Languages
         <form id="email-form" name="email-form" data-name="Email Form" method="GET" action="../results/SearchResults.php">
           <label for="name">ID</label>
           <input class="w-input" id="ID" type="text" placeholder="Enter ID of project you want" name="ID" required="required" data-name="ID">
-		  <label for="email">UploadDateRange (MM/DD/YYYY)</label>
+		  <label for="email">Upload Date Range (MM/DD/YYYY)</label>
           <div class="w-row">
             <div class="w-col w-col-6">
              <input class="w-input" id="Begin_UploadDateRange" type="text" placeholder="Begin upload date" name="Begin_UploadDateRange"  data-name="Begin_UploadDateRange">
@@ -125,7 +125,7 @@ Secondary_Programming_Languages
           <input class="w-input" id="University" type="text" placeholder="   University" name="University" data-name="University">
           <div class="w-row">
             <div class="w-col w-col-2">
-              <label for="Artefacts">Artefacts</label>
+              <label for="Artefacts">Artifacts</label>
             </div>
             <div class="w-col w-col-2">
               <label for="MinRating">Rating</label>
@@ -146,9 +146,9 @@ Secondary_Programming_Languages
           <div class="w-row">
             <div class="w-col w-col-2">
               <select class="w-select artefacts" id="Artefacts" name="Artefacts" data-name="Artefacts">
-                <option value="">Unimportant</option>
-                <option value="TRUE">Has Artefacts</option>
-                <option value="FALSE">No Artefacts</option>
+                <option value="">No preference</option>
+                <option value="TRUE">Has Artifacts</option>
+                <option value="FALSE">No Artifacts</option>
               </select>
             </div>
             <div class="w-col w-col-2">
@@ -163,22 +163,25 @@ Secondary_Programming_Languages
             <div class="w-col w-col-2">
               <select class="w-select level" id="Level" name="Level" data-name="Level">
                 <option value="0">Any</option>
-                <option value="1">High School</option>
-                <option value="2">Freshman</option>
-                <option value="3">Junior/Senior</option>
-                <option value="4">Postgrad</option>
-                <option value="5">Doctorate Level</option>
+                <option value="12">High School</option>
+                <option value="100">Freshman</option>
+                <option value="200">Sophmore</option>
+                <option value="300">Junior</option>
+                <option value="400">Senior</option>
+                <option value="500">Grad</option>
+                <option value="700">Phd</option>
               </select>
             </div>
             <div class="w-col w-col-2">
               <select class="w-select status" id="Status" name="Status" data-name="Status">
                 <option value="0">Any</option>
-                <option value="False">Incomplete</option>
-                <option value="True">Complete</option>
+                <option value="Concept">Concept</option>
+                <option value="InProgress">In Progress</option>
+                <option value="Completed">Completed</option>
               </select>
             </div>
             <div class="w-col w-col-2">
-              <input class="w-input" id="Username" type="text" placeholder="Jaiden91" name="Authors" data-name="Authors">
+              <input class="w-input" id="Username" type="text" name="Authors" data-name="Authors">
             </div>
             <div class="w-col w-col-2">
               <select class="w-select language" id="Language" name="Language" data-name="Language">
@@ -186,12 +189,12 @@ Secondary_Programming_Languages
                 <option value="C++">C++</option>
                 <option value="Php">Php</option>
                 <option value="Python">Python</option>
-				<option value="JavaScript">JavaScript</option>
-				<option value="CSS">CSS</option>
-				<option value="Ruby">Ruby</option>
-				<option value="Java">Java</option>
-				<option value="HTML">HTML</option>
-				<option value="Shell">Shell</option>
+		<option value="JavaScript">JavaScript</option>
+		<option value="CSS">CSS</option>
+		<option value="Ruby">Ruby</option>
+		<option value="Java">Java</option>
+		<option value="HTML">HTML</option>
+		<option value="Shell">Shell</option>
               </select>
             </div>
           </div>
