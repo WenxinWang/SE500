@@ -45,10 +45,10 @@ if (!$OrderSearch){
 	
 switch($OrderSearch){
 		case"RL":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY (Rating_Total / Number_of_Ratings) ASC";
 			break;
 		case"RH":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY (Rating_Total / Number_of_Ratings) DESC";
 			break;
 		case"LH":
 			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
