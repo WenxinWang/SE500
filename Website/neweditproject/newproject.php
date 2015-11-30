@@ -108,7 +108,7 @@ include('../include/session.php');
               <label for="email">Authors</label>
             </div>
             <div class="w-col w-col-10">
-              <input class="w-input" id="field" type="text" placeholder="Enter Author Names (Harvard style reference preferred)" name="field">
+              <input class="w-input" id="Authors" type="text" placeholder="Enter Author Names (Harvard style reference preferred)" name="Authors">
             </div>
           </div>
           <div class="w-row">

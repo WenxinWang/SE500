@@ -24,11 +24,12 @@ mysqli_select_db("SE500spr", $con);
 
 $Title = $_POST['Title']; 
 $Description = $_POST['Description'];
+$Authors = $_POST['Authors']
   
   
   $query = "
-  INSERT INTO Projects (Project_Name, Project_Description, Uploader, Date_Uploaded) VALUES ('$Title',
-        '$Description', '$UID', now())";
+  INSERT INTO Projects (Project_Name, Project_Description, Uploader, Date_Uploaded, Group_Members) VALUES ('$Title',
+        '$Description', '$UID', now(), '$Authors')";
 		
 	
 	if (mysqli_query($con, $query)) {
