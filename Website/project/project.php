@@ -15,7 +15,7 @@ echo " succeded logging into the database!";
 }
 mysqli_select_db("SE500spr", $con);
 
-
+$ProjectRating = 0.00;
 $Project=$_GET["ID"];
 
 $search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_ID = $Project";
