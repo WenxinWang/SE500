@@ -375,7 +375,7 @@ switch($OrderSearch){
             echo '">';
             echo $ProjectName[$ii];
             echo '</a></h3>';
-            
+            //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
               echo '<div>Created by';
               echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
             echo '</div>';
