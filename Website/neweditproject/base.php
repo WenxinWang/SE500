@@ -5,11 +5,11 @@ include('../include/session.php');
 
 if(isset($_POST['submit'])){
 	echo "New record created successfully";
-	createProject();
+	createProject($UserId);
 }
 
 /* session_start(); */
-function createProject()
+function createProject($UID)
 {
 
 
