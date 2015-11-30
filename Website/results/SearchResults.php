@@ -1,5 +1,6 @@
 <?php
    include('../include/unauthsession.php');
+   $dbName="Projects";
     $ProjectDesc = [];
     $ProjectName = [];
     $ProjectAuthors = [];
