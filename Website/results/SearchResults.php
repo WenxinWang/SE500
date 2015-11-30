@@ -292,7 +292,7 @@ switch($OrderSearch){
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-4">
-          <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a href="../index.html" class="smallheaderlink"></a></h1>
+          <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a href="../index.php" class="smallheaderlink"></a></h1>
         </div>
         <div class="w-col w-col-8">
           <div class="w-form">
@@ -321,7 +321,7 @@ switch($OrderSearch){
           <div class="w-col w-col-3">
             <h5>Order Search</h5>
           </div>
-          <div class="w-col w-col-2"><a href="../advancedsearch/advanced-search.html">Advanced Search</a>
+          <div class="w-col w-col-2"><a href="../advancedsearch/advanced-search.php">Advanced Search</a>
           </div>
         </div>
         <div class="w-row">
@@ -381,7 +381,7 @@ switch($OrderSearch){
             echo '">';
             echo $ProjectName[$ii];
             echo '</a></h3>';
-            //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+            
               echo '<div>Created by';
               echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
             echo '</div>';
