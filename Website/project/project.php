@@ -33,14 +33,8 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectDate = $search_rs["Date_Uploaded"];
                         $RatingTotal = $search_rs["Rating_Total"];
                         $Num = $search_rs["Number_of_Ratings"];
-                        settype($RatingTotal, 'float');
-                        settype($Num, 'float');
-                        if(Num == 0){
-                            $ProjectRating = 0;
-                        }else{
-                            //$ProjectRating = bcdiv($RatingTotal, $Num, 3);
-                            $ProjectRating = $RatingTotal/$Num;   
-                        }
+                        
+                        
                         
 }
 
@@ -130,7 +124,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                 ?>
         </div>
         <div class="w-col w-col-6">
-          <h1 class="projectheading"><?php echo $ProjectName ?> Rating: <?php echo $ProjectRating ?> Num: <?php echo $Num ?> RatingTotal: <?php echo $RatingTotal ?> </h1>
+          <h1 class="projectheading"><?php echo $ProjectName ?> </h1>
           <div>
             <div class="w-form">
               <form id="email-form" method = "post" action = "RatingUpdate.php?ID=<?php echo $Project ?>" name="email-form" data-name="Email Form">
