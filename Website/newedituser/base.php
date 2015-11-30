@@ -1,25 +1,30 @@
 <?php
 
 
-
+/*
+When form submitted, start function "createUSer"
+*/
 if(isset($_POST['submit'])){
 	createUser();
 }
 
-/* session_start(); */
+/* Function that create an user */
 function createUser()
 {
 
-
+//Connection to the database with "host,username,password,dbname"
 $con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
+//if connection failed, stop and print error statement
 if (!$con)
   {
     die('Could not connect: ' . mysqli_connect_error());
   }
 
+//Select database
 mysqli_select_db("SE500spr", $con);
 
+//Get info from the form
 $First_Name = $_POST['FirstName']; //Take "name" from the form
 $Last_Name = $_POST['Last-Name'];
 $Email = $_POST['Email'];
@@ -27,33 +32,22 @@ $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 $Description = $_POST['Blurb'];
 $University = $_POST['University'];
-
-//echo "Data", $First_Name, $Last_Name;
-/*
- SQL injection
-
-$users_name = mysql_real_escape_string($users_name);
-  $users_email = mysql_real_escape_string($users_email);
-  $users_website = mysql_real_escape_string($users_website);
-  $users_comment = mysql_real_escape_string($users_comment);*/
   
-  
+  //SQL query for the database to insert a new project
   $query = "
   INSERT INTO Users (First_Name, Last_Name, Email, Username,
          Password, User_Description, University) VALUES ('$First_Name',
         '$Last_Name', '$Email', '$Username', '$Password', '$Description', '$University')";
 		
-		//$First_Name,
-        //$Last_Name, $Email, $Username, $Password)";
-	//mysqli_query($query);
-	
+	//Run the query
 	if (mysqli_query($con, $query)) {
 	header("Location:../index.php");
 } else {
+//if failed, print error statement
     echo "Error: " . $query . "<br>" . mysqli_error($con);
 }
 
-	
+	//Close connection
 	mysqli_close($con);
 	
 }
