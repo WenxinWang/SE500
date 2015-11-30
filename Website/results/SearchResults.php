@@ -39,34 +39,34 @@ mysqli_select_db("SE500spr", $con);
 
 
 if (!$OrderSearch){
-		$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
+		$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 }else {
     
 	
 switch($OrderSearch){
 		case"RL":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total ASC";
 			break;
 		case"RH":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Rating_Total DESC";
 			break;
 		case"LH":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level DESC";
 			break;
 		case"LL":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level ASC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Recommended_Grade_Level ASC";
 			break;
 		case"VH":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times DESC
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings	FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times DESC
 			break;
 		case"VL":
-				$search_sql = "SELECT Project_ID, Project_Description,	Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times ASC
+				$search_sql = "SELECT Project_ID, Project_Description,	Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%'";//ORDER BY View_times ASC
 			break;
 		case"DH":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded DESC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded DESC";
 			break;
 		case"DL":
-			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
+			$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings	FROM $dbName WHERE Project_Name LIKE '%$Search%' ORDER BY Date_Uploaded ASC";
 			break;
 		}
 }
@@ -104,7 +104,8 @@ switch($OrderSearch){
                         $ProjectName[$load] = $search_rs["Project_Name"];
                         $ProjectAuthors[$load] = $search_rs["Group_Members"];
                         $ProjectDate[$load] = $search_rs["Date_Uploaded"];
-                        $ProjectRating[$load] = $search_rs["Rating_Total"];
+                        $RatingTotal[$load] = $search_rs["Rating_Total"];
+                        $Num[$load] = $search_rs["Number_of_Ratings"];
                         $ProjectID[$load] = $search_rs["Project_ID"];
                         $load++;
                 }
@@ -312,25 +313,25 @@ switch($OrderSearch){
             echo '</div>';
             echo '<div class="w-col w-col-5">';
               echo '<div>Includes: SRS, Source Code, Proposal</div>';
-            if ($ProjectRating[$ii] < 0.25){
+            if (($RatingTotal[$ii]/$Num[$ii]) < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
-            } elseif ($ProjectRating[$ii] < 0.75){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 0.75){
                 echo '<div><img src="../images/starImage/05.png">';
-            } elseif ($ProjectRating[$ii] < 1.25){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 1.25){
                 echo '<div><img src="../images/starImage/1.png">';
-            } elseif ($ProjectRating[$ii] < 1.75){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 1.75){
                 echo '<div><img src="../images/starImage/15.png">';
-            } elseif ($ProjectRating[$ii] < 2.25){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 2.25){
                 echo '<div><img src="../images/starImage/2.png">';
-            } elseif ($ProjectRating[$ii] < 2.75){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 2.75){
                 echo '<div><img src="../images/starImage/25.png">';
-            } elseif ($ProjectRating[$ii] < 3.25){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 3.25){
                 echo '<div><img src="../images/starImage/3.png">';
-            } elseif ($ProjectRating[$ii] < 3.75){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 3.75){
                 echo '<div><img src="../images/starImage/35.png">';
-            } elseif ($ProjectRating[$ii] < 4.25){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 4.25){
                 echo '<div><img src="../images/starImage/4.png">';
-            } elseif ($ProjectRating[$ii] < 4.75){
+            } elseif (($RatingTotal[$ii]/$Num[$ii]) < 4.75){
                 echo '<div><img src="../images/starImage/45.png">';
             } else {
                  echo '<div><img src="../images/starImage/5.png">';
