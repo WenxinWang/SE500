@@ -183,7 +183,7 @@ $Username = $searchUser["Username"];
           <div><a href="../user/user.php"><?php echo $ProjectAuthors ?></a>&nbsp;Completed on <?php echo $ProjectDate ?></div>
         </div>
       </div>
-      <div class="projectdescriptiontext">This project was created by <?php echo $Username ?><br><br><?php echo $ProjectDesc ?></div>
+        <div class="projectdescriptiontext">This project was uploaded by <a href="../user/user.php?ID=<?php echo $UserId ?>"><?php echo $Username ?></a><br><br><?php echo $ProjectDesc ?></div>
     </div>
     <div>
       <div class="w-container">
