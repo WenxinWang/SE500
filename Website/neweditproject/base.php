@@ -28,7 +28,7 @@ $Description = $_POST['Description'];
   
   $query = "
   INSERT INTO Projects (Project_Name, Project_Description, Uploader) VALUES ('$Title',
-        '$Description', $UID)";
+        '$Description', '$UID')";
 		
 	
 	if (mysqli_query($con, $query)) {
