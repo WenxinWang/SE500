@@ -17,7 +17,7 @@ mysqli_select_db("SE500spr", $con);
 
 $Project=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = $Project";
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_Of_Ratings FROM $dbName WHERE Project_ID = $Project";
 
 $search_query = mysqli_query($con, $search_sql);
 
@@ -30,8 +30,14 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectName = $search_rs["Project_Name"];
                         $ProjectAuthors = $search_rs["Group_Members"];
                         $ProjectDate = $search_rs["Date_Uploaded"];
-                        $ProjectRating = $search_rs["Rating_Total"];
-    
+                        $RatingTotal = $search_rs["Rating_Total"];
+                        $Num = $search_rd["Number_Of_Ratings"]
+                        if(Num != 0){
+                            $ProjectRating = $RatingTotal / Num;
+                        }else{
+                            $ProjectRating = 0;
+                        }
+                        
 }
 
 
@@ -149,25 +155,25 @@ if(!$search_query){	//Error checking here / may want to reroute index page
           </div>
           <div>
               <?php
-                         if ($ProjectRating[$ii] < 0.25){
+                         if ($ProjectRating < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
-            } elseif ($ProjectRating[$ii] < 0.75){
+            } elseif ($ProjectRating < 0.75){
                 echo '<div><img src="../images/starImage/05.png">';
-            } elseif ($ProjectRating[$ii] < 1.25){
+            } elseif ($ProjectRating < 1.25){
                 echo '<div><img src="../images/starImage/1.png">';
-            } elseif ($ProjectRating[$ii] < 1.75){
+            } elseif ($ProjectRating < 1.75){
                 echo '<div><img src="../images/starImage/15.png">';
-            } elseif ($ProjectRating[$ii] < 2.25){
+            } elseif ($ProjectRating < 2.25){
                 echo '<div><img src="../images/starImage/2.png">';
-            } elseif ($ProjectRating[$ii] < 2.75){
+            } elseif ($ProjectRating < 2.75){
                 echo '<div><img src="../images/starImage/25.png">';
-            } elseif ($ProjectRating[$ii] < 3.25){
+            } elseif ($ProjectRating < 3.25){
                 echo '<div><img src="../images/starImage/3.png">';
-            } elseif ($ProjectRating[$ii] < 3.75){
+            } elseif ($ProjectRating < 3.75){
                 echo '<div><img src="../images/starImage/35.png">';
-            } elseif ($ProjectRating[$ii] < 4.25){
+            } elseif ($ProjectRating < 4.25){
                 echo '<div><img src="../images/starImage/4.png">';
-            } elseif ($ProjectRating[$ii] < 4.75){
+            } elseif ($ProjectRating < 4.75){
                 echo '<div><img src="../images/starImage/45.png">';
             } else {
                  echo '<div><img src="../images/starImage/5.png">';
