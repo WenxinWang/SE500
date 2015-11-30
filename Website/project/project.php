@@ -126,7 +126,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                 ?>
         </div>
         <div class="w-col w-col-6">
-          <h1 class="projectheading"><?php echo $ProjectName ?></h1>
+          <h1 class="projectheading"><?php echo $ProjectName ?><?php echo $ProjectRating ?></h1>
           <div>
             <div class="w-form">
               <form id="email-form" method = "post" action = "RatingUpdate.php?ID=<?php echo $Project ?>" name="email-form" data-name="Email Form">
