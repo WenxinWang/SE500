@@ -39,7 +39,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                             $ProjectRating = 0;
                         }else{
                             //$ProjectRating = bcdiv($RatingTotal, $Num, 3);
-                            $ProjectRating = $RatingTotal / $Num;   
+                            $ProjectRating = $RatingTotal/$Num;   
                         }
                         
 }
