@@ -1,7 +1,7 @@
 <?php
 include('../include/session.php');
 
-$dbName="User";
+$dbName="Users";
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
 	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
@@ -16,9 +16,9 @@ echo " succeded logging into the database!";
 mysqli_select_db("SE500spr", $con);
 
 
-$Project=$_GET["ID"];
+$User=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total	FROM $dbName WHERE Project_ID = $Project";
+$search_sql = "SELECT First_Name, Last_Name, Email, Username, User_Description, University FROM $dbName WHERE ID = $User";
 
 $search_query = mysqli_query($con, $search_sql);
 
@@ -27,11 +27,13 @@ if(!$search_query){	//Error checking here / may want to reroute index page
 	//	header("Location:index.php");
 	}else{
                         $search_rs = mysqli_fetch_assoc($search_query);
-                        $ProjectDesc = $search_rs["Project_Description"];
-                        $ProjectName = $search_rs["Project_Name"];
-                        $ProjectAuthors = $search_rs["Group_Members"];
-                        $ProjectDate = $search_rs["Date_Uploaded"];
-                        $ProjectRating = $search_rs["Rating_Total"];
+                        $FirstName = $search_rs["First_Name"];
+                        $LastName = $search_rs["Last_Name"];
+                        $Email = $search_rs["Email"];
+                        $Username = $search_rs["Username"];
+                        $Description = $search_rs["User_Description"];
+                        $University = $search_rs["University"];
+                        
     
 }
 
@@ -115,8 +117,8 @@ if(!$search_query){	//Error checking here / may want to reroute index page
         <div class="w-col w-col-6"><img class="profileimage" src="../images/exampleimage4.jpg">
         </div>
         <div class="w-col w-col-6">
-          <h1>Jaiden91</h1>
-          <p>Paragraph describing the User here.&nbsp;Paragraph describing the User here.Paragraph describing the User here.Paragraph describing the User here.Paragraph describing the User here.Paragraph describing the User here.Paragraph describing the User here.Paragraph describing the User here.</p>
+          <h1><?php echo $Username; ?></h1>
+          <p><?php echo $Description; ?></p>
         </div>
       </div>
       <div>
@@ -135,10 +137,10 @@ if(!$search_query){	//Error checking here / may want to reroute index page
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6">
-          <div>jaiden.wolf.kennedy@gmail.com</div>
+          <div><?php echo $Email; ?></div>
         </div>
         <div class="w-col w-col-6">
-          <div>Embry-Riddle Aeronautical</div>
+          <div><?php echo $University; ?></div>
         </div>
       </div>
       <div class="w-row userprojdisp">
