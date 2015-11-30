@@ -464,36 +464,39 @@ switch($OrderSearch){
         ?>
        Results </div>
       <div class="search-navigate">
-          
+          <div class="w-col w-col-6 w-clearfix">
           <?php
           
           if ($searchPage != 0){
           
-          echo '<div class="w-col w-col-6 w-clearfix"><a class="previous-page" href="../results/SearchResults.php?name=';
+          echo '<a class="previous-page" href="../results/SearchResults.php?name=';
           echo $Search;
           echo '&OrderSearch=';
           echo $OrderSearch;
           echo '&page=';
           echo ($searchPage - 1);
-          echo '">‍&lt;&nbsp;<span>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>';
-          echo '</div>';
+          echo '">‍';
           
           }
-          
-         
+          echo '&lt;&nbsp;<span>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>';
+          echo '</div>';
+          echo '<div class="w-col w-col-6">';
+              
+              
           if ((($searchPage + 1) * 15) < $NumResults){
           
-          echo '<div class="w-col w-col-6"><a href="../results/SearchResults.php?name=';
+          echo '<a href="../results/SearchResults.php?name=';
           echo $Search;
           echo '&OrderSearch=';
           echo $OrderSearch;
           echo '&page=';
           echo ($searchPage + 1);
-          echo '">&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
-          echo '</div>';
+          echo '">';
+         
               
           }
-          
+           echo '&nbsp; &nbsp; &nbsp;&nbsp;Next &gt;</a>';
+          echo '</div>';
           ?>
           
            
