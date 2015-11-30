@@ -26,7 +26,7 @@ $Email = $_POST['Email'];
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 $Description = $_POST['Blurb'];
-$University = $_POST['University']
+$University = $_POST['University'];
 
 //echo "Data", $First_Name, $Last_Name;
 /*
