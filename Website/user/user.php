@@ -109,7 +109,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
         </div>
       </div>
     </div>
-    <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+    <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a class="smallheaderlink" href="../index.php"></a></h1>
   </div>
   <div class="w-section">
     <div class="w-container">
