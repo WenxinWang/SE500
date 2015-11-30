@@ -159,25 +159,25 @@ if(!$search_query){	//Error checking here / may want to reroute index page
           </div>
           <div>
               <?php
-                         if ($ProjectRating < 0.25){
+                         if (($RatingTotal/$Num) < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
-            } elseif ($ProjectRating < 0.75){
+            } elseif (($RatingTotal/$Num) < 0.75){
                 echo '<div><img src="../images/starImage/05.png">';
-            } elseif ($ProjectRating < 1.25){
+            } elseif (($RatingTotal/$Num) < 1.25){
                 echo '<div><img src="../images/starImage/1.png">';
-            } elseif ($ProjectRating < 1.75){
+            } elseif (($RatingTotal/$Num) < 1.75){
                 echo '<div><img src="../images/starImage/15.png">';
-            } elseif ($ProjectRating < 2.25){
+            } elseif (($RatingTotal/$Num) < 2.25){
                 echo '<div><img src="../images/starImage/2.png">';
-            } elseif ($ProjectRating < 2.75){
+            } elseif (($RatingTotal/$Num) < 2.75){
                 echo '<div><img src="../images/starImage/25.png">';
-            } elseif ($ProjectRating < 3.25){
+            } elseif (($RatingTotal/$Num) < 3.25){
                 echo '<div><img src="../images/starImage/3.png">';
-            } elseif ($ProjectRating < 3.75){
+            } elseif (($RatingTotal/$Num) < 3.75){
                 echo '<div><img src="../images/starImage/35.png">';
-            } elseif ($ProjectRating < 4.25){
+            } elseif (($RatingTotal/$Num) < 4.25){
                 echo '<div><img src="../images/starImage/4.png">';
-            } elseif ($ProjectRating < 4.75){
+            } elseif (($RatingTotal/$Num) < 4.75){
                 echo '<div><img src="../images/starImage/45.png">';
             } else {
                  echo '<div><img src="../images/starImage/5.png">';
