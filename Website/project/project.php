@@ -31,7 +31,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectAuthors = $search_rs["Group_Members"];
                         $ProjectDate = $search_rs["Date_Uploaded"];
                         $RatingTotal = $search_rs["Rating_Total"];
-                        $Num = $search_rd["Number_of_Ratings"];
+                        $Num = $search_rs["Number_of_Ratings"];
                         if(Num == 0){
                             $ProjectRating = 0;
                         }else{
