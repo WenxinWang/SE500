@@ -192,7 +192,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
       <div class="w-row bottomrow">
         <div class="w-col w-col-6"><a class="w-button" href="../newedituser/newedituser.html">Modify</a>
         </div>
-        <div class="w-col w-col-6"><a class="w-button" href="#">Delete Account?</a>
+        <div class="w-col w-col-6"><a class="w-button" href="#">Delete Account</a>
         </div>
       </div>
     </div>
