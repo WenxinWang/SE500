@@ -31,11 +31,11 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectAuthors = $search_rs["Group_Members"];
                         $ProjectDate = $search_rs["Date_Uploaded"];
                         $RatingTotal = $search_rs["Rating_Total"];
-                        $Num = $search_rd["Number_Of_Ratings"]
-                        if(Num != 0){
-                            $ProjectRating = $RatingTotal / $Num;
-                        }else{
+                        $Num = $search_rd["Number_Of_Ratings"];
+                        if(Num == 0){
                             $ProjectRating = 0;
+                        }else{
+                            $ProjectRating = $RatingTotal/$Num;   
                         }
                         
 }
