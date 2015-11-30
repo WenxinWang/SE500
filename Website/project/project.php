@@ -18,7 +18,7 @@ mysqli_select_db("SE500spr", $con);
 $ProjectRating = 0.00;
 $Project=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_ID = $Project";
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings, Uploader FROM $dbName WHERE Project_ID = $Project";
 
 $search_query = mysqli_query($con, $search_sql);
 
@@ -32,12 +32,14 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectAuthors = $search_rs["Group_Members"];
                         $ProjectDate = $search_rs["Date_Uploaded"];
                         $RatingTotal = $search_rs["Rating_Total"];
-                        $Num = $search_rs["Number_of_Ratings"];
-                        
-                        
-                        
+                        $Num = $search_rs["Number_of_Ratings"]; 
+                        $Uploader = $search_rs["Uploader"]; 
 }
-
+$search_sqlUser = "SELECT ID, Username FROM Users WHERE ID = $Uploader";
+$search_queryUser = mysqli_query($con, $search_sqlUser);
+$searchUser = mysqli_fetch_assoc($search_queryUser);
+$UserId = $searchUser["ID"];
+$Username = $searchUser["Username"];
 
 ?>
 <!DOCTYPE html>
@@ -153,7 +155,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
           </div>
           <div>
               <?php
-                         if (($RatingTotal/$Num) < 0.25){
+            if (($RatingTotal/$Num) < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
             } elseif (($RatingTotal/$Num) < 0.75){
                 echo '<div><img src="../images/starImage/05.png">';
@@ -181,7 +183,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
           <div><a href="../user/user.php"><?php echo $ProjectAuthors ?></a>&nbsp;Completed on <?php echo $ProjectDate ?></div>
         </div>
       </div>
-      <div class="projectdescriptiontext"><?php echo $ProjectDesc ?></div>
+      <div class="projectdescriptiontext">This project was created by <?php echo $Username ?><br><br><?php echo $ProjectDesc ?></div>
     </div>
     <div>
       <div class="w-container">
