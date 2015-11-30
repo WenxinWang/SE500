@@ -17,7 +17,7 @@ mysqli_select_db("SE500spr", $con);
 
 $Project=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, NumberoOf_Ratings FROM $dbName WHERE Project_ID = $Project";
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings FROM $dbName WHERE Project_ID = $Project";
 
 $search_query = mysqli_query($con, $search_sql);
 
