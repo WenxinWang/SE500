@@ -1,6 +1,7 @@
 <?php
 include('../include/session.php');
 $dbName="Projects";
+
 	
 	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
 	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
@@ -35,7 +36,8 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         if(Num == 0){
                             $ProjectRating = 0;
                         }else{
-                            $ProjectRating = $RatingTotal / $Num;   
+                            $ProjectRating = bcdiv($RatingTotal, $Num, 3);
+                            //$ProjectRating = $RatingTotal / $Num;   
                         }
                         
 }
