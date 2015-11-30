@@ -33,8 +33,8 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectDate = $search_rs["Date_Uploaded"];
                         $RatingTotal = $search_rs["Rating_Total"];
                         $Num = $search_rs["Number_of_Ratings"];
-                        settype($RatingTotal, "float");
-                        settype($Num, "float");
+                        settype($RatingTotal, 'float');
+                        settype($Num, 'float');
                         if(Num == 0){
                             $ProjectRating = 0;
                         }else{
