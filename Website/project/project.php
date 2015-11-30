@@ -17,7 +17,7 @@ mysqli_select_db("SE500spr", $con);
 
 $Project=$_GET["ID"];
 
-$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_Of_Ratings FROM $dbName WHERE Project_ID = $Project";
+$search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, NumberoOf_Ratings FROM $dbName WHERE Project_ID = $Project";
 
 $search_query = mysqli_query($con, $search_sql);
 
@@ -31,7 +31,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $ProjectAuthors = $search_rs["Group_Members"];
                         $ProjectDate = $search_rs["Date_Uploaded"];
                         $RatingTotal = $search_rs["Rating_Total"];
-                        $Num = $search_rd["Number_Of_Ratings"];
+                        $Num = $search_rd["Number_of_Ratings"];
                         if(Num == 0){
                             $ProjectRating = 0;
                         }else{
