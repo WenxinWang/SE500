@@ -1,11 +1,5 @@
 <?php
    include('../include/unauthsession.php');
-// Tiffany code (Database connection and Query here
-    // Code to include MYSQL, connect  to the database, select  the database to use, query  the database table 
-	//$serverName="192.168.1.128/phpmyadmin";
-	//$userName="spr_erau";
-	//$password="$PRfall2015@ERAU";
-	$dbName="Projects";
     $ProjectDesc = [];
     $ProjectName = [];
     $ProjectAuthors = [];
