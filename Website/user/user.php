@@ -1,9 +1,10 @@
 <?php
+// The Session Header allows for identification of users (or identification that no one is logged in)
 include('../include/session.php');
 
 $dbName="Users";
 	
-	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
+
 	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
 if (!$con)
@@ -15,9 +16,9 @@ echo " succeded logging into the database!";
 }
 mysqli_select_db("SE500spr", $con);
 
-
+// Get from whichever page is requesting, the ID for the User profile to be viewed
 $User=$_GET["ID"];
-
+//Load the query
 $search_sql = "SELECT First_Name, Last_Name, Email, Username, User_Description, University FROM $dbName WHERE ID = $User";
 
 $search_query = mysqli_query($con, $search_sql);
@@ -77,6 +78,8 @@ if(!$search_query){	//Error checking here / may want to reroute index page
             <div class="w-dropdown" data-delay="0">
               <div class="w-dropdown-toggle topmenu">
                   <?php  
+                  
+                  //This PHP segment embeds HTML code for a drop down menu, the contents are different depending on whether the User is logged in or not.
                 if($LoggedIn){
               echo '<div class="log-in-button"><span class="in-image-text" ><i>';
                 echo $login_session;
@@ -86,6 +89,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
             echo  '</div>';
             echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
             echo  $UserId;
+                    // The above is a link to the profile page, which is embedding the Users Id into the Get request.
             echo  '">Profile</a><a class="w-dropdown-link" href="../include/logout.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/newproject.php">New Project</a>';
             echo '</nav>';    
             
@@ -117,6 +121,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
         <div class="w-col w-col-6"><img class="profileimage" src="../images/exampleimage4.jpg">
         </div>
         <div class="w-col w-col-6">
+            <!-- The HTML for this page is pregenerated using webflow, PHP echo statements embed the results of the database query into the page. Still to be done on this page in a future development, includes adding a user's projects display (currently static), a User's favourites (currently static) and a modify page, and another modify.php script which is actionable only to user or administrator-->
           <h1><?php echo $Username; ?></h1>
           <p><?php echo $Description; ?></p>
         </div>

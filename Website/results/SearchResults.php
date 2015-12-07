@@ -1,5 +1,8 @@
 <?php
+// The Unauth Header allows for identification of users (or identification that no one is logged in) without redirecting unauthorised users.
    include('../include/unauthsession.php');
+
+// Variables used are initialized below.
    $dbName="Projects";
     $ProjectDesc = [];
     $ProjectName = [];
@@ -10,29 +13,27 @@
     $ii = 0;
     $num = 0;
     $load = 0; 
-	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
+	//Database connection is made below
 	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
+    // Connection is checked here - and Error message produced if unable to connect
 if (!$con)
   {
     die('Could not connect: ' . mysqli_connect_error());
   }
 else {
+    //Error checking message - only visible when source is viewed as this will be embedded beneath the banner image
 echo " succeded logging into the database!"; 
 }
 mysqli_select_db("SE500spr", $con);
-	//if (!$conn){		//check connection
-	//		die("Connection failed: " . mysqli_connect_error());
-	//}	
-	//else{
-     // echo " succ}ed logging into the database!";  
-   // } 
-// The below will take the results of the search from the previuos page Execute
-    $Search=$_GET["name"];
-    //$searchPage = 1;
-    $searchPage = $_GET["page"];
-    $OrderSearch = $_GET["OrderSearch"];
 
+// The below will take variables given to this page through a HTTP GET request
 
+    $Search=$_GET["name"]; // This is given from the search page
+    
+    $searchPage = $_GET["page"]; //This variable is provided if a user navigates to a different search page
+    $OrderSearch = $_GET["OrderSearch"]; // This variable is provided if the user requests that the search page is ordered
+
+// The below if and case statement will determine which SQL query to run, based on what search order (or default) has been requested
 if (!$OrderSearch){
 		$search_sql = "SELECT Project_ID, Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings	FROM $dbName WHERE Project_Name LIKE '%$Search%'";
 }else {
@@ -70,7 +71,7 @@ switch($OrderSearch){
     if(!$searchPage){ // If no search page has been provided - straight from index or advanced search page. 
         $searchPage = 0;
     }
-
+//Executes Query.
 	$search_query = mysqli_query($con, $search_sql);
 	
 	if(!$search_query){	//Error checking here / may want to reroute index page
@@ -79,19 +80,22 @@ switch($OrderSearch){
 	}else{
 			//$num_rows = mysqli_num_rows($search_query);
            $NumResults =  mysqli_num_rows($search_query);
-			if(!NumResults){	//Error checking here / may want to reroute index page
+			if(!NumResults){	//Error checking here / may want to reroute index page in subsequent build
 			echo "No rows found, nothing to print so return to index page.";
 	//			header("Location:index.php");
 		}else{
-				//array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
-				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array("Eample1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-				//array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
+                
+// The below commented variables of scripts can be uncommented to test page display if database is unavailable.
+                
+			   //$ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
+    //$ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+    //$ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+    //$ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
+    //$ProjectRating = array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
 				//initial the array for saving results
                
 				while($search_rs = mysqli_fetch_assoc($search_query)){
-                    
+         // While loop will execute for every result, the if statement below will save up to 15 results into an array based on which searchpage is current. These variables will be used to display the search results through echo statements later.     
                     if ($num >= ($searchPage * 15) && $num < (($searchPage + 1) * 15)){
                         
                         
@@ -106,54 +110,11 @@ switch($OrderSearch){
                 }
 					$num ++;
 				}
-			//	<p>Search results</p>
-				// While a row of data exists, put that row in $row as an associative array
-				// Note: If you're expecting just one row, no need to use a loop
-				// Note: If you put extract($row); inside the following loop, you'll
-				//       then create $userid, $fullname, and $userstatus
-				//while ($row = mysql_fetch_assoc($result)) {
-// results need to be send back to GUI interface.
-				//	echo $row["ID"];
-				//	echo $row["User_ID"];
-				//	echo $row["Project_Name"];
-				//	echo $row["Project_Description"];
-			//		echo $row["Requirements"];
-				//	echo $row["Source_Code"];
-				//	echo $row["UML _Diagram_1"];
-				//	echo $row["UML_Diagram_2"];
-				//	echo $row["UML_Diagram_3"];
-				//	echo $row["UML_Diagram_4"];
-				//	echo $row["UML_Diagram_5"];
-				//	echo $row["UML_Diagram_6"];
-				//	echo $row["UML_Diagram_7"];
-				//	echo $row["UML_Diagram_8"];
-				//	echo $row["UML_Diagram_9"];
-				//	echo $row["UML_Diagram_10"];
-				//	echo $row["Recommended_Grade_Level"];
-				//	echo $row["Recommended_Team_Size"];
-				//	echo $row["Completion_Status"];
-				//	echo $row["University"];
-				//	echo $row["Group_Members"];
-				//	echo $row["Rating_Total"];
-				//	echo $row["Number_of_Ratings"];
-		//			echo $row["Project_Security_Level"];
-	//				echo $row["Date_Uploaded"];
-	//				echo $row["Primary_Programming_Language"];
-		}
-		}
-	//}
 		
-	//mysqli_free_result($search_query);
-	//mysqli_close($conn);
-    //$NumResults = mysql_num_rows($DB);
-    //$NumResults = 20;
-    //$ProjectDesc = array("ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription", "ExampleProjectDescription");
-    //$ProjectName = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    //$ProjectAuthors = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    //$ProjectDate = array("Example1", "Example2", "Example3", "Example4", "Example5", "Example6", "Example7", "Example8", "Example9", "Example10", "Example11", "Example12", "Example13", "Example14", "Example15", "Example16", "Example17", "Example18", "Example19", "Example20");
-    //$ProjectRating = array(1.4,2.6,3.1232,3.234,2.436,1.30,2.890,3.7,2.2,2.4,3.3,4.03,5,4.5,5,4.49,3.31,4.5,5.3,2.4);
-    //$ii = 0;
-       
+		}
+		}
+	
+
 ?>
 
 <!DOCTYPE html>
@@ -193,7 +154,8 @@ switch($OrderSearch){
         <div class="w-col w-col-2 w-col-small-2 w-col-tiny-4">
           <div class="w-dropdown" data-delay="0">
             <div class="w-dropdown-toggle topmenu">
-               <?php  
+               <?php 
+                 //This PHP segment embeds HTML code for a drop down menu, the contents are different depending on whether the User is logged in or not.
                 if($LoggedIn){
               echo '<div class="log-in-button"><span class="in-image-text" ><i>';
                 echo $login_session;
@@ -203,6 +165,7 @@ switch($OrderSearch){
             echo  '</div>';
             echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
             echo  $UserId;
+                      // The above is a link to the profile page, which is embedding the Users Id into the Get request.
             echo  '">Profile</a><a class="w-dropdown-link" href="../include/logout.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/newproject.php">New Project</a>';
             echo '</nav>';    
             
@@ -226,63 +189,7 @@ switch($OrderSearch){
       </div>
     </div>
   </div>
-  <!--<div class="w-section search-page-search">
-    <div class="w-container">
-      <div class="w-form">
-        <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php">
-           <div class="w-row">
-            <div class="w-col w-col-2 w-col-small-2">
-              <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a class="smallheaderlink" href="../index.php"></a></h1>
-            </div>
-            <div class="w-col w-col-8 w-col-small-8">
-              <input class="w-input" id="name" type="text" placeholder="<?php echo $Search;?>" name="name" data-name="name">
-            </div>
-           <div class="w-col w-col-2 w-col-small-2">
-              <input class="w-button" type="submit" value="Submit" data-wait="Please wait...">
-            </div>
-          </div>
-          <div>
-            <div class="w-row">
-              <div class="w-col w-col-7"></div>
-              <div class="w-col w-col-3">
-                <h5>Order Search</h5>
-              </div>
-              <div class="w-col w-col-2"><a href="../advancedsearch/advanced-search.php">Advanced Search</a>
-              </div>
-            </div>
-            <div class="w-row">
-              <div class="w-col w-col-7"></div>
-              <div class="w-col w-col-3">
-                <select class="w-select ordersearch" id="OrderSearch" name="OrderSearch" data-name="OrderSearch">
-                  <option value="RH">Rating (High - Low)</option>
-                  <option value="RL">Rating (Low - Hi)</option>
-                  <option value="LH">Level (High - Low)</option>
-                  <option value="LL">Level (low - High)</option>
-                  <option value="VH">Views (High - Low)</option>
-                  <option value="VL">Views (Low - High)</option>
-                  <option value="DH">Dates (Eariler first)</option>
-                  <option value="DL">Dates (Oldest first)</option>
-                </select>
-              </div>
-              <div class="w-col w-col-2"><a class="w-button" href="#">Save Search</a>
-              </div>
-            </div>
-          </div>
-        </form>
-        <div class="w-form-done">
-          <p>Thank you! Your submission has been received!</p>
-        </div>
-        <div class="w-form-fail">
-          <p>Oops! Something went wrong while submitting the form</p>
-        </div>
-      </div>
-      <div>
-         
-        <h1 class="results-heading"><?php echo "Your Search for {$Search} returned {$NumResults} results!"; ?> </h1>
-        
-      </div>
-    </div>
-  </div> -->
+      
 <div class="w-section search-page-search">
     <div class="w-container">
       <div class="w-row">
@@ -290,7 +197,7 @@ switch($OrderSearch){
           <h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.php">Project Hunter</a><a href="../index.php" class="smallheaderlink"></a></h1>
         </div>
         <div class="w-col w-col-8">
-          <div class="w-form">
+          <div class="w-form"> <!-- This form enables a search to be conducted from the results page -->
             <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method = "get" action = "../results/SearchResults.php">
               <div class="w-row">
                 <div class="w-col w-col-10 w-col-small-10 w-col-tiny-6">
@@ -324,6 +231,7 @@ switch($OrderSearch){
           </div>
           <div class="w-col w-col-6">
             <div class="w-form">
+                <!-- This form will reload the page with the same search variable, but will also provide a search order request  -->
               <form id="email-form" name="email-form" data-name="Email Form" method = "get" action = "../results/SearchResults.php?name=<?php echo $Search ?>">
                 <div class="w-row">
                   <div class="w-col w-col-10 w-col-medium-6 w-col-small-6 w-col-tiny-6">
@@ -354,6 +262,7 @@ switch($OrderSearch){
         </div>
       </div>
       <div>
+          <!-- Displays a message on what was searched for and number of results returned (total) -->
         <h1 class="results-heading"><?php echo "Your Search for {$Search} returned {$NumResults} results!"; ?> </h1>
       </div>
     </div>
@@ -363,7 +272,7 @@ switch($OrderSearch){
         <!-- This is the beginning of the results, the earlier code will be replaced by a while loop which will add rows based on number of elements. -->
    
         <?php 
-        
+        // This loop embeds, through php echo scripts, a series of HTML rows formatted as per Webflow output. Result details are embedded from earlier prepared variable in echo statements
         while($ii < count($ProjectName)){
         echo '<div class="w-row">';
            echo ' <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">';
@@ -376,13 +285,16 @@ switch($OrderSearch){
             echo '">';
             echo $ProjectName[$ii];
             echo '</a></h3>';
-            //<h1 class="searchpagetitle"><a class="smallheaderlink" href="../index.html">Project Hunter</a><a class="smallheaderlink" href="../index.html"></a></h1>
+            
               echo '<div>Created by';
               echo "{$ProjectAuthors[$ii]}, {$ProjectDate[$ii]}";  
             echo '</div>';
             echo '</div>';
             echo '<div class="w-col w-col-5">';
               echo '<div>Includes: SRS, Source Code, Proposal</div>';
+            
+            // Based on the rating of the project, a different image of stars will be displayed 
+            
             if (($RatingTotal[$ii]/$Num[$ii]) < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
             } elseif (($RatingTotal[$ii]/$Num[$ii]) < 0.75){
@@ -420,7 +332,7 @@ switch($OrderSearch){
         ?>
         <div> 
         
-        <!-- Old results code used to display 
+        <!-- Old results code that is inactive (no php embedding). Left here as it may be of use to future developers
         
       <div class="w-row">
         <div class="w-col w-col-2"><img class="resultimage" src="../images/ExampleImage1.jpeg">
@@ -514,6 +426,7 @@ switch($OrderSearch){
         <div class="results-text">Now displaying 
         
         <?php
+            // This is the footer of the page, where the user can navigate. This functions by sending a search page variable back to the top of this page through a HTTP GET request.
         
         echo (($searchPage*15) + 1);
             

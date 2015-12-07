@@ -1,4 +1,7 @@
 <?php
+
+// The Unauth Header allows for identification of users (or identification that no one is logged in) without redirecting unauthorised users.
+
 include('include/unauthsession.php');
 ?>
 <!DOCTYPE html>
@@ -40,6 +43,9 @@ include('include/unauthsession.php');
             <div class="w-dropdown-toggle topmenu">
             
             <?php  
+                
+                //This PHP segment embeds HTML code for a drop down menu, the contents are different depending on whether the User is logged in or not.
+                
                 if($LoggedIn){
               echo '<div class="log-in-button"><span class="in-image-text" ><i>';
                 echo $login_session;
@@ -50,6 +56,8 @@ include('include/unauthsession.php');
             echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="user/user.php?ID=';
             echo  $UserId;
             echo  '">Profile</a><a class="w-dropdown-link" href="include/logout.php">Log Out</a><a class="w-dropdown-link" href="neweditproject/newproject.php">New Project</a>';
+                    
+                    // The above is a link to the profile page, which is embedding the Users Id into the Get request.
             echo '</nav>';    
             
               

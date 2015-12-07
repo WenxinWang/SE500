@@ -1,9 +1,10 @@
 <?php
+// The Session Header allows for identification of users (or identification that no one is logged in) without redirecting unauthorised users.
 include('../include/session.php');
 $dbName="Projects";
 
+	//Connect to the database
 	
-	//$conn=mysqli_connect($serverName, $userName, $password);	//create connection
 	$con = mysqli_connect("localhost","spr_erau","asdf", "SE500spr");
 
 if (!$con)
@@ -14,14 +15,14 @@ else {
 echo " succeded logging into the database!"; 
 }
 mysqli_select_db("SE500spr", $con);
-
+//Initialise variables, GET Project ID for search from HTTP GET request
 $ProjectRating = 0.00;
 $Project=$_GET["ID"];
-
+//Query
 $search_sql = "SELECT Project_Description, Project_Name, Group_Members, Date_Uploaded, Rating_Total, Number_of_Ratings, Uploader FROM $dbName WHERE Project_ID = $Project";
 
 $search_query = mysqli_query($con, $search_sql);
-
+//Fill variables for page display from the query results
 if(!$search_query){	//Error checking here / may want to reroute index page
 	echo "Could not successfully run query ($search_query) from database" . mysqli_error();
 	//	header("Location:index.php");
@@ -35,6 +36,7 @@ if(!$search_query){	//Error checking here / may want to reroute index page
                         $Num = $search_rs["Number_of_Ratings"]; 
                         $Uploader = $search_rs["Uploader"]; 
 }
+// Run a query on USER, using foreign key from PRojects table (uploader). This will allow link to Users profile.
 $search_sqlUser = "SELECT ID, Username FROM Users WHERE ID = $Uploader";
 $search_queryUser = mysqli_query($con, $search_sqlUser);
 $searchUser = mysqli_fetch_assoc($search_queryUser);
@@ -81,6 +83,7 @@ $Username = $searchUser["Username"];
             <div class="w-dropdown-toggle topmenu">
                 <?php  
                 if($LoggedIn){
+                    //This PHP segment embeds HTML code for a drop down menu, the contents are different depending on whether the User is logged in or not.
               echo '<div class="log-in-button"><span class="in-image-text" ><i>';
                 echo $login_session;
                   echo  '</i></span>';
@@ -89,6 +92,7 @@ $Username = $searchUser["Username"];
             echo  '</div>';
             echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
             echo  $UserId;
+                     // The above is a link to the profile page, which is embedding the Users Id into the Get request.
             echo  '">Profile</a><a class="w-dropdown-link" href="../include/logout.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/newproject.php">New Project</a>';
             echo '</nav>';    
             
@@ -120,6 +124,8 @@ $Username = $searchUser["Username"];
       <div class="w-row">
         <div class="w-col w-col-6">
             <?php
+            // The below embeds HTML code that was pre-formatted with Webflow - but also embeds the results from the earlier database query
+            
             echo '<img src="../images/Project/';
             echo $Project;
             echo '.jpg">';
@@ -128,6 +134,7 @@ $Username = $searchUser["Username"];
         <div class="w-col w-col-6">
           <h1 class="projectheading"><?php echo $ProjectName ?> </h1>
           <div>
+              <!-- The form below will submit the projects ID and a star variable to a php script designed to update a projects rating. -->
             <div class="w-form">
               <form id="email-form" method = "post" action = "RatingUpdate.php?ID=<?php echo $Project ?>" name="email-form" data-name="Email Form">
                 <div class="w-row">
@@ -155,6 +162,7 @@ $Username = $searchUser["Username"];
           </div>
           <div>
               <?php
+    // As per the result page, a different star image is embedded based on the projects overall rating
             if (($RatingTotal/$Num) < 0.25){
                 echo '<div><img src="../images/starImage/0.png">';
             } elseif (($RatingTotal/$Num) < 0.75){

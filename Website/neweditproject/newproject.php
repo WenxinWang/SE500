@@ -1,4 +1,5 @@
 <?php
+// The Session Header allows for identification of users (or identification that no one is logged in) without redirecting unauthorised users.
 include('../include/session.php');
 ?>
 <!DOCTYPE html>
@@ -40,6 +41,8 @@ include('../include/session.php');
             <div class="w-dropdown-toggle topmenu">
                <?php  
                 if($LoggedIn){
+                    //This PHP segment embeds HTML code for a drop down menu, the contents are different depending on whether the User is logged in or not.
+            
               echo '<div class="log-in-button"><span class="in-image-text" ><i>';
                 echo $login_session;
                   echo  '</i></span>';
@@ -48,6 +51,7 @@ include('../include/session.php');
             echo  '</div>';
             echo  '<nav class="w-dropdown-list"><a class="w-dropdown-link" href="../user/user.php?ID=';
             echo  $UserId;
+                       // The above is a link to the profile page, which is embedding the Users Id into the Get request.
             echo  '">Profile</a><a class="w-dropdown-link" href="../include/logout.php">Log Out</a><a class="w-dropdown-link" href="../neweditproject/newproject.php">New Project</a>';
             echo '</nav>';    
             
@@ -77,6 +81,7 @@ include('../include/session.php');
   <div class="w-section">
     <div class="w-container">
       <div class="w-form">
+          <!-- The below form, takes input from the User (and should enforce required fields) and sends as a http GET request to the base.php file. The base.php file will take the inputs from this and add to the database. -->
         <form id="email-form" method="post" action="base.php" name="email-form" data-name="Email Form">
           <label for="name">Project Title:</label>
           <input class="w-input" id="Title" type="text" placeholder="Enter your name" name="Title" data-name="Name" required="required">
