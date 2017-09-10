@@ -7,6 +7,7 @@ Aug - Dec 2015
 * Jaiden
 * Latilm
 * Jiayin Song
+* Bell
 ## Function
 * Launched a web based repository to upload, store, search, and display demos of software projects
 *	Led a five-member team implementing Agile software development methods under Git version control
