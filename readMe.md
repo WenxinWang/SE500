@@ -1,8 +1,7 @@
-# Web Based Repository (Software Engineering Discipline Course Project)
+# Web Based Repository 
+### Software Engineering Discipline Course Project at Embry Riddle Aeronautical University
 ## Time
 Aug - Dec 2015
-## Location
-Daytona Beach, FL, US, 32114
 ## Team members
 * Wenxin Wang
 * Jaiden
